@@ -1,0 +1,24 @@
+package br.senac.backend.repository;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import br.senac.backend.model.User;
+
+@Repository
+public interface UserRepository extends PagingAndSortingRepository<User, Long> {
+
+	@Query("SELECT c FROM User c WHERE c.email = :email and c.password = :password and c.active = 0")
+	User getByLoginPassword(@Param("email") String email, @Param("password") String password);
+	
+	@Query("SELECT c FROM User c WHERE c.email = :email and c.active = 0")
+	User getByEmail(@Param("email") String email);
+
+	@Query("SELECT c FROM User c WHERE c.guid = :guid and c.active = 0")
+	User getByGuid(@Param("guid") String guid);
+
+	@Query("SELECT CASE WHEN (COUNT(u) > 0) THEN true ELSE false END FROM User u WHERE u.email = :email and u.active = 0")
+	Boolean isExists(@Param("email") String email);
+}
