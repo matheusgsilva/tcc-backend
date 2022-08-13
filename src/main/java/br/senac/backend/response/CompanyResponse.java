@@ -1,19 +1,24 @@
 package br.senac.backend.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CompanyResponse {
 
 	private String guid;
-	private String nome;
-	private String documento;
-	private String email;
-	private String rua;
-	private String numero;
+	private String name;
+	private String document;
+	private String country;
+	private String emailAccess;
+	private String emailContact;
+	private String street;
+	private String numberAddress;
 	private String cep;
-	private String bairro;
-	private String cidade;
+	private String district;
+	private String city;
 	private String uf;
-	private String telefone;
-	private String descricao;
+	private String phone;
+	private String description;
 
 	public String getGuid() {
 		return guid;
@@ -23,44 +28,60 @@ public class CompanyResponse {
 		this.guid = guid;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getDocumento() {
-		return documento;
+	public String getDocument() {
+		return document;
 	}
 
-	public void setDocumento(String documento) {
-		this.documento = documento;
+	public void setDocument(String document) {
+		this.document = document;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getCountry() {
+		return country;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
-	public String getRua() {
-		return rua;
+	public String getEmailAccess() {
+		return emailAccess;
 	}
 
-	public void setRua(String rua) {
-		this.rua = rua;
+	public void setEmailAccess(String emailAccess) {
+		this.emailAccess = emailAccess;
 	}
 
-	public String getNumero() {
-		return numero;
+	public String getEmailContact() {
+		return emailContact;
 	}
 
-	public void setNumero(String numero) {
-		this.numero = numero;
+	public void setEmailContact(String emailContact) {
+		this.emailContact = emailContact;
+	}
+
+	public String getStreet() {
+		return street;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+
+	public String getNumberAddress() {
+		return numberAddress;
+	}
+
+	public void setNumberAddress(String numberAddress) {
+		this.numberAddress = numberAddress;
 	}
 
 	public String getCep() {
@@ -71,20 +92,20 @@ public class CompanyResponse {
 		this.cep = cep;
 	}
 
-	public String getBairro() {
-		return bairro;
+	public String getDistrict() {
+		return district;
 	}
 
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
+	public void setDistrict(String district) {
+		this.district = district;
 	}
 
-	public String getCidade() {
-		return cidade;
+	public String getCity() {
+		return city;
 	}
 
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
+	public void setCity(String city) {
+		this.city = city;
 	}
 
 	public String getUf() {
@@ -95,20 +116,20 @@ public class CompanyResponse {
 		this.uf = uf;
 	}
 
-	public String getTelefone() {
-		return telefone;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 }

@@ -10,7 +10,7 @@ public interface CompanyService {
 
 	Company getByLoginPassword(String email, String password);
 
-	Boolean isExists(String nome, String email, String documento);
+	Boolean isExists(String name, String email, String document);
 	
-	Boolean isExists(String nome, String email, String documento, String guid);
+	Boolean isExists(String name, String email, String document, String guid);
 }

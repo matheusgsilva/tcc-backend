@@ -20,21 +20,23 @@ public class CompanyConverter {
 
 		try {
 			Company company = new Company();
-			company.setAtivo(EACTIVE.YES);
-			company.setBairro(companyRequest.getBairro());
+			company.setActive(EACTIVE.YES);
+			company.setDistrict(companyRequest.getDistrict());
 			company.setCep(companyRequest.getCep());
-			company.setCidade(companyRequest.getCidade());
-			company.setDescricao(companyRequest.getDescricao());
-			company.setDocumento(companyRequest.getDocumento());
-			company.setEmail(companyRequest.getEmail());
+			company.setCity(companyRequest.getCity());
+			company.setDescription(companyRequest.getDescription());
+			company.setDocument(companyRequest.getDocument());
+			company.setEmailAccess(companyRequest.getEmailAccess());
+			company.setEmailContact(companyRequest.getEmailContact());
 			company.setGuid(UUID.randomUUID().toString());
-			company.setNome(companyRequest.getNome());
-			company.setNumero(companyRequest.getNumero());
+			company.setName(companyRequest.getName());
+			company.setNumberAddress(companyRequest.getNumberAddress());
 			company.setPassword(BCrypt.hashpw(companyRequest.getPassword(), BCrypt.gensalt()));
-			company.setPermissao(ECOMPANY_PERMISSION.AUTHORIZED);
-			company.setRua(companyRequest.getRua());
-			company.setTelefone(companyRequest.getTelefone());
+			company.setPermission(ECOMPANY_PERMISSION.AUTHORIZED);
+			company.setStreet(companyRequest.getStreet());
+			company.setPhone(companyRequest.getPhone());
 			company.setUf(companyRequest.getUf());
+			company.setCountry(companyRequest.getCountry());
 			return company;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -45,18 +47,19 @@ public class CompanyConverter {
 	public Company companyUpdate(CompanyRequest companyRequest, Company company) {
 
 		try {
-			company.setBairro(companyRequest.getBairro());
+			company.setDistrict(companyRequest.getDistrict());
 			company.setCep(companyRequest.getCep());
-			company.setCidade(companyRequest.getCidade());
-			company.setDescricao(companyRequest.getDescricao());
-			company.setDocumento(companyRequest.getDocumento());
-			company.setEmail(companyRequest.getEmail());
-			company.setNome(companyRequest.getNome());
-			company.setNumero(companyRequest.getNumero());
-			company.setPassword(BCrypt.hashpw(companyRequest.getPassword(), BCrypt.gensalt()));
-			company.setRua(companyRequest.getRua());
-			company.setTelefone(companyRequest.getTelefone());
+			company.setCity(companyRequest.getCity());
+			company.setDescription(companyRequest.getDescription());
+			company.setDocument(companyRequest.getDocument());
+			company.setEmailAccess(companyRequest.getEmailAccess());
+			company.setEmailContact(companyRequest.getEmailContact());
+			company.setName(companyRequest.getName());
+			company.setNumberAddress(companyRequest.getNumberAddress());
+			company.setStreet(companyRequest.getStreet());
+			company.setPhone(companyRequest.getPhone());
 			company.setUf(companyRequest.getUf());
+			company.setCountry(companyRequest.getCountry());
 			return company;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -68,18 +71,33 @@ public class CompanyConverter {
 
 		try {
 			CompanyResponse companyResponse = new CompanyResponse();
-			companyResponse.setBairro(company.getBairro());
+			companyResponse.setDistrict(company.getDistrict());
 			companyResponse.setCep(company.getCep());
-			companyResponse.setCidade(company.getCidade());
-			companyResponse.setDescricao(company.getDescricao());
-			companyResponse.setDocumento(company.getDocumento());
-			companyResponse.setEmail(company.getEmail());
-			companyResponse.setGuid(company.getGuid());
-			companyResponse.setNome(company.getNome());
-			companyResponse.setNumero(company.getNumero());
-			companyResponse.setRua(company.getRua());
-			companyResponse.setTelefone(company.getTelefone());
+			companyResponse.setCity(company.getCity());
+			companyResponse.setDescription(company.getDescription());
+			companyResponse.setDocument(company.getDocument());
+			companyResponse.setEmailAccess(company.getEmailAccess());
+			companyResponse.setEmailContact(company.getEmailContact());
+			companyResponse.setName(company.getName());
+			companyResponse.setNumberAddress(company.getNumberAddress());
+			companyResponse.setStreet(company.getStreet());
+			companyResponse.setPhone(company.getPhone());
 			companyResponse.setUf(company.getUf());
+			companyResponse.setCountry(company.getCountry());
+			companyResponse.setGuid(company.getGuid());
+			return companyResponse;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public CompanyResponse companyToResponseContact(Company company) {
+
+		try {
+			CompanyResponse companyResponse = new CompanyResponse();
+			companyResponse.setEmailContact(company.getEmailContact());
+			companyResponse.setPhone(company.getPhone());
 			return companyResponse;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -93,18 +111,20 @@ public class CompanyConverter {
 			List<CompanyResponse> list = new ArrayList<CompanyResponse>();
 			companies.forEach(company -> {
 				CompanyResponse companyResponse = new CompanyResponse();
-				companyResponse.setBairro(company.getBairro());
+				companyResponse.setDistrict(company.getDistrict());
 				companyResponse.setCep(company.getCep());
-				companyResponse.setCidade(company.getCidade());
-				companyResponse.setDescricao(company.getDescricao());
-				companyResponse.setDocumento(company.getDocumento());
-				companyResponse.setEmail(company.getEmail());
-				companyResponse.setGuid(company.getGuid());
-				companyResponse.setNome(company.getNome());
-				companyResponse.setNumero(company.getNumero());
-				companyResponse.setRua(company.getRua());
-				companyResponse.setTelefone(company.getTelefone());
+				companyResponse.setCity(company.getCity());
+				companyResponse.setDescription(company.getDescription());
+				companyResponse.setDocument(company.getDocument());
+				companyResponse.setEmailAccess(company.getEmailAccess());
+				companyResponse.setEmailContact(company.getEmailContact());
+				companyResponse.setName(company.getName());
+				companyResponse.setNumberAddress(company.getNumberAddress());
+				companyResponse.setStreet(company.getStreet());
+				companyResponse.setPhone(company.getPhone());
 				companyResponse.setUf(company.getUf());
+				companyResponse.setCountry(company.getCountry());
+				companyResponse.setGuid(company.getGuid());
 				list.add(companyResponse);
 			});
 			return list;

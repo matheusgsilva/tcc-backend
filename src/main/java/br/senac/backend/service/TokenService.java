@@ -1,5 +1,6 @@
 package br.senac.backend.service;
 
+import br.senac.backend.model.Company;
 import br.senac.backend.model.Token;
 import br.senac.backend.model.User;
 
@@ -14,6 +15,8 @@ public interface TokenService {
 	Token save(Token obj);
 
 	Token getNewTokenPersisted(User user);
+	
+	Token getNewTokenPersisted(Company company);
 
 	Token getLastTokenForToday(Token tbToken);
 }

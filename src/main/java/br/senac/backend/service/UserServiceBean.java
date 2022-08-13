@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.senac.backend.model.User;
 import br.senac.backend.repository.UserRepository;
+import br.senac.backend.util.EACTIVE;
 
 @Service
 public class UserServiceBean implements UserService {
@@ -28,9 +29,10 @@ public class UserServiceBean implements UserService {
 	public User getByLoginPassword(String email, String password) {
 		if ((!email.equals("")) && (!password.equals(""))) {
 			User u = repository.getByEmail(email);
-			if ((u != null))
-				if (BCrypt.checkpw(password, u.getPassword()))
-					return u;
+			if (u != null)
+				if (u.getActive().equals(EACTIVE.YES))
+					if (BCrypt.checkpw(password, u.getPassword()))
+						return u;
 		}
 		return null;
 	}
@@ -38,11 +40,11 @@ public class UserServiceBean implements UserService {
 	public Boolean isExists(String email) {
 		return repository.isExists(email);
 	}
-	
+
 	public User locateByEmail(String email) {
 		return repository.getByEmail(email);
 	}
-	
+
 	@Transactional
 	public void delete(User user) {
 		repository.delete(user);

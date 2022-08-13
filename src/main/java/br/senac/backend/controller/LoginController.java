@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import br.senac.backend.handler.HandlerLogin;
+import br.senac.backend.model.Company;
 import br.senac.backend.model.Token;
 import br.senac.backend.model.User;
 import br.senac.backend.request.LoginRequest;
 import br.senac.backend.response.LoginResponse;
 import br.senac.backend.response.ResponseAPI;
+import br.senac.backend.service.CompanyService;
 import br.senac.backend.service.TokenService;
 import br.senac.backend.service.UserService;
 
@@ -25,6 +27,9 @@ public class LoginController {
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private CompanyService companyService;
 
 	@Autowired
 	private TokenService tokenService;
@@ -49,15 +54,25 @@ public class LoginController {
 				login.setToken(t.getToken());
 				login.setGuid(user.getGuid());
 				handlerLogin.handleLoginMessages(responseAPI, 200, login);
-
 				LOGGER.info(" :: Encerrando o método logon - 200 - OK :: ");
 				return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
-
-			} else {
-				LOGGER.info(" :: Encerrando o método logon - 401 - UNAUTHORIZED :: ");
-				handlerLogin.handleLoginMessages(responseAPI, 401, login);
-				return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.UNAUTHORIZED);
 			}
+			
+			Company company = companyService.getByLoginPassword(loginRequest.getEmail(), loginRequest.getPassword());
+			if(company != null) {
+				Token t = tokenService.getNewTokenPersisted(company);
+				login.setUsername(company.getEmailAccess());
+				login.setToken(t.getToken());
+				login.setGuid(company.getGuid());
+				handlerLogin.handleLoginMessages(responseAPI, 200, login);
+				LOGGER.info(" :: Encerrando o método logon - 200 - OK :: ");
+				return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+			}
+
+			LOGGER.info(" :: Encerrando o método logon - 401 - UNAUTHORIZED :: ");
+			handlerLogin.handleLoginMessages(responseAPI, 401, login);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.UNAUTHORIZED);
+
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			LOGGER.info(" :: Encerrando o método logon - 400 - BAD REQUEST :: ");

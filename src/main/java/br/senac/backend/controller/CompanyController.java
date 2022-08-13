@@ -52,8 +52,8 @@ public class CompanyController {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 		try {
-			if (!companyService.isExists(companyRequest.getNome(), companyRequest.getEmail(),
-					companyRequest.getDocumento())) {
+			if (!companyService.isExists(companyRequest.getName(), companyRequest.getEmailAccess(),
+					companyRequest.getDocument())) {
 				Company company = companyConverter.companySave(companyRequest);
 				if (company != null) {
 					company = companyService.save(company);
@@ -88,8 +88,8 @@ public class CompanyController {
 		try {
 			Company company = companyService.getByGuid(companyRequest.getGuid());
 			if (company != null) {
-				if (!companyService.isExists(companyRequest.getNome(), companyRequest.getEmail(),
-						companyRequest.getDocumento(), companyRequest.getGuid())) {
+				if (!companyService.isExists(companyRequest.getName(), companyRequest.getEmailAccess(),
+						companyRequest.getDocument(), companyRequest.getGuid())) {
 					company = companyConverter.companyUpdate(companyRequest, company);
 					if (company != null) {
 						company = companyService.save(company);
@@ -144,7 +144,7 @@ public class CompanyController {
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/api/company/authorize", method = RequestMethod.POST)
 	public ResponseEntity<ResponseAPI> autorizar(@RequestHeader(value = "token") String token,
@@ -155,7 +155,7 @@ public class CompanyController {
 		try {
 			Company company = companyService.getByGuid(companyRequest.getGuid());
 			if (company != null) {
-				company.setPermissao(ECOMPANY_PERMISSION.AUTHORIZED);
+				company.setPermission(ECOMPANY_PERMISSION.AUTHORIZED);
 				company = companyService.save(company);
 				CompanyResponse companyResponse = companyConverter.companyToResponse(company);
 				if (companyResponse != null)
@@ -241,7 +241,7 @@ public class CompanyController {
 		try {
 			Company company = companyService.getByGuid(guid);
 			if (company != null) {
-				company.setAtivo(EACTIVE.NO);
+				company.setActive(EACTIVE.NO);
 				company = companyService.save(company);
 				handlerCompany.handleDeleteMessages(responseAPI, 200);
 			} else

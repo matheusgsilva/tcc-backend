@@ -87,6 +87,16 @@ public class TokenServiceBean implements TokenService {
 		token = save(token);
 		return token;
 	}
+	
+	@Transactional
+	public Token getNewTokenPersisted(Company company) {
+		Token token = new Token();
+		token.setCreatedDate(new Date());
+		token.setCompany(company);
+		token.setToken(getNewToken());
+		token = save(token);
+		return token;
+	}
 
 	public String getNewToken() {
 		return UUID.randomUUID().toString();

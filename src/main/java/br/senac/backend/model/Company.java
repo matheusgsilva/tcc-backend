@@ -37,41 +37,47 @@ public class Company implements Serializable {
 	private String guid;
 
 	@Column(columnDefinition = "VARCHAR(100)", nullable = false)
-	private String nome;
+	private String name;
 
 	@Column(columnDefinition = "VARCHAR(14)", nullable = false)
-	private String documento;
+	private String document;
 
 	@Column(columnDefinition = "VARCHAR(200)", nullable = false)
-	private String email;
+	private String emailAccess;
+
+	@Column(columnDefinition = "VARCHAR(200)", nullable = false)
+	private String emailContact;
 
 	@Column(columnDefinition = "VARCHAR(255)", nullable = false)
-	private String rua;
+	private String street;
 
 	@Column(columnDefinition = "VARCHAR(10)", nullable = false)
-	private String numero;
+	private String numberAddress;
 
 	@Column(columnDefinition = "VARCHAR(8)", nullable = false)
 	private String cep;
 
 	@Column(columnDefinition = "VARCHAR(255)", nullable = false)
-	private String bairro;
+	private String district;
 
 	@Column(columnDefinition = "VARCHAR(255)", nullable = false)
-	private String cidade;
+	private String city;
 
 	@Column(columnDefinition = "VARCHAR(2)", nullable = false)
 	private String uf;
 
 	@Column(columnDefinition = "VARCHAR(20)", nullable = false)
-	private String telefone;
+	private String phone;
+
+	@Column(columnDefinition = "VARCHAR(50)", nullable = false)
+	private String country;
 
 	@Column(columnDefinition = "VARCHAR(255)", nullable = true)
-	private String descricao;
+	private String description;
 
-	private EACTIVE ativo;
+	private EACTIVE active;
 
-	private ECOMPANY_PERMISSION permissao;
+	private ECOMPANY_PERMISSION permission;
 
 	@Column(nullable = false, columnDefinition = "VARCHAR(100)")
 	private String password;
@@ -92,44 +98,44 @@ public class Company implements Serializable {
 		this.guid = guid;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getDocumento() {
-		return documento;
+	public String getDocument() {
+		return document;
 	}
 
-	public void setDocumento(String documento) {
-		this.documento = documento;
+	public void setDocument(String document) {
+		this.document = document;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getEmailAccess() {
+		return emailAccess;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmailAccess(String emailAccess) {
+		this.emailAccess = emailAccess;
 	}
 
-	public String getRua() {
-		return rua;
+	public String getStreet() {
+		return street;
 	}
 
-	public void setRua(String rua) {
-		this.rua = rua;
+	public void setStreet(String street) {
+		this.street = street;
 	}
 
-	public String getNumero() {
-		return numero;
+	public String getNumberAddress() {
+		return numberAddress;
 	}
 
-	public void setNumero(String numero) {
-		this.numero = numero;
+	public void setNumberAddress(String numberAddress) {
+		this.numberAddress = numberAddress;
 	}
 
 	public String getCep() {
@@ -140,20 +146,20 @@ public class Company implements Serializable {
 		this.cep = cep;
 	}
 
-	public String getBairro() {
-		return bairro;
+	public String getDistrict() {
+		return district;
 	}
 
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
+	public void setDistrict(String district) {
+		this.district = district;
 	}
 
-	public String getCidade() {
-		return cidade;
+	public String getCity() {
+		return city;
 	}
 
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
+	public void setCity(String city) {
+		this.city = city;
 	}
 
 	public String getUf() {
@@ -164,36 +170,44 @@ public class Company implements Serializable {
 		this.uf = uf;
 	}
 
-	public String getTelefone() {
-		return telefone;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getCountry() {
+		return country;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
-	public EACTIVE getAtivo() {
-		return ativo;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setAtivo(EACTIVE ativo) {
-		this.ativo = ativo;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public ECOMPANY_PERMISSION getPermissao() {
-		return permissao;
+	public EACTIVE getActive() {
+		return active;
 	}
 
-	public void setPermissao(ECOMPANY_PERMISSION permissao) {
-		this.permissao = permissao;
+	public void setActive(EACTIVE active) {
+		this.active = active;
+	}
+
+	public ECOMPANY_PERMISSION getPermission() {
+		return permission;
+	}
+
+	public void setPermission(ECOMPANY_PERMISSION permission) {
+		this.permission = permission;
 	}
 
 	public String getPassword() {
@@ -202,6 +216,14 @@ public class Company implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getEmailContact() {
+		return emailContact;
+	}
+
+	public void setEmailContact(String emailContact) {
+		this.emailContact = emailContact;
 	}
 
 }

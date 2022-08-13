@@ -40,16 +40,16 @@ public class User implements Serializable {
 	private String guid;
 
 	@Column(columnDefinition = "VARCHAR(100)", nullable = false)
-	private String nome;
+	private String name;
 
 	@Column(columnDefinition = "VARCHAR(14)", nullable = false)
-	private String documento;
+	private String document;
 
 	@Column(columnDefinition = "VARCHAR(200)", nullable = false)
 	private String email;
 
 	@Column(columnDefinition = "VARCHAR(20)", nullable = false)
-	private String telefone;
+	private String phone;
 
 	@Column(nullable = false, columnDefinition = "VARCHAR(100)")
 	private String password;
@@ -76,20 +76,20 @@ public class User implements Serializable {
 		this.guid = guid;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getDocumento() {
-		return documento;
+	public String getDocument() {
+		return document;
 	}
 
-	public void setDocumento(String documento) {
-		this.documento = documento;
+	public void setDocument(String document) {
+		this.document = document;
 	}
 
 	public String getEmail() {
@@ -100,12 +100,12 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
-	public String getTelefone() {
-		return telefone;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public String getPassword() {
@@ -123,7 +123,7 @@ public class User implements Serializable {
 	public void setActive(EACTIVE active) {
 		this.active = active;
 	}
-	
+
 	public List<Token> getTokens() {
 		return tokens;
 	}

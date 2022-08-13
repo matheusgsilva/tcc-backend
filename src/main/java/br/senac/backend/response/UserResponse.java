@@ -1,12 +1,15 @@
 package br.senac.backend.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserResponse {
 
 	private String guid;
-	private String nome;
-	private String documento;
+	private String name;
+	private String document;
 	private String email;
-	private String telefone;
+	private String phone;
 
 	public String getGuid() {
 		return guid;
@@ -16,20 +19,20 @@ public class UserResponse {
 		this.guid = guid;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getDocumento() {
-		return documento;
+	public String getDocument() {
+		return document;
 	}
 
-	public void setDocumento(String documento) {
-		this.documento = documento;
+	public void setDocument(String document) {
+		this.document = document;
 	}
 
 	public String getEmail() {
@@ -40,12 +43,12 @@ public class UserResponse {
 		this.email = email;
 	}
 
-	public String getTelefone() {
-		return telefone;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 }

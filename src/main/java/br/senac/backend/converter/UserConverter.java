@@ -18,12 +18,12 @@ public class UserConverter {
 		try {
 			User user = new User();
 			user.setActive(EACTIVE.YES);
-			user.setDocumento(userRequest.getDocumento());
+			user.setDocument(userRequest.getDocument());
 			user.setEmail(userRequest.getEmail());
 			user.setGuid(UUID.randomUUID().toString());
-			user.setNome(userRequest.getNome());
+			user.setName(userRequest.getName());
 			user.setPassword(BCrypt.hashpw(userRequest.getPassword(), BCrypt.gensalt()));
-			user.setTelefone(userRequest.getTelefone());
+			user.setPhone(userRequest.getPhone());
 			return user;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -34,10 +34,10 @@ public class UserConverter {
 	public User userUpdate(UserRequest userRequest, User user) {
 
 		try {
-			user.setDocumento(userRequest.getDocumento());
+			user.setDocument(userRequest.getDocument());
 			user.setEmail(userRequest.getEmail());
-			user.setNome(userRequest.getNome());
-			user.setTelefone(userRequest.getTelefone());
+			user.setName(userRequest.getName());
+			user.setPhone(userRequest.getPhone());
 			return user;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -49,10 +49,10 @@ public class UserConverter {
 
 		try {
 			UserResponse userResponse = new UserResponse();
-			userResponse.setDocumento(user.getDocumento());
+			userResponse.setDocument(user.getDocument());
 			userResponse.setEmail(user.getEmail());
-			userResponse.setNome(user.getNome());
-			userResponse.setTelefone(user.getTelefone());
+			userResponse.setName(user.getName());
+			userResponse.setPhone(user.getPhone());
 			userResponse.setGuid(user.getGuid());
 			return userResponse;
 		} catch (Exception e) {
