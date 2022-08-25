@@ -43,10 +43,7 @@ public class Company implements Serializable {
 	private String document;
 
 	@Column(columnDefinition = "VARCHAR(200)", nullable = false)
-	private String emailAccess;
-
-	@Column(columnDefinition = "VARCHAR(200)", nullable = false)
-	private String emailContact;
+	private String email;
 
 	@Column(columnDefinition = "VARCHAR(255)", nullable = false)
 	private String street;
@@ -114,12 +111,12 @@ public class Company implements Serializable {
 		this.document = document;
 	}
 
-	public String getEmailAccess() {
-		return emailAccess;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setEmailAccess(String emailAccess) {
-		this.emailAccess = emailAccess;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getStreet() {
@@ -216,14 +213,6 @@ public class Company implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public String getEmailContact() {
-		return emailContact;
-	}
-
-	public void setEmailContact(String emailContact) {
-		this.emailContact = emailContact;
 	}
 
 }

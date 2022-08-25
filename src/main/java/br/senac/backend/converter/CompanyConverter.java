@@ -26,8 +26,7 @@ public class CompanyConverter {
 			company.setCity(companyRequest.getCity());
 			company.setDescription(companyRequest.getDescription());
 			company.setDocument(companyRequest.getDocument());
-			company.setEmailAccess(companyRequest.getEmailAccess());
-			company.setEmailContact(companyRequest.getEmailContact());
+			company.setEmail(companyRequest.getEmail());
 			company.setGuid(UUID.randomUUID().toString());
 			company.setName(companyRequest.getName());
 			company.setNumberAddress(companyRequest.getNumberAddress());
@@ -52,8 +51,7 @@ public class CompanyConverter {
 			company.setCity(companyRequest.getCity());
 			company.setDescription(companyRequest.getDescription());
 			company.setDocument(companyRequest.getDocument());
-			company.setEmailAccess(companyRequest.getEmailAccess());
-			company.setEmailContact(companyRequest.getEmailContact());
+			company.setEmail(companyRequest.getEmail());
 			company.setName(companyRequest.getName());
 			company.setNumberAddress(companyRequest.getNumberAddress());
 			company.setStreet(companyRequest.getStreet());
@@ -76,8 +74,7 @@ public class CompanyConverter {
 			companyResponse.setCity(company.getCity());
 			companyResponse.setDescription(company.getDescription());
 			companyResponse.setDocument(company.getDocument());
-			companyResponse.setEmailAccess(company.getEmailAccess());
-			companyResponse.setEmailContact(company.getEmailContact());
+			companyResponse.setEmail(company.getEmail());
 			companyResponse.setName(company.getName());
 			companyResponse.setNumberAddress(company.getNumberAddress());
 			companyResponse.setStreet(company.getStreet());
@@ -96,7 +93,7 @@ public class CompanyConverter {
 
 		try {
 			CompanyResponse companyResponse = new CompanyResponse();
-			companyResponse.setEmailContact(company.getEmailContact());
+			companyResponse.setEmail(company.getEmail());
 			companyResponse.setPhone(company.getPhone());
 			return companyResponse;
 		} catch (Exception e) {
@@ -116,8 +113,7 @@ public class CompanyConverter {
 				companyResponse.setCity(company.getCity());
 				companyResponse.setDescription(company.getDescription());
 				companyResponse.setDocument(company.getDocument());
-				companyResponse.setEmailAccess(company.getEmailAccess());
-				companyResponse.setEmailContact(company.getEmailContact());
+				companyResponse.setEmail(company.getEmail());
 				companyResponse.setName(company.getName());
 				companyResponse.setNumberAddress(company.getNumberAddress());
 				companyResponse.setStreet(company.getStreet());

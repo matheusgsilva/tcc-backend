@@ -40,6 +40,10 @@ public class UserServiceBean implements UserService {
 	public Boolean isExists(String email) {
 		return repository.isExists(email);
 	}
+	
+	public Boolean isExists(String email, String guid) {
+		return repository.isExists(email, guid);
+	}
 
 	public User locateByEmail(String email) {
 		return repository.getByEmail(email);

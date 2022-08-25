@@ -21,4 +21,7 @@ public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 
 	@Query("SELECT CASE WHEN (COUNT(u) > 0) THEN true ELSE false END FROM User u WHERE u.email = :email and u.active = 0")
 	Boolean isExists(@Param("email") String email);
+	
+	@Query("SELECT CASE WHEN (COUNT(u) > 0) THEN true ELSE false END FROM User u WHERE u.email = :email and u.guid <> :guid and u.active = 0")
+	Boolean isExists(@Param("email") String email, @Param("guid") String guid);
 }

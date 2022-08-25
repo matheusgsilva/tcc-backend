@@ -52,7 +52,7 @@ public class CompanyController {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 		try {
-			if (!companyService.isExists(companyRequest.getName(), companyRequest.getEmailAccess(),
+			if (!companyService.isExists(companyRequest.getName(), companyRequest.getEmail(),
 					companyRequest.getDocument())) {
 				Company company = companyConverter.companySave(companyRequest);
 				if (company != null) {
@@ -88,7 +88,7 @@ public class CompanyController {
 		try {
 			Company company = companyService.getByGuid(companyRequest.getGuid());
 			if (company != null) {
-				if (!companyService.isExists(companyRequest.getName(), companyRequest.getEmailAccess(),
+				if (!companyService.isExists(companyRequest.getName(), companyRequest.getEmail(),
 						companyRequest.getDocument(), companyRequest.getGuid())) {
 					company = companyConverter.companyUpdate(companyRequest, company);
 					if (company != null) {

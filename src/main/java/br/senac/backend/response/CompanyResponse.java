@@ -9,8 +9,7 @@ public class CompanyResponse {
 	private String name;
 	private String document;
 	private String country;
-	private String emailAccess;
-	private String emailContact;
+	private String email;
 	private String street;
 	private String numberAddress;
 	private String cep;
@@ -52,20 +51,12 @@ public class CompanyResponse {
 		this.country = country;
 	}
 
-	public String getEmailAccess() {
-		return emailAccess;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setEmailAccess(String emailAccess) {
-		this.emailAccess = emailAccess;
-	}
-
-	public String getEmailContact() {
-		return emailContact;
-	}
-
-	public void setEmailContact(String emailContact) {
-		this.emailContact = emailContact;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getStreet() {

@@ -29,7 +29,7 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private HandlerUser handlerUser;
 
@@ -75,26 +75,15 @@ public class UserController {
 		try {
 			User user = userService.getByGuid(userRequest.getGuid());
 			if (user != null) {
-
-				if (userRequest.getEmail().equals(user.getEmail())) {
+				if (!userService.isExists(userRequest.getEmail(), userRequest.getGuid())) {
 					UserResponse userResponse = userConverter
 							.userToResponse(userService.save(userConverter.userUpdate(userRequest, user)));
 					if (userResponse != null)
 						handlerUser.handleUpdateMessages(responseAPI, 200, userResponse);
 					else
 						handlerUser.handleUpdateMessages(responseAPI, 404, null);
-				} else {
-					if (!userService.isExists(userRequest.getEmail())) {
-						UserResponse userResponse = userConverter
-								.userToResponse(userService.save(userConverter.userUpdate(userRequest, user)));
-						if (userResponse != null)
-							handlerUser.handleUpdateMessages(responseAPI, 200, userResponse);
-						else
-							handlerUser.handleUpdateMessages(responseAPI, 404, null);
-					} else
-						handlerUser.handleUpdateMessages(responseAPI, 304, null);
-				}
-
+				} else
+					handlerUser.handleUpdateMessages(responseAPI, 304, null);
 			} else
 				handlerUser.handleUpdateMessages(responseAPI, 404, null);
 

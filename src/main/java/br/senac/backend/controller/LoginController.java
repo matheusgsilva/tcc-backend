@@ -50,7 +50,7 @@ public class LoginController {
 			User user = userService.getByLoginPassword(loginRequest.getEmail(), loginRequest.getPassword());
 			if (user != null) {
 				Token t = tokenService.getNewTokenPersisted(user);
-				login.setUsername(user.getEmail());
+				login.setEmail(user.getEmail());
 				login.setToken(t.getToken());
 				login.setGuid(user.getGuid());
 				handlerLogin.handleLoginMessages(responseAPI, 200, login);
@@ -61,7 +61,7 @@ public class LoginController {
 			Company company = companyService.getByLoginPassword(loginRequest.getEmail(), loginRequest.getPassword());
 			if(company != null) {
 				Token t = tokenService.getNewTokenPersisted(company);
-				login.setUsername(company.getEmailAccess());
+				login.setEmail(company.getEmail());
 				login.setToken(t.getToken());
 				login.setGuid(company.getGuid());
 				handlerLogin.handleLoginMessages(responseAPI, 200, login);

@@ -12,6 +12,8 @@ public interface UserService {
 	
 	Boolean isExists(String email);
 	
+	Boolean isExists(String email, String guid);
+	
 	User locateByEmail(String email);
 	
 	void delete(User user);
