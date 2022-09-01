@@ -21,6 +21,7 @@ import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.CompanyService;
 import br.senac.backend.service.TokenService;
 import br.senac.backend.service.UserService;
+import br.senac.backend.util.ELOGIN_TYPE;
 
 @Controller
 public class LoginController {
@@ -53,6 +54,7 @@ public class LoginController {
 				login.setEmail(user.getEmail());
 				login.setToken(t.getToken());
 				login.setGuid(user.getGuid());
+				login.setType(ELOGIN_TYPE.USER);
 				handlerLogin.handleLoginMessages(responseAPI, 200, login);
 				LOGGER.info(" :: Encerrando o método logon - 200 - OK :: ");
 				return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
@@ -64,6 +66,7 @@ public class LoginController {
 				login.setEmail(company.getEmail());
 				login.setToken(t.getToken());
 				login.setGuid(company.getGuid());
+				login.setType(ELOGIN_TYPE.COMPANY);
 				handlerLogin.handleLoginMessages(responseAPI, 200, login);
 				LOGGER.info(" :: Encerrando o método logon - 200 - OK :: ");
 				return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
