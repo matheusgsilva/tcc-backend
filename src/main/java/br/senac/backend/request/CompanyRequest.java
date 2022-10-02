@@ -2,7 +2,6 @@ package br.senac.backend.request;
 
 public class CompanyRequest {
 
-	private String guid;
 	private String name;
 	private String document;
 	private String country;
@@ -16,14 +15,6 @@ public class CompanyRequest {
 	private String phone;
 	private String description;
 	private String password;
-
-	public String getGuid() {
-		return guid;
-	}
-
-	public void setGuid(String guid) {
-		this.guid = guid;
-	}
 
 	public String getName() {
 		return name;

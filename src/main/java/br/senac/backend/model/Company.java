@@ -45,7 +45,7 @@ public class Company implements Serializable {
 	@Column(columnDefinition = "VARCHAR(200)", nullable = false)
 	private String email;
 
-	@Column(columnDefinition = "VARCHAR(255)", nullable = false)
+	@Column(columnDefinition = "VARCHAR(100)", nullable = false)
 	private String street;
 
 	@Column(columnDefinition = "VARCHAR(10)", nullable = false)
@@ -54,10 +54,10 @@ public class Company implements Serializable {
 	@Column(columnDefinition = "VARCHAR(8)", nullable = false)
 	private String cep;
 
-	@Column(columnDefinition = "VARCHAR(255)", nullable = false)
+	@Column(columnDefinition = "VARCHAR(50)", nullable = false)
 	private String district;
 
-	@Column(columnDefinition = "VARCHAR(255)", nullable = false)
+	@Column(columnDefinition = "VARCHAR(50)", nullable = false)
 	private String city;
 
 	@Column(columnDefinition = "VARCHAR(2)", nullable = false)

@@ -2,20 +2,11 @@ package br.senac.backend.request;
 
 public class UserRequest {
 
-	private String guid;
 	private String name;
 	private String document;
 	private String email;
 	private String phone;
 	private String password;
-
-	public String getGuid() {
-		return guid;
-	}
-
-	public void setGuid(String guid) {
-		this.guid = guid;
-	}
 
 	public String getName() {
 		return name;

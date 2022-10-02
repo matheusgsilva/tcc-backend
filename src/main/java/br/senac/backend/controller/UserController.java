@@ -68,16 +68,16 @@ public class UserController {
 	}
 
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/user/update", method = RequestMethod.POST)
-	public ResponseEntity<ResponseAPI> update(@RequestHeader(value = "token") String token,
+	@RequestMapping(value = "/api/user/update/guid/{guid}", method = RequestMethod.PUT)
+	public ResponseEntity<ResponseAPI> update(@RequestHeader(value = "token") String token, @PathVariable String guid,
 			@RequestBody UserRequest userRequest) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 
 		try {
-			User user = userService.getByGuid(userRequest.getGuid());
+			User user = userService.getByGuid(guid);
 			if (user != null) {
-				if (!userService.isExists(userRequest.getEmail(), userRequest.getGuid())) {
+				if (!userService.isExists(userRequest.getEmail(), guid)) {
 					UserResponse userResponse = userConverter
 							.userToResponse(userService.save(userConverter.userUpdate(userRequest, user)));
 					if (userResponse != null)
@@ -89,11 +89,11 @@ public class UserController {
 			} else
 				handlerUser.handleUpdateMessages(responseAPI, 404, null);
 
-			LOGGER.info(" :: Encerrando o método /api/user/update - 200 - OK :: ");
+			LOGGER.info(" :: Encerrando o método /api/user/update/guid - 200 - OK :: ");
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			LOGGER.error(" :: Encerrando o método /api/user/update - 400 - BAD REQUEST :: ");
+			LOGGER.error(" :: Encerrando o método /api/user/update/guid - 400 - BAD REQUEST :: ");
 			handlerUser.handleUpdateMessages(responseAPI, 400, null);
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
@@ -153,7 +153,7 @@ public class UserController {
 	}
 
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/user/delete/guid/{guid}", method = RequestMethod.GET)
+	@RequestMapping(value = "/api/user/delete/guid/{guid}", method = RequestMethod.DELETE)
 	public ResponseEntity<ResponseAPI> delete(@PathVariable String guid, @RequestHeader(value = "token") String token) {
 
 		ResponseAPI responseAPI = new ResponseAPI();

@@ -82,17 +82,17 @@ public class CompanyController {
 	}
 
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/company/update", method = RequestMethod.POST)
-	public ResponseEntity<ResponseAPI> update(@RequestHeader(value = "token") String token,
+	@RequestMapping(value = "/api/company/update/guid/{guid}", method = RequestMethod.PUT)
+	public ResponseEntity<ResponseAPI> update(@RequestHeader(value = "token") String token, @PathVariable String guid,
 			@RequestBody CompanyRequest companyRequest) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 
 		try {
-			Company company = companyService.getByGuid(companyRequest.getGuid());
+			Company company = companyService.getByGuid(guid);
 			if (company != null) {
 				if (!companyService.isExists(companyRequest.getName(), companyRequest.getEmail(),
-						companyRequest.getDocument(), companyRequest.getGuid())) {
+						companyRequest.getDocument(), guid)) {
 					company = companyConverter.companyUpdate(companyRequest, company);
 					if (company != null) {
 						company = companyService.save(company);
@@ -109,11 +109,11 @@ public class CompanyController {
 			} else
 				handlerCompany.handleUpdateMessages(responseAPI, 404, null);
 
-			LOGGER.info(" :: Encerrando o método /api/company/update - 200 - OK :: ");
+			LOGGER.info(" :: Encerrando o método /api/company/update/guid - 200 - OK :: ");
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			LOGGER.error(" :: Encerrando o método /api/company/update - 400 - BAD REQUEST :: ");
+			LOGGER.error(" :: Encerrando o método /api/company/update/guid - 400 - BAD REQUEST :: ");
 			handlerCompany.handleUpdateMessages(responseAPI, 400, null);
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
@@ -297,7 +297,7 @@ public class CompanyController {
 	}
 
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/company/delete/guid/{guid}", method = RequestMethod.GET)
+	@RequestMapping(value = "/api/company/delete/guid/{guid}", method = RequestMethod.DELETE)
 	public ResponseEntity<ResponseAPI> delete(@PathVariable String guid, @RequestHeader(value = "token") String token) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
