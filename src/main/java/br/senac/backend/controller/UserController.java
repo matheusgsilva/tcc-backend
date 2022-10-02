@@ -1,5 +1,7 @@
 package br.senac.backend.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -170,6 +172,29 @@ public class UserController {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			LOGGER.error(" :: Encerrando o método /api/user/delete/guid - 400 - BAD REQUEST :: ");
+			handlerUser.handleDeleteMessages(responseAPI, 400);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/api/user/list", method = RequestMethod.GET)
+	public ResponseEntity<ResponseAPI> list(@RequestHeader(value = "token") String token) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			List<UserResponse> list = userConverter.userToResponseList(userService.getAll());
+			if (!list.isEmpty())
+				handlerUser.handleDetailMessages(responseAPI, 200, list);
+			else
+				handlerUser.handleDetailMessages(responseAPI, 404, null);
+
+			LOGGER.info(" :: Encerrando o método /api/user/list - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/user/list - 400 - BAD REQUEST :: ");
 			handlerUser.handleDeleteMessages(responseAPI, 400);
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}

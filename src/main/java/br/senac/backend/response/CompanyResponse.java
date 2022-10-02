@@ -2,6 +2,8 @@ package br.senac.backend.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import br.senac.backend.util.ECOMPANY_PERMISSION;
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CompanyResponse {
 
@@ -18,6 +20,7 @@ public class CompanyResponse {
 	private String uf;
 	private String phone;
 	private String description;
+	private ECOMPANY_PERMISSION permission;
 
 	public String getGuid() {
 		return guid;
@@ -121,6 +124,14 @@ public class CompanyResponse {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public ECOMPANY_PERMISSION getPermission() {
+		return permission;
+	}
+
+	public void setPermission(ECOMPANY_PERMISSION permission) {
+		this.permission = permission;
 	}
 
 }

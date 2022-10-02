@@ -1,10 +1,14 @@
 package br.senac.backend.service;
 
+import java.util.List;
+
 import br.senac.backend.model.Company;
 
 public interface CompanyService {
 
 	Company getByGuid(String guid);
+	
+	List<Company> getAll();
 
 	Company save(Company company);
 

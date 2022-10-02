@@ -1,5 +1,7 @@
 package br.senac.backend.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
@@ -18,6 +20,9 @@ public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 
 	@Query("SELECT c FROM User c WHERE c.guid = :guid and c.active = 0")
 	User getByGuid(@Param("guid") String guid);
+	
+	@Query("SELECT c FROM User c WHERE c.active = 0")
+	List<User> getAll();
 
 	@Query("SELECT CASE WHEN (COUNT(u) > 0) THEN true ELSE false END FROM User u WHERE u.email = :email and u.active = 0")
 	Boolean isExists(@Param("email") String email);

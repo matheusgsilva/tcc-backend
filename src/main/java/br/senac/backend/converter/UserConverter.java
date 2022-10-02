@@ -1,5 +1,7 @@
 package br.senac.backend.converter;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -55,6 +57,27 @@ public class UserConverter {
 			userResponse.setPhone(user.getPhone());
 			userResponse.setGuid(user.getGuid());
 			return userResponse;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public List<UserResponse> userToResponseList(List<User> users) {
+
+		try {
+
+			List<UserResponse> list = new ArrayList<UserResponse>();
+			for (User user : users) {
+				UserResponse userResponse = new UserResponse();
+				userResponse.setDocument(user.getDocument());
+				userResponse.setEmail(user.getEmail());
+				userResponse.setName(user.getName());
+				userResponse.setPhone(user.getPhone());
+				userResponse.setGuid(user.getGuid());
+				list.add(userResponse);
+			}
+			return list;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

@@ -63,6 +63,26 @@ public class HandlerCompany {
 		}
 	}	
 	
+	public void handleCnpjMessages(ResponseAPI response, int code, Object model) {
+		if (code == 200) {
+			response.setCode(200);
+			response.setData(model);
+			response.setMsg("CNPJ_DETAIL_SUCCESSFULLY");
+		} else if (code == 404) {
+			response.setCode(404);
+			response.setData(null);
+			response.setMsg("CNPJ_NOT_FOUND");
+		} else if (code == 429) {
+			response.setCode(429);
+			response.setData(null);
+			response.setMsg("MANY_CONNECTIONS");
+		} else if (code == 400) {
+			response.setCode(400);
+			response.setMsg("BAD_REQUEST");
+			response.setData(null);
+		}
+	}	
+	
 	public void handleDetailMessages(ResponseAPI response, int code, Object model) {
 		if (code == 200) {
 			response.setCode(200);

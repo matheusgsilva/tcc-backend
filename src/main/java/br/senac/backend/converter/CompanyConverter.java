@@ -31,7 +31,7 @@ public class CompanyConverter {
 			company.setName(companyRequest.getName());
 			company.setNumberAddress(companyRequest.getNumberAddress());
 			company.setPassword(BCrypt.hashpw(companyRequest.getPassword(), BCrypt.gensalt()));
-			company.setPermission(ECOMPANY_PERMISSION.AUTHORIZED);
+			company.setPermission(ECOMPANY_PERMISSION.UNAUTHORIZED);
 			company.setStreet(companyRequest.getStreet());
 			company.setPhone(companyRequest.getPhone());
 			company.setUf(companyRequest.getUf());
@@ -82,6 +82,7 @@ public class CompanyConverter {
 			companyResponse.setUf(company.getUf());
 			companyResponse.setCountry(company.getCountry());
 			companyResponse.setGuid(company.getGuid());
+			companyResponse.setPermission(company.getPermission());
 			return companyResponse;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -121,6 +122,7 @@ public class CompanyConverter {
 				companyResponse.setUf(company.getUf());
 				companyResponse.setCountry(company.getCountry());
 				companyResponse.setGuid(company.getGuid());
+				companyResponse.setPermission(company.getPermission());
 				list.add(companyResponse);
 			});
 			return list;

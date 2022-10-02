@@ -21,6 +21,7 @@ import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.CompanyService;
 import br.senac.backend.service.TokenService;
 import br.senac.backend.service.UserService;
+import br.senac.backend.util.ECOMPANY_PERMISSION;
 import br.senac.backend.util.ELOGIN_TYPE;
 
 @Controller
@@ -61,7 +62,7 @@ public class LoginController {
 			}
 			
 			Company company = companyService.getByLoginPassword(loginRequest.getEmail(), loginRequest.getPassword());
-			if(company != null) {
+			if(company != null && company.getPermission().equals(ECOMPANY_PERMISSION.AUTHORIZED)) {
 				Token t = tokenService.getNewTokenPersisted(company);
 				login.setEmail(company.getEmail());
 				login.setToken(t.getToken());

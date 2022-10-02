@@ -1,5 +1,7 @@
 package br.senac.backend.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,7 @@ import br.senac.backend.model.Company;
 import br.senac.backend.request.CompanyRequest;
 import br.senac.backend.request.UpdatePassRequest;
 import br.senac.backend.response.CepResponse;
+import br.senac.backend.response.CnpjResponse;
 import br.senac.backend.response.CompanyResponse;
 import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.CompanyService;
@@ -124,8 +127,8 @@ public class CompanyController {
 		ResponseAPI responseAPI = new ResponseAPI();
 
 		try {
-			String data = restUrl.getData("http://viacep.com.br/ws/" + cep + "/json/", "");
-			if (data.contains("erro")) {
+			String data = restUrl.getData("https://viacep.com.br/ws/" + cep + "/json/", "");
+			if (data.contains("erro") || data.contains("400::")) {
 				handlerCompany.handleCepMessages(responseAPI, 404, null);
 			} else {
 				CepResponse cepResponse = new Gson().fromJson(data, CepResponse.class);
@@ -140,20 +143,81 @@ public class CompanyController {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			LOGGER.error(" :: Encerrando o método /api/company/query/cep - 400 - BAD REQUEST :: ");
+			handlerCompany.handleCepMessages(responseAPI, 400, null);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/api/company/query/cnpj/{cnpj}", method = RequestMethod.GET)
+	public ResponseEntity<ResponseAPI> queryCnpj(@RequestHeader(value = "token") String token,
+			@PathVariable String cnpj) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			String data = restUrl.getData("https://publica.cnpj.ws/cnpj/" + cnpj, "");
+			if (data.contains("erro") || data.contains("400::")) {
+				handlerCompany.handleCnpjMessages(responseAPI, 404, null);
+			} else if(data.contains("429::")) {
+				handlerCompany.handleCnpjMessages(responseAPI, 429, null);
+			} else {
+				CnpjResponse cnpjResponse = new Gson().fromJson(data, CnpjResponse.class);
+				if (cnpjResponse != null)
+					handlerCompany.handleCnpjMessages(responseAPI, 200, cnpjResponse);
+				else
+					handlerCompany.handleCnpjMessages(responseAPI, 404, null);
+			}
+
+			LOGGER.info(" :: Encerrando o método /api/company/query/cnpj - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/company/query/cnpj - 400 - BAD REQUEST :: ");
+			handlerCompany.handleCnpjMessages(responseAPI, 400, null);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/api/company/unauthorize/guid/{guid}", method = RequestMethod.GET)
+	public ResponseEntity<ResponseAPI> unautorizar(@RequestHeader(value = "token") String token,
+			@PathVariable String guid) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			Company company = companyService.getByGuid(guid);
+			if (company != null) {
+				company.setPermission(ECOMPANY_PERMISSION.UNAUTHORIZED);
+				company = companyService.save(company);
+				CompanyResponse companyResponse = companyConverter.companyToResponse(company);
+				if (companyResponse != null)
+					handlerCompany.handleUpdateMessages(responseAPI, 200, companyResponse);
+				else
+					handlerCompany.handleUpdateMessages(responseAPI, 404, null);
+			} else
+				handlerCompany.handleUpdateMessages(responseAPI, 404, null);
+
+			LOGGER.info(" :: Encerrando o método /api/company/unauthorize/guid - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/company/unauthorize/guid - 400 - BAD REQUEST :: ");
 			handlerCompany.handleUpdateMessages(responseAPI, 400, null);
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
 
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/company/authorize", method = RequestMethod.POST)
+	@RequestMapping(value = "/api/company/authorize/guid/{guid}", method = RequestMethod.GET)
 	public ResponseEntity<ResponseAPI> autorizar(@RequestHeader(value = "token") String token,
-			@RequestBody CompanyRequest companyRequest) {
+			@PathVariable String guid) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 
 		try {
-			Company company = companyService.getByGuid(companyRequest.getGuid());
+			Company company = companyService.getByGuid(guid);
 			if (company != null) {
 				company.setPermission(ECOMPANY_PERMISSION.AUTHORIZED);
 				company = companyService.save(company);
@@ -165,11 +229,11 @@ public class CompanyController {
 			} else
 				handlerCompany.handleUpdateMessages(responseAPI, 404, null);
 
-			LOGGER.info(" :: Encerrando o método /api/company/authorize - 200 - OK :: ");
+			LOGGER.info(" :: Encerrando o método /api/company/authorize/guid - 200 - OK :: ");
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			LOGGER.error(" :: Encerrando o método /api/company/authorize - 400 - BAD REQUEST :: ");
+			LOGGER.error(" :: Encerrando o método /api/company/authorize/guid - 400 - BAD REQUEST :: ");
 			handlerCompany.handleUpdateMessages(responseAPI, 400, null);
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
@@ -252,6 +316,29 @@ public class CompanyController {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			LOGGER.error(" :: Encerrando o método /api/company/delete/guid - 400 - BAD REQUEST :: ");
+			handlerCompany.handleDeleteMessages(responseAPI, 400);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/api/company/list", method = RequestMethod.GET)
+	public ResponseEntity<ResponseAPI> list(@RequestHeader(value = "token") String token) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			List<CompanyResponse> list = companyConverter.companyToResponseList(companyService.getAll());
+			if (!list.isEmpty())
+				handlerCompany.handleDetailMessages(responseAPI, 200, list);
+			else
+				handlerCompany.handleDetailMessages(responseAPI, 404, null);
+
+			LOGGER.info(" :: Encerrando o método /api/company/list - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/company/list - 400 - BAD REQUEST :: ");
 			handlerCompany.handleDeleteMessages(responseAPI, 400);
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}

@@ -1,5 +1,7 @@
 package br.senac.backend.service;
 
+import java.util.List;
+
 import br.senac.backend.model.User;
 
 public interface UserService {
@@ -17,4 +19,6 @@ public interface UserService {
 	User locateByEmail(String email);
 	
 	void delete(User user);
+	
+	List<User> getAll();
 }
