@@ -2,7 +2,6 @@ package br.senac.backend.request;
 
 public class PetRequest {
 
-	private String guid;
 	private String name;
 	private String description;
 	private String size;
@@ -15,14 +14,6 @@ public class PetRequest {
 	private String photo3;
 	private String photo4;
 	private String companyGuid;
-
-	public String getGuid() {
-		return guid;
-	}
-
-	public void setGuid(String guid) {
-		this.guid = guid;
-	}
 
 	public String getName() {
 		return name;

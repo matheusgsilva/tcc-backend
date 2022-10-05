@@ -87,14 +87,14 @@ public class PetController {
 	}
 
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/pet/update", method = RequestMethod.POST)
-	public ResponseEntity<ResponseAPI> update(@RequestHeader(value = "token") String token,
+	@RequestMapping(value = "/api/pet/update/guid/{guid}", method = RequestMethod.PUT)
+	public ResponseEntity<ResponseAPI> update(@RequestHeader(value = "token") String token, @PathVariable String guid,
 			@RequestBody PetRequest petRequest) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 
 		try {
-			Pet pet = petService.getByGuid(petRequest.getGuid());
+			Pet pet = petService.getByGuid(guid);
 			if (pet != null) {
 				pet = petConverter.petUpdate(petRequest, pet);
 				if (pet != null) {
@@ -190,7 +190,7 @@ public class PetController {
 	}
 
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/pet/delete/guid/{guid}", method = RequestMethod.GET)
+	@RequestMapping(value = "/api/pet/delete/guid/{guid}", method = RequestMethod.DELETE)
 	public ResponseEntity<ResponseAPI> delete(@PathVariable String guid, @RequestHeader(value = "token") String token) {
 
 		ResponseAPI responseAPI = new ResponseAPI();

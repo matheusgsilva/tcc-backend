@@ -83,7 +83,7 @@ public class PetConverter {
 			petResponse.setSize(pet.getSize());
 			if (pet.getCompany() != null) {
 				petResponse.setCompany(pet.getCompany().getName());
-				petResponse.setPhone(pet.getCompany().getPhone());
+				petResponse.setCompanyGuid(pet.getCompany().getGuid());
 			}
 			petResponse.setVaccines(pet.getVaccines());
 			petResponse.setPhoto1(pet.getPhoto1());
@@ -110,8 +110,10 @@ public class PetConverter {
 				petResponse.setMedication(pet.getMedication());
 				petResponse.setName(pet.getName());
 				petResponse.setSize(pet.getSize());
-				if (pet.getCompany() != null)
+				if (pet.getCompany() != null) {
 					petResponse.setCompany(pet.getCompany().getName());
+					petResponse.setCompanyGuid(pet.getCompany().getGuid());
+				}
 				petResponse.setVaccines(pet.getVaccines());
 				petResponse.setPhoto1(pet.getPhoto1());
 				list.add(petResponse);

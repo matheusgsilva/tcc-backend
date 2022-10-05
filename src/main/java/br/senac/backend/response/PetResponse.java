@@ -14,7 +14,7 @@ public class PetResponse {
 	private String vaccines;
 	private String medication;
 	private String company;
-	private String phone;
+	private String companyGuid;
 	private String statusPet;
 	private String photo1;
 	private String photo2;
@@ -93,14 +93,6 @@ public class PetResponse {
 		this.company = company;
 	}
 
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
 	public String getStatusPet() {
 		return statusPet;
 	}
@@ -139,6 +131,14 @@ public class PetResponse {
 
 	public void setPhoto4(String photo4) {
 		this.photo4 = photo4;
+	}
+
+	public String getCompanyGuid() {
+		return companyGuid;
+	}
+
+	public void setCompanyGuid(String companyGuid) {
+		this.companyGuid = companyGuid;
 	}
 
 }
