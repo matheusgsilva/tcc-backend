@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Index;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -75,6 +76,9 @@ public class Company implements Serializable {
 	private EACTIVE active;
 
 	private ECOMPANY_PERMISSION permission;
+
+	@Lob
+	private String photo1;
 
 	@Column(nullable = false, columnDefinition = "VARCHAR(100)")
 	private String password;
@@ -213,6 +217,14 @@ public class Company implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getPhoto1() {
+		return photo1;
+	}
+
+	public void setPhoto1(String photo1) {
+		this.photo1 = photo1;
 	}
 
 }

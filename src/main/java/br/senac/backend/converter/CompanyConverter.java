@@ -83,6 +83,7 @@ public class CompanyConverter {
 			companyResponse.setCountry(company.getCountry());
 			companyResponse.setGuid(company.getGuid());
 			companyResponse.setPermission(company.getPermission());
+			companyResponse.setPhoto1(company.getPhoto1());
 			return companyResponse;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -123,6 +124,7 @@ public class CompanyConverter {
 				companyResponse.setCountry(company.getCountry());
 				companyResponse.setGuid(company.getGuid());
 				companyResponse.setPermission(company.getPermission());
+				companyResponse.setPhoto1(company.getPhoto1());
 				list.add(companyResponse);
 			});
 			return list;

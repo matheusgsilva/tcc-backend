@@ -20,6 +20,7 @@ public class CompanyResponse {
 	private String uf;
 	private String phone;
 	private String description;
+	private String photo1;
 	private ECOMPANY_PERMISSION permission;
 
 	public String getGuid() {
@@ -132,6 +133,14 @@ public class CompanyResponse {
 
 	public void setPermission(ECOMPANY_PERMISSION permission) {
 		this.permission = permission;
+	}
+
+	public String getPhoto1() {
+		return photo1;
+	}
+
+	public void setPhoto1(String photo1) {
+		this.photo1 = photo1;
 	}
 
 }

@@ -15,6 +15,7 @@ public class CompanyRequest {
 	private String phone;
 	private String description;
 	private String password;
+	private String photo1;
 
 	public String getName() {
 		return name;
@@ -119,4 +120,13 @@ public class CompanyRequest {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
+	public String getPhoto1() {
+		return photo1;
+	}
+
+	public void setPhoto1(String photo1) {
+		this.photo1 = photo1;
+	}
+
 }
