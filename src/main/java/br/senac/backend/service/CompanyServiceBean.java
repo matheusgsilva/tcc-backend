@@ -42,10 +42,10 @@ public class CompanyServiceBean implements CompanyService {
 	}
 
 	public Boolean isExists(String name, String email, String document) {
-		return repository.isExists(name, email, document);
+		return repository.isExists(name, document, email);
 	}
 
 	public Boolean isExists(String name, String email, String document, String guid) {
-		return repository.isExists(name, email, document, guid);
+		return repository.isExists(name, document, email, guid);
 	}
 }

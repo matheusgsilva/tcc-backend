@@ -58,14 +58,14 @@ public class PetController {
 	private Logger LOGGER = LoggerFactory.getLogger(PetController.class);
 
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/pet/add", method = RequestMethod.POST)
+	@RequestMapping(value = "/api/pet/add/companyguid/{companyGuid}", method = RequestMethod.POST)
 	public ResponseEntity<ResponseAPI> add(@RequestHeader(value = "token") String token,
-			@RequestBody PetRequest petRequest) {
+			@PathVariable String companyGuid, @RequestBody PetRequest petRequest) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 		try {
 
-			Pet pet = petConverter.petSave(petRequest);
+			Pet pet = petConverter.petSave(petRequest, companyGuid);
 			if (pet != null) {
 				pet = petService.save(pet);
 				PetResponse petResponse = petConverter.petToResponse(pet);

@@ -5,6 +5,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -28,6 +30,7 @@ import br.senac.backend.response.CnpjResponse;
 import br.senac.backend.response.CompanyResponse;
 import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.CompanyService;
+import br.senac.backend.task.EmailTask;
 import br.senac.backend.util.EACTIVE;
 import br.senac.backend.util.ECOMPANY_PERMISSION;
 import br.senac.backend.util.RestUrl;
@@ -46,6 +49,12 @@ public class CompanyController {
 
 	@Autowired
 	private RestUrl restUrl;
+
+	@Autowired
+	private ApplicationContext applicationContext;
+
+	@Autowired
+	private TaskExecutor taskExecutor;
 
 	private Logger LOGGER = LoggerFactory.getLogger(CompanyController.class);
 
@@ -147,7 +156,7 @@ public class CompanyController {
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/api/company/query/cnpj/{cnpj}", method = RequestMethod.GET)
 	public ResponseEntity<ResponseAPI> queryCnpj(@RequestHeader(value = "token") String token,
@@ -159,7 +168,7 @@ public class CompanyController {
 			String data = restUrl.getData("https://publica.cnpj.ws/cnpj/" + cnpj, "");
 			if (data.contains("erro") || data.contains("400::")) {
 				handlerCompany.handleCnpjMessages(responseAPI, 404, null);
-			} else if(data.contains("429::")) {
+			} else if (data.contains("429::")) {
 				handlerCompany.handleCnpjMessages(responseAPI, 429, null);
 			} else {
 				CnpjResponse cnpjResponse = new Gson().fromJson(data, CnpjResponse.class);
@@ -178,7 +187,7 @@ public class CompanyController {
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/api/company/unauthorize/guid/{guid}", method = RequestMethod.GET)
 	public ResponseEntity<ResponseAPI> unautorizar(@RequestHeader(value = "token") String token,
@@ -240,6 +249,33 @@ public class CompanyController {
 	}
 
 	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/api/company/send/email/access/guid/{guid}", method = RequestMethod.GET)
+	public ResponseEntity<ResponseAPI> sendEmailAccess(@RequestHeader(value = "token") String token,
+			@PathVariable String guid) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			Company company = companyService.getByGuid(guid);
+			if (company != null) {
+				EmailTask emailTask = applicationContext.getBean(EmailTask.class);
+				emailTask.setCompany(company);
+				taskExecutor.execute(emailTask);
+				handlerCompany.handleEmailMessages(responseAPI, 200, null);
+			} else
+				handlerCompany.handleEmailMessages(responseAPI, 404, null);
+
+			LOGGER.info(" :: Encerrando o método /api/company/send/email/access/guid - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/company/send/email/access/guid - 400 - BAD REQUEST :: ");
+			handlerCompany.handleEmailMessages(responseAPI, 400, null);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/api/company/updatepass", method = RequestMethod.POST)
 	public ResponseEntity<ResponseAPI> updatePass(@RequestHeader(value = "token") String token,
 			@RequestBody UpdatePassRequest companyUpdatePassRequest) {
@@ -256,7 +292,7 @@ public class CompanyController {
 				else
 					handlerCompany.handleUpdateMessages(responseAPI, 404, null);
 			} else
-				handlerCompany.handleUpdateMessages(responseAPI, 200, null);
+				handlerCompany.handleUpdateMessages(responseAPI, 404, null);
 
 			LOGGER.info(" :: Encerrando o método /api/company/updatepass - 200 - OK :: ");
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);

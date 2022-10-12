@@ -20,10 +20,10 @@ public class PetConverter {
 	@Autowired
 	private CompanyService companyService;
 
-	public Pet petSave(PetRequest petRequest) {
+	public Pet petSave(PetRequest petRequest, String companyGuid) {
 
 		try {
-			Company company = companyService.getByGuid(petRequest.getCompanyGuid());
+			Company company = companyService.getByGuid(companyGuid);
 			if (company == null)
 				return null;
 

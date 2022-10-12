@@ -13,7 +13,6 @@ public class PetRequest {
 	private String photo2;
 	private String photo3;
 	private String photo4;
-	private String companyGuid;
 
 	public String getName() {
 		return name;
@@ -69,14 +68,6 @@ public class PetRequest {
 
 	public void setMedication(String medication) {
 		this.medication = medication;
-	}
-
-	public String getCompanyGuid() {
-		return companyGuid;
-	}
-
-	public void setCompanyGuid(String companyGuid) {
-		this.companyGuid = companyGuid;
 	}
 
 	public String getPhoto1() {

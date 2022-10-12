@@ -25,6 +25,7 @@ public class CompanyConverter {
 			company.setCep(companyRequest.getCep());
 			company.setCity(companyRequest.getCity());
 			company.setDescription(companyRequest.getDescription());
+			company.setPhoto1(companyRequest.getPhoto1());
 			company.setDocument(companyRequest.getDocument());
 			company.setEmail(companyRequest.getEmail());
 			company.setGuid(UUID.randomUUID().toString());
@@ -48,6 +49,7 @@ public class CompanyConverter {
 		try {
 			company.setDistrict(companyRequest.getDistrict());
 			company.setCep(companyRequest.getCep());
+			company.setPhoto1(companyRequest.getPhoto1());
 			company.setCity(companyRequest.getCity());
 			company.setDescription(companyRequest.getDescription());
 			company.setDocument(companyRequest.getDocument());

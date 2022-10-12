@@ -46,6 +46,22 @@ public class HandlerCompany {
 			response.setData(null);
 		}
 	}
+	
+	public void handleEmailMessages(ResponseAPI response, int code, Object model) {
+		if (code == 200) {
+			response.setCode(200);
+			response.setData(model);
+			response.setMsg("EMAIL_SEND_SUCCESSFULLY");
+		} else if (code == 404) {
+			response.setCode(404);
+			response.setData(null);
+			response.setMsg("COMPANY_NOT_FOUND");
+		} else if (code == 400) {
+			response.setCode(400);
+			response.setMsg("BAD_REQUEST");
+			response.setData(null);
+		}
+	}	
 
 	public void handleCepMessages(ResponseAPI response, int code, Object model) {
 		if (code == 200) {
