@@ -1,14 +1,18 @@
 package br.senac.backend.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Index;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -82,6 +86,9 @@ public class Company implements Serializable {
 
 	@Column(nullable = false, columnDefinition = "VARCHAR(100)")
 	private String password;
+
+	@OneToMany(mappedBy = "company", targetEntity = Rating.class, fetch = FetchType.LAZY)
+	private List<Rating> ratings = new ArrayList<Rating>();
 
 	public Long getId() {
 		return id;
@@ -225,6 +232,14 @@ public class Company implements Serializable {
 
 	public void setPhoto1(String photo1) {
 		this.photo1 = photo1;
+	}
+
+	public List<Rating> getRatings() {
+		return ratings;
+	}
+
+	public void setRatings(List<Rating> ratings) {
+		this.ratings = ratings;
 	}
 
 }

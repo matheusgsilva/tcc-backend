@@ -1,6 +1,7 @@
 package br.senac.backend.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -58,7 +59,10 @@ public class User implements Serializable {
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "user", targetEntity = Token.class, fetch = FetchType.LAZY)
-	private List<Token> tokens;
+	private List<Token> tokens = new ArrayList<Token>();
+
+	@OneToMany(mappedBy = "user", targetEntity = Rating.class, fetch = FetchType.LAZY)
+	private List<Rating> ratings = new ArrayList<Rating>();
 
 	public Long getId() {
 		return id;
@@ -130,6 +134,14 @@ public class User implements Serializable {
 
 	public void setTokens(List<Token> tokens) {
 		this.tokens = tokens;
+	}
+
+	public List<Rating> getRatings() {
+		return ratings;
+	}
+
+	public void setRatings(List<Rating> ratings) {
+		this.ratings = ratings;
 	}
 
 }

@@ -13,7 +13,7 @@ import br.senac.backend.model.Pet;
 public interface PetRepository extends PagingAndSortingRepository<Pet, Long> {
 
 	@Query("SELECT c FROM Pet c WHERE c.company.guid = :companyGuid and c.active = 0")
-	List<Pet> getByCompanyGuid(@Param("companyGuid") String userGuid);
+	List<Pet> getByCompanyGuid(@Param("companyGuid") String companyGuid);
 	
 	@Query("SELECT c FROM Pet c WHERE c.guid = :guid and c.active = 0")
 	Pet getByGuid(@Param("guid") String guid);

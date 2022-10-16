@@ -186,16 +186,16 @@ public class UserController {
 		try {
 			List<UserResponse> list = userConverter.userToResponseList(userService.getAll());
 			if (!list.isEmpty())
-				handlerUser.handleDetailMessages(responseAPI, 200, list);
+				handlerUser.handleListMessages(responseAPI, 200, list);
 			else
-				handlerUser.handleDetailMessages(responseAPI, 404, null);
+				handlerUser.handleListMessages(responseAPI, 404, null);
 
 			LOGGER.info(" :: Encerrando o método /api/user/list - 200 - OK :: ");
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			LOGGER.error(" :: Encerrando o método /api/user/list - 400 - BAD REQUEST :: ");
-			handlerUser.handleDeleteMessages(responseAPI, 400);
+			handlerUser.handleListMessages(responseAPI, 400, null);
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
