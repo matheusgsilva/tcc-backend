@@ -31,12 +31,4 @@ public class RatingServiceBean implements RatingService {
 	public Rating save(Rating rating) {
 		return repository.save(rating);
 	}
-
-	public Boolean isExists(String userGuid, String companyGuid) {
-		return repository.isExists(userGuid, companyGuid);
-	}
-
-	public Boolean isExists(String userGuid, String companyGuid, String guid) {
-		return repository.isExists(userGuid, companyGuid, guid);
-	}
 }

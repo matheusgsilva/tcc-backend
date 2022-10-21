@@ -11,12 +11,6 @@ import br.senac.backend.model.Rating;
 
 @Repository
 public interface RatingRepository extends PagingAndSortingRepository<Rating, Long> {
-	
-	@Query("SELECT CASE WHEN (COUNT(r) > 0) THEN true ELSE false END FROM Rating r WHERE r.user.guid = :userGuid and r.company.guid = :companyGuid and r.active = 0")
-	Boolean isExists(@Param("userGuid") String userGuid, @Param("companyGuid") String companyGuid);
-	
-	@Query("SELECT CASE WHEN (COUNT(r) > 0) THEN true ELSE false END FROM Rating r WHERE r.user.guid = :userGuid and r.company.guid = :companyGuid and r.guid <> :guid and r.active = 0")
-	Boolean isExists(@Param("userGuid") String userGuid, @Param("companyGuid") String companyGuid, @Param("guid") String guid);
 
 	@Query("SELECT r FROM Rating r WHERE r.company.guid = :companyGuid and r.active = 0 order by r.date desc")
 	List<Rating> getByCompanyGuid(@Param("companyGuid") String companyGuid);

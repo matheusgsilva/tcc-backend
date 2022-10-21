@@ -93,4 +93,20 @@ public class HandlerRating {
 			response.setData(null);
 		}
 	}
+	
+	public void handleSendEmailMessages(ResponseAPI response, int code, Object model) {
+		if (code == 200) {
+			response.setCode(200);
+			response.setData(model);
+			response.setMsg("RATING_EMAIL_SENT_SUCCESSFULLY");
+		} else if (code == 404) {
+			response.setCode(404);
+			response.setData(null);
+			response.setMsg("RATING_NOT_FOUND");
+		} else if (code == 400) {
+			response.setCode(400);
+			response.setMsg("BAD_REQUEST");
+			response.setData(null);
+		}
+	}
 }

@@ -5,6 +5,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -22,12 +24,15 @@ import br.senac.backend.handler.HandlerUser;
 import br.senac.backend.model.Company;
 import br.senac.backend.model.Rating;
 import br.senac.backend.model.User;
+import br.senac.backend.request.RatingEmailRequest;
 import br.senac.backend.request.RatingRequest;
 import br.senac.backend.response.RatingResponse;
 import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.CompanyService;
 import br.senac.backend.service.RatingService;
 import br.senac.backend.service.TokenService;
+import br.senac.backend.service.UserService;
+import br.senac.backend.task.EmailRatingTask;
 import br.senac.backend.util.EACTIVE;
 
 @Controller
@@ -38,6 +43,9 @@ public class RatingController {
 
 	@Autowired
 	private CompanyService companyService;
+
+	@Autowired
+	private UserService userService;
 
 	@Autowired
 	private RatingService ratingService;
@@ -54,72 +62,53 @@ public class RatingController {
 	@Autowired
 	private RatingConverter ratingConverter;
 
-	private Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+	@Autowired
+	private ApplicationContext applicationContext;
+
+	@Autowired
+	private TaskExecutor taskExecutor;
+
+	private Logger LOGGER = LoggerFactory.getLogger(RatingController.class);
 
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/rating/add/companyguid/{companyguid}", method = RequestMethod.POST)
-	public ResponseEntity<ResponseAPI> add(@RequestHeader(value = "token") String token,
-			@PathVariable String companyguid, @RequestBody RatingRequest ratingRequest) {
+	@RequestMapping(value = "/api/rating/save/companyguid/{companyguid}", method = RequestMethod.POST)
+	public ResponseEntity<ResponseAPI> save(@RequestHeader(value = "token") String token,
+			@PathVariable String companyGuid, @RequestBody RatingRequest ratingRequest) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 		try {
 
-			User user = tokenService.getByToken(token).getUser();
+			User user = userService.getByLoginPassword(ratingRequest.getEmail(), ratingRequest.getPassword());
 			if (user == null) {
 				handlerUser.handleDetailMessages(responseAPI, 404, null);
 				return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
 			}
-			Company company = companyService.getByGuid(companyguid);
+			Company company = companyService.getByGuid(companyGuid);
 			if (company == null) {
 				handlerCompany.handleDetailMessages(responseAPI, 404, null);
 				return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
 			}
 
-			if (!ratingService.isExists(user.getGuid(), company.getGuid())) {
-				RatingResponse ratingResponse = ratingConverter
-						.ratingToResponse(ratingService.save(ratingConverter.ratingSave(ratingRequest, user, company)));
-				if (ratingResponse != null)
-					handlerRating.handleAddMessages(responseAPI, 200, ratingResponse);
-				else
-					handlerRating.handleAddMessages(responseAPI, 404, null);
-			} else
-				handlerRating.handleAddMessages(responseAPI, 304, null);
-
-			LOGGER.info(" :: Encerrando o método /api/rating/add/companyguid - 200 - OK :: ");
-			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
-		} catch (Exception ex) {
-			ex.printStackTrace();
-			LOGGER.error(" :: Encerrando o método /api/rating/add/companyguid - 400 - BAD REQUEST :: ");
-			handlerRating.handleAddMessages(responseAPI, 400, null);
-			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
-		}
-	}
-
-	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/rating/update/guid/{guid}", method = RequestMethod.PUT)
-	public ResponseEntity<ResponseAPI> update(@RequestHeader(value = "token") String token, @PathVariable String guid,
-			@RequestBody RatingRequest ratingRequest) {
-
-		ResponseAPI responseAPI = new ResponseAPI();
-
-		try {
-			Rating rating = ratingService.getByGuid(guid);
+			RatingResponse ratingResponse = new RatingResponse();
+			Rating rating = ratingService.getByUserAndCompany(user.getGuid(), companyGuid);
 			if (rating != null) {
-				RatingResponse ratingResponse = ratingConverter
+				ratingResponse = ratingConverter
 						.ratingToResponse(ratingService.save(ratingConverter.ratingUpdate(ratingRequest, rating)));
-				if (ratingResponse != null)
-					handlerRating.handleUpdateMessages(responseAPI, 200, ratingResponse);
-				else
-					handlerRating.handleUpdateMessages(responseAPI, 404, null);
-			} else
-				handlerRating.handleUpdateMessages(responseAPI, 404, null);
+			} else {
+				ratingResponse = ratingConverter
+						.ratingToResponse(ratingService.save(ratingConverter.ratingSave(ratingRequest, user, company)));
+			}
+			if (ratingResponse != null)
+				handlerRating.handleAddMessages(responseAPI, 200, ratingResponse);
+			else
+				handlerRating.handleAddMessages(responseAPI, 404, null);
 
-			LOGGER.info(" :: Encerrando o método /api/rating/update/guid - 200 - OK :: ");
+			LOGGER.info(" :: Encerrando o método /api/rating/save/companyguid - 200 - OK :: ");
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			LOGGER.error(" :: Encerrando o método /api/rating/update/guid - 400 - BAD REQUEST :: ");
-			handlerRating.handleUpdateMessages(responseAPI, 400, null);
+			LOGGER.error(" :: Encerrando o método /api/rating/save/companyguid - 400 - BAD REQUEST :: ");
+			handlerRating.handleAddMessages(responseAPI, 400, null);
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -194,6 +183,34 @@ public class RatingController {
 			ex.printStackTrace();
 			LOGGER.error(" :: Encerrando o método /api/rating/list/companyguid - 400 - BAD REQUEST :: ");
 			handlerRating.handleListMessages(responseAPI, 400, null);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/api/rating/send/email", method = RequestMethod.POST)
+	public ResponseEntity<ResponseAPI> sendEmail(@RequestHeader(value = "token") String token,
+			@RequestBody RatingEmailRequest ratingEmailRequest) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			User user = userService.locateByEmail(ratingEmailRequest.getEmail());
+			if (user != null) {
+				EmailRatingTask emailTask = applicationContext.getBean(EmailRatingTask.class);
+				emailTask.setCompany(tokenService.getByToken(token).getCompany());
+				emailTask.setUser(user);
+				taskExecutor.execute(emailTask);
+				handlerRating.handleSendEmailMessages(responseAPI, 200, null);
+			} else
+				handlerUser.handleDetailMessages(responseAPI, 404, null);
+
+			LOGGER.info(" :: Encerrando o método /api/rating/send/email - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/rating/send/email - 400 - BAD REQUEST :: ");
+			handlerRating.handleSendEmailMessages(responseAPI, 400, null);
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}

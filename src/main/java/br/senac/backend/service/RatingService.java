@@ -13,8 +13,4 @@ public interface RatingService {
 	List<Rating> getByCompanyGuid(String companyGuid);
 	
 	Rating save(Rating rating);
-	
-	Boolean isExists(String userGuid, String companyGuid);
-	
-	Boolean isExists(String userGuid, String companyGuid, String guid);
 }

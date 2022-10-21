@@ -11,6 +11,7 @@ import br.senac.backend.model.User;
 import br.senac.backend.request.UserRequest;
 import br.senac.backend.response.UserResponse;
 import br.senac.backend.util.EACTIVE;
+import br.senac.backend.util.ETYPE_USER;
 
 @Component
 public class UserConverter {
@@ -26,6 +27,7 @@ public class UserConverter {
 			user.setName(userRequest.getName());
 			user.setPassword(BCrypt.hashpw(userRequest.getPassword(), BCrypt.gensalt()));
 			user.setPhone(userRequest.getPhone());
+			user.setType(ETYPE_USER.NORMAL);
 			return user;
 		} catch (Exception e) {
 			e.printStackTrace();

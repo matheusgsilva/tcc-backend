@@ -22,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import br.senac.backend.util.EACTIVE;
+import br.senac.backend.util.ETYPE_USER;
 
 @Entity
 @Table(name = "USERS", indexes = { @Index(name = "GUID_INDEX", columnList = "guid", unique = true) })
@@ -56,6 +57,9 @@ public class User implements Serializable {
 	private String password;
 
 	private EACTIVE active;
+
+	@Column(columnDefinition = "INT(1) default 0")
+	private ETYPE_USER type;
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "user", targetEntity = Token.class, fetch = FetchType.LAZY)
@@ -142,6 +146,14 @@ public class User implements Serializable {
 
 	public void setRatings(List<Rating> ratings) {
 		this.ratings = ratings;
+	}
+
+	public ETYPE_USER getType() {
+		return type;
+	}
+
+	public void setType(ETYPE_USER type) {
+		this.type = type;
 	}
 
 }

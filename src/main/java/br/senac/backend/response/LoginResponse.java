@@ -8,6 +8,7 @@ public class LoginResponse {
 	private String token;
 	private String guid;
 	private ELOGIN_TYPE type;
+	private Integer permission;
 
 	public String getEmail() {
 		return email;
@@ -39,6 +40,14 @@ public class LoginResponse {
 
 	public void setType(ELOGIN_TYPE type) {
 		this.type = type;
+	}
+
+	public Integer getPermission() {
+		return permission;
+	}
+
+	public void setPermission(Integer permission) {
+		this.permission = permission;
 	}
 
 }

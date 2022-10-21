@@ -23,6 +23,7 @@ import br.senac.backend.service.TokenService;
 import br.senac.backend.service.UserService;
 import br.senac.backend.util.ECOMPANY_PERMISSION;
 import br.senac.backend.util.ELOGIN_TYPE;
+import br.senac.backend.util.ETYPE_USER;
 
 @Controller
 public class LoginController {
@@ -56,6 +57,7 @@ public class LoginController {
 				login.setToken(t.getToken());
 				login.setGuid(user.getGuid());
 				login.setType(ELOGIN_TYPE.USER);
+				login.setPermission(user.getType().ordinal());
 				handlerLogin.handleLoginMessages(responseAPI, 200, login);
 				LOGGER.info(" :: Encerrando o método logon - 200 - OK :: ");
 				return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
@@ -68,6 +70,7 @@ public class LoginController {
 				login.setToken(t.getToken());
 				login.setGuid(company.getGuid());
 				login.setType(ELOGIN_TYPE.COMPANY);
+				login.setPermission(ETYPE_USER.NORMAL.ordinal());
 				handlerLogin.handleLoginMessages(responseAPI, 200, login);
 				LOGGER.info(" :: Encerrando o método logon - 200 - OK :: ");
 				return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
