@@ -16,6 +16,7 @@ public class EmailRatingTask implements Runnable {
 
 	private Company company;
 	private User user;
+	private String url;
 
 	public User getUser() {
 		return user;
@@ -33,14 +34,22 @@ public class EmailRatingTask implements Runnable {
 		this.company = company;
 	}
 
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
 	@Override
 	public void run() {
 		SimpleMailMessage msg = new SimpleMailMessage();
 		msg.setTo(user.getEmail());
 		msg.setSubject("Avaliação de Serviço - 4PET");
-		msg.setText(
-				"O que você achou do processo de adoção?\nAvalie já os serviços prestados pela Organização - " + company.getName() + ""
-						+ "\n Segue o link para avaliação: " + "" +"\nAtenciosamente,\nEquipe 4PET.");
+		msg.setText("O que você achou do processo de adoção?\nAvalie já os serviços prestados pela Organização - "
+				+ company.getName() + "\n Segue o link para avaliação: " + this.getUrl() + company.getGuid()
+				+ "\nAtenciosamente,\nEquipe 4PET.");
 		javaMailSender.send(msg);
 	}
 }

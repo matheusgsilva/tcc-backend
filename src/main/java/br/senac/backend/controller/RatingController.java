@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.http.HttpStatus;
@@ -61,6 +62,9 @@ public class RatingController {
 
 	@Autowired
 	private RatingConverter ratingConverter;
+	
+	@Value("${url.rating}")
+	private String url;
 
 	@Autowired
 	private ApplicationContext applicationContext;
@@ -200,6 +204,7 @@ public class RatingController {
 				EmailRatingTask emailTask = applicationContext.getBean(EmailRatingTask.class);
 				emailTask.setCompany(tokenService.getByToken(token).getCompany());
 				emailTask.setUser(user);
+				emailTask.setUrl(url);
 				taskExecutor.execute(emailTask);
 				handlerRating.handleSendEmailMessages(responseAPI, 200, null);
 			} else
