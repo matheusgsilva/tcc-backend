@@ -331,6 +331,34 @@ public class CompanyController {
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
+	
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/company/detail/name/guid/{guid}", method = RequestMethod.GET)
+	public ResponseEntity<ResponseAPI> getNameByGuid(@PathVariable String guid,
+			@RequestHeader(value = "token") String token) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			Company company = companyService.getByGuid(guid);
+			if (company != null) {
+				CompanyResponse companyResponse = companyConverter.companyToResponseName(company);
+				if (companyResponse != null)
+					handlerCompany.handleDetailMessages(responseAPI, 200, companyResponse);
+				else
+					handlerCompany.handleDetailMessages(responseAPI, 404, null);
+			} else
+				handlerCompany.handleDetailMessages(responseAPI, 404, null);
+
+			LOGGER.info(" :: Encerrando o método /api/company/detail/guid - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/company/detail/guid - 400 - BAD REQUEST :: ");
+			handlerCompany.handleDetailMessages(responseAPI, 400, null);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
 
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/api/company/delete/guid/{guid}", method = RequestMethod.DELETE)

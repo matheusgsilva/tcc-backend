@@ -75,9 +75,9 @@ public class RatingController {
 	private Logger LOGGER = LoggerFactory.getLogger(RatingController.class);
 
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/rating/save/companyguid/{companyguid}", method = RequestMethod.POST)
+	@RequestMapping(value = "/rating/save/companyguid/{companyguid}", method = RequestMethod.POST)
 	public ResponseEntity<ResponseAPI> save(@RequestHeader(value = "token") String token,
-			@PathVariable String companyGuid, @RequestBody RatingRequest ratingRequest) {
+			@PathVariable String companyguid, @RequestBody RatingRequest ratingRequest) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 		try {
@@ -87,14 +87,14 @@ public class RatingController {
 				handlerUser.handleDetailMessages(responseAPI, 404, null);
 				return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
 			}
-			Company company = companyService.getByGuid(companyGuid);
+			Company company = companyService.getByGuid(companyguid);
 			if (company == null) {
 				handlerCompany.handleDetailMessages(responseAPI, 404, null);
 				return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
 			}
 
 			RatingResponse ratingResponse = new RatingResponse();
-			Rating rating = ratingService.getByUserAndCompany(user.getGuid(), companyGuid);
+			Rating rating = ratingService.getByUserAndCompany(user.getGuid(), companyguid);
 			if (rating != null) {
 				ratingResponse = ratingConverter
 						.ratingToResponse(ratingService.save(ratingConverter.ratingUpdate(ratingRequest, rating)));

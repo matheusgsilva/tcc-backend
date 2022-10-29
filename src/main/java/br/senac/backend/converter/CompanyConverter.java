@@ -66,6 +66,19 @@ public class CompanyConverter {
 			return null;
 		}
 	}
+	
+	public CompanyResponse companyToResponseName(Company company) {
+
+		try {
+			CompanyResponse companyResponse = new CompanyResponse();
+			companyResponse.setName(company.getName());
+			companyResponse.setGuid(company.getGuid());
+			return companyResponse;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 
 	public CompanyResponse companyToResponse(Company company) {
 
