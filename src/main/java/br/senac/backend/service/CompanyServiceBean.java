@@ -1,5 +1,6 @@
 package br.senac.backend.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,13 @@ public class CompanyServiceBean implements CompanyService {
 	}
 	
 	public List<Company> getAll() {
-		return repository.getAll();
+		List<Company> listByClassinfications = repository.getAllByClassification();
+		List<Company> list = repository.getAll();
+		list.removeAll(listByClassinfications);
+		List<Company> listReturn = new ArrayList<Company>();
+		listReturn.addAll(listByClassinfications);
+		listReturn.addAll(list);
+		return listReturn;
 	}
 
 	@Transactional

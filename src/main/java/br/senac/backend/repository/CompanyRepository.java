@@ -18,6 +18,14 @@ public interface CompanyRepository extends PagingAndSortingRepository<Company, L
 	@Query("SELECT c FROM Company c WHERE c.email = :email")
 	Company getByEmail(@Param("email") String email);
 	
+	@Query(value = "SELECT *, sum(r.classification) as sumClassifications "
+			+ "FROM company as c "
+			+ "inner join rating as r on r.company = c.id "
+			+ "WHERE c.active = 0 "
+			+ "group by c.name "
+			+ "order by sumClassifications desc", nativeQuery = true)
+	List<Company> getAllByClassification();
+	
 	@Query("SELECT c FROM Company c WHERE c.active = 0")
 	List<Company> getAll();
 
