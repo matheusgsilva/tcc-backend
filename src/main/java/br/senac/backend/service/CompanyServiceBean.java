@@ -22,6 +22,10 @@ public class CompanyServiceBean implements CompanyService {
 		return repository.getByGuid(guid);
 	}
 	
+	public Company getByEmail(String email) {
+		return repository.getByEmail(email);
+	}
+	
 	public List<Company> getAll() {
 		List<Company> listByClassinfications = repository.getAllByClassification();
 		List<Company> list = repository.getAll();

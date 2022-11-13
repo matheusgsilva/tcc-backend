@@ -33,7 +33,6 @@ public class PetConverter {
 			pet.setDescription(petRequest.getDescription());
 			pet.setGuid(UUID.randomUUID().toString());
 			pet.setMedication(petRequest.getMedication());
-			pet.setName(petRequest.getName());
 			pet.setSize(petRequest.getSize());
 			pet.setActive(EACTIVE.YES);
 			pet.setPhoto1(petRequest.getPhoto1());
@@ -42,6 +41,8 @@ public class PetConverter {
 			pet.setPhoto4(petRequest.getPhoto4());
 			pet.setCompany(company);
 			pet.setVaccines(petRequest.getVaccines());
+			pet.setTypePet(petRequest.getTypePet());
+			pet.setGender(petRequest.getGender());
 			return pet;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -56,13 +57,14 @@ public class PetConverter {
 			pet.setBreed(petRequest.getBreed());
 			pet.setDescription(petRequest.getDescription());
 			pet.setMedication(petRequest.getMedication());
-			pet.setName(petRequest.getName());
 			pet.setSize(petRequest.getSize());
 			pet.setVaccines(petRequest.getVaccines());
 			pet.setPhoto1(petRequest.getPhoto1());
 			pet.setPhoto2(petRequest.getPhoto2());
 			pet.setPhoto3(petRequest.getPhoto3());
 			pet.setPhoto4(petRequest.getPhoto4());
+			pet.setTypePet(petRequest.getTypePet());
+			pet.setGender(petRequest.getGender());
 			return pet;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -79,17 +81,19 @@ public class PetConverter {
 			petResponse.setDescription(pet.getDescription());
 			petResponse.setGuid(pet.getGuid());
 			petResponse.setMedication(pet.getMedication());
-			petResponse.setName(pet.getName());
 			petResponse.setSize(pet.getSize());
 			if (pet.getCompany() != null) {
 				petResponse.setCompany(pet.getCompany().getName());
 				petResponse.setCompanyGuid(pet.getCompany().getGuid());
+				petResponse.setCompanyPhone(pet.getCompany().getPhone());
 			}
 			petResponse.setVaccines(pet.getVaccines());
 			petResponse.setPhoto1(pet.getPhoto1());
 			petResponse.setPhoto2(pet.getPhoto2());
 			petResponse.setPhoto3(pet.getPhoto3());
 			petResponse.setPhoto4(pet.getPhoto4());
+			petResponse.setTypePet(pet.getTypePet());
+			petResponse.setGender(pet.getGender());
 			return petResponse;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -108,7 +112,6 @@ public class PetConverter {
 				petResponse.setDescription(pet.getDescription());
 				petResponse.setGuid(pet.getGuid());
 				petResponse.setMedication(pet.getMedication());
-				petResponse.setName(pet.getName());
 				petResponse.setSize(pet.getSize());
 				if (pet.getCompany() != null) {
 					petResponse.setCompany(pet.getCompany().getName());
@@ -116,6 +119,7 @@ public class PetConverter {
 				}
 				petResponse.setVaccines(pet.getVaccines());
 				petResponse.setPhoto1(pet.getPhoto1());
+				petResponse.setTypePet(pet.getTypePet());
 				list.add(petResponse);
 			}
 			return list;

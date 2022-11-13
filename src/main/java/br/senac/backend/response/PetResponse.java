@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 public class PetResponse {
 
 	private String guid;
-	private String name;
 	private String description;
 	private String size;
 	private String age;
@@ -15,11 +14,14 @@ public class PetResponse {
 	private String medication;
 	private String company;
 	private String companyGuid;
+	private String companyPhone;
 	private String statusPet;
 	private String photo1;
 	private String photo2;
 	private String photo3;
 	private String photo4;
+	private String typePet;
+	private String gender;
 
 	public String getGuid() {
 		return guid;
@@ -27,14 +29,6 @@ public class PetResponse {
 
 	public void setGuid(String guid) {
 		this.guid = guid;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getDescription() {
@@ -139,6 +133,30 @@ public class PetResponse {
 
 	public void setCompanyGuid(String companyGuid) {
 		this.companyGuid = companyGuid;
+	}
+
+	public String getTypePet() {
+		return typePet;
+	}
+
+	public void setTypePet(String typePet) {
+		this.typePet = typePet;
+	}
+
+	public String getCompanyPhone() {
+		return companyPhone;
+	}
+
+	public void setCompanyPhone(String companyPhone) {
+		this.companyPhone = companyPhone;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 }

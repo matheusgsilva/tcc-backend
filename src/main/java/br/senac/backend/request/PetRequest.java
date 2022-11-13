@@ -2,7 +2,6 @@ package br.senac.backend.request;
 
 public class PetRequest {
 
-	private String name;
 	private String description;
 	private String size;
 	private String age;
@@ -13,14 +12,8 @@ public class PetRequest {
 	private String photo2;
 	private String photo3;
 	private String photo4;
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
+	private String typePet;
+	private String gender;
 
 	public String getDescription() {
 		return description;
@@ -101,4 +94,21 @@ public class PetRequest {
 	public void setPhoto4(String photo4) {
 		this.photo4 = photo4;
 	}
+
+	public String getTypePet() {
+		return typePet;
+	}
+
+	public void setTypePet(String typePet) {
+		this.typePet = typePet;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
 }

@@ -39,9 +39,6 @@ public class Pet implements Serializable {
 	@Column(name = "guid", columnDefinition = "VARCHAR(36)", nullable = false)
 	private String guid;
 
-	@Column(columnDefinition = "VARCHAR(100)", nullable = true)
-	private String name;
-
 	@Lob
 	private String description;
 
@@ -53,6 +50,9 @@ public class Pet implements Serializable {
 
 	@Column(columnDefinition = "VARCHAR(50)", nullable = true)
 	private String breed;
+
+	@Column(columnDefinition = "VARCHAR(50)", nullable = true)
+	private String gender;
 
 	@Lob
 	private String vaccines;
@@ -71,6 +71,9 @@ public class Pet implements Serializable {
 
 	@Lob
 	private String photo4;
+
+	@Column(columnDefinition = "VARCHAR(50)", nullable = true)
+	private String typePet;
 
 	private EACTIVE active;
 
@@ -92,14 +95,6 @@ public class Pet implements Serializable {
 
 	public void setGuid(String guid) {
 		this.guid = guid;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getDescription() {
@@ -196,6 +191,22 @@ public class Pet implements Serializable {
 
 	public void setPhoto4(String photo4) {
 		this.photo4 = photo4;
+	}
+
+	public String getTypePet() {
+		return typePet;
+	}
+
+	public void setTypePet(String typePet) {
+		this.typePet = typePet;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 }

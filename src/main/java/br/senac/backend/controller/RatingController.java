@@ -31,16 +31,12 @@ import br.senac.backend.response.RatingResponse;
 import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.CompanyService;
 import br.senac.backend.service.RatingService;
-import br.senac.backend.service.TokenService;
 import br.senac.backend.service.UserService;
 import br.senac.backend.task.EmailRatingTask;
 import br.senac.backend.util.EACTIVE;
 
 @Controller
 public class RatingController {
-
-	@Autowired
-	private TokenService tokenService;
 
 	@Autowired
 	private CompanyService companyService;
@@ -202,8 +198,8 @@ public class RatingController {
 			User user = userService.locateByEmail(ratingEmailRequest.getEmail());
 			if (user != null) {
 				EmailRatingTask emailTask = applicationContext.getBean(EmailRatingTask.class);
-				emailTask.setCompany(tokenService.getByToken(token).getCompany());
-				emailTask.setUser(user);
+				emailTask.setCompanyGuid(ratingEmailRequest.getCompanyGuid());
+				emailTask.setEmail(ratingEmailRequest.getEmail());
 				emailTask.setUrl(url);
 				taskExecutor.execute(emailTask);
 				handlerRating.handleSendEmailMessages(responseAPI, 200, null);

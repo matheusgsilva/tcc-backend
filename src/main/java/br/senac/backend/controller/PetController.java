@@ -15,20 +15,14 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import br.senac.backend.converter.CompanyConverter;
 import br.senac.backend.converter.PetConverter;
-import br.senac.backend.handler.HandlerCompany;
 import br.senac.backend.handler.HandlerPet;
-import br.senac.backend.handler.HandlerUser;
-import br.senac.backend.model.Company;
 import br.senac.backend.model.Pet;
-import br.senac.backend.model.User;
+import br.senac.backend.request.ListPetRequest;
 import br.senac.backend.request.PetRequest;
-import br.senac.backend.response.CompanyResponse;
 import br.senac.backend.response.PetResponse;
 import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.PetService;
-import br.senac.backend.service.TokenService;
 import br.senac.backend.util.EACTIVE;
 
 @Controller
@@ -38,19 +32,7 @@ public class PetController {
 	private PetService petService;
 
 	@Autowired
-	private TokenService tokenService;
-
-	@Autowired
-	private CompanyConverter companyConverter;
-
-	@Autowired
 	private HandlerPet handlerPet;
-
-	@Autowired
-	private HandlerUser handlerUser;
-
-	@Autowired
-	private HandlerCompany handlerCompany;
 
 	@Autowired
 	private PetConverter petConverter;
@@ -148,48 +130,6 @@ public class PetController {
 	}
 
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/pet/confirm/contact/guid/{guid}", method = RequestMethod.POST)
-	public ResponseEntity<ResponseAPI> contact(@RequestHeader(value = "token") String token,
-			@PathVariable String guid) {
-
-		ResponseAPI responseAPI = new ResponseAPI();
-
-		try {
-
-			User user = tokenService.getByToken(token).getUser();
-			if (user == null) {
-				handlerUser.handleDetailMessages(responseAPI, 404, null);
-			}
-
-			Pet pet = petService.getByGuid(guid);
-			if (pet == null) {
-				handlerPet.handleDetailMessages(responseAPI, 404, null);
-			}
-
-			Company company = pet.getCompany();
-			if (company != null) {
-				if (company.getActive().equals(EACTIVE.YES)) {
-					CompanyResponse companyResponse = companyConverter.companyToResponseContact(company);
-					if (companyResponse != null)
-						handlerPet.handleContactMessages(responseAPI, 200, companyResponse);
-					else
-						handlerCompany.handleDetailMessages(responseAPI, 404, null);
-				} else
-					handlerCompany.handleDetailMessages(responseAPI, 404, null);
-			} else
-				handlerCompany.handleDetailMessages(responseAPI, 404, null);
-
-			LOGGER.info(" :: Encerrando o método /api/pet/confirm/contact/guid - 200 - OK :: ");
-			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
-		} catch (Exception ex) {
-			ex.printStackTrace();
-			LOGGER.error(" :: Encerrando o método /api/pet/confirm/contact/guid - 400 - BAD REQUEST :: ");
-			handlerPet.handleContactMessages(responseAPI, 400, null);
-			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
-		}
-	}
-
-	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/api/pet/delete/guid/{guid}", method = RequestMethod.DELETE)
 	public ResponseEntity<ResponseAPI> delete(@PathVariable String guid, @RequestHeader(value = "token") String token) {
 
@@ -216,7 +156,7 @@ public class PetController {
 
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/api/pet/list/companyguid/{guid}", method = RequestMethod.GET)
-	public ResponseEntity<ResponseAPI> listByUser(@PathVariable String guid,
+	public ResponseEntity<ResponseAPI> listByCompany(@PathVariable String guid,
 			@RequestHeader(value = "token") String token) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
@@ -232,11 +172,71 @@ public class PetController {
 			} else
 				handlerPet.handleListMessages(responseAPI, 404, null);
 
-			LOGGER.info(" :: Encerrando o método /api/pet/list/userguid - 200 - OK :: ");
+			LOGGER.info(" :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: ");
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			LOGGER.error(" :: Encerrando o método /api/pet/list/userguid - 400 - BAD REQUEST :: ");
+			LOGGER.error(" :: Encerrando o método /api/pet/list/companyguid - 400 - BAD REQUEST :: ");
+			handlerPet.handleListMessages(responseAPI, 400, null);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/api/pet/list", method = RequestMethod.POST)
+	public ResponseEntity<ResponseAPI> list(@RequestHeader(value = "token") String token,
+			@RequestBody ListPetRequest listPetRequest) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			List<Pet> pets = petService.getAllFiltered(listPetRequest.getDescription(), listPetRequest.getSize(),
+					listPetRequest.getBreed(), listPetRequest.getTypePet(), listPetRequest.getCity(),
+					listPetRequest.getDistrict(), listPetRequest.getCompanyName(), listPetRequest.getGender());
+			if (!pets.isEmpty()) {
+				List<PetResponse> responseList = petConverter.petsToResponseList(pets);
+				if (!responseList.isEmpty())
+					handlerPet.handleListMessages(responseAPI, 200, responseList);
+				else
+					handlerPet.handleListMessages(responseAPI, 404, null);
+			} else
+				handlerPet.handleListMessages(responseAPI, 404, null);
+
+			LOGGER.info(" :: Encerrando o método /api/pet/list - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/pet/list - 400 - BAD REQUEST :: ");
+			handlerPet.handleListMessages(responseAPI, 400, null);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/api/pet/list/companyguid/{guid}", method = RequestMethod.POST)
+	public ResponseEntity<ResponseAPI> listByCompany(@RequestHeader(value = "token") String token,
+			@PathVariable String guid, @RequestBody ListPetRequest listPetRequest) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			List<Pet> pets = petService.getAllFilteredCompany(listPetRequest.getDescription(), listPetRequest.getSize(),
+					listPetRequest.getBreed(), listPetRequest.getTypePet(), listPetRequest.getCity(),
+					listPetRequest.getDistrict(), guid, listPetRequest.getGender());
+			if (!pets.isEmpty()) {
+				List<PetResponse> responseList = petConverter.petsToResponseList(pets);
+				if (!responseList.isEmpty())
+					handlerPet.handleListMessages(responseAPI, 200, responseList);
+				else
+					handlerPet.handleListMessages(responseAPI, 404, null);
+			} else
+				handlerPet.handleListMessages(responseAPI, 404, null);
+
+			LOGGER.info(" :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/pet/list/companyguid - 400 - BAD REQUEST :: ");
 			handlerPet.handleListMessages(responseAPI, 400, null);
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}

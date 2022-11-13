@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 
 import br.senac.backend.model.Company;
 import br.senac.backend.model.User;
+import br.senac.backend.service.CompanyService;
+import br.senac.backend.service.UserService;
 
 @Component
 public class EmailRatingTask implements Runnable {
@@ -14,24 +16,30 @@ public class EmailRatingTask implements Runnable {
 	@Autowired
 	private JavaMailSender javaMailSender;
 
-	private Company company;
-	private User user;
+	@Autowired
+	private UserService userService;
+
+	@Autowired
+	private CompanyService companyService;
+
+	private String companyGuid;
+	private String email;
 	private String url;
 
-	public User getUser() {
-		return user;
+	public String getCompanyGuid() {
+		return companyGuid;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setCompanyGuid(String companyGuid) {
+		this.companyGuid = companyGuid;
 	}
 
-	public Company getCompany() {
-		return company;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setCompany(Company company) {
-		this.company = company;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getUrl() {
@@ -44,12 +52,17 @@ public class EmailRatingTask implements Runnable {
 
 	@Override
 	public void run() {
-		SimpleMailMessage msg = new SimpleMailMessage();
-		msg.setTo(user.getEmail());
-		msg.setSubject("Avaliação de Serviço - 4PET");
-		msg.setText("O que você achou do processo de adoção?\nAvalie já os serviços prestados pela Organização - "
-				+ company.getName() + "\n Segue o link para avaliação: " + this.getUrl() + company.getGuid()
-				+ "\nAtenciosamente,\nEquipe 4PET.");
-		javaMailSender.send(msg);
+		User user = userService.locateByEmail(this.getEmail());
+		Company company = companyService.getByGuid(this.getCompanyGuid());
+		
+		if (user != null && company != null) {
+			SimpleMailMessage msg = new SimpleMailMessage();
+			msg.setTo(user.getEmail());
+			msg.setSubject("Avaliação de Serviço - 4PET");
+			msg.setText("O que você achou do processo de adoção?\nAvalie já os serviços prestados pela Organização - "
+					+ company.getName() + "\n Segue o link para avaliação: " + this.getUrl() + company.getGuid()
+					+ "\nAtenciosamente,\nEquipe 4PET.");
+			javaMailSender.send(msg);
+		}
 	}
 }
