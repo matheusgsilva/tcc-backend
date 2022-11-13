@@ -120,6 +120,7 @@ public class PetConverter {
 				petResponse.setVaccines(pet.getVaccines());
 				petResponse.setPhoto1(pet.getPhoto1());
 				petResponse.setTypePet(pet.getTypePet());
+				petResponse.setGender(pet.getGender());
 				list.add(petResponse);
 			}
 			return list;
