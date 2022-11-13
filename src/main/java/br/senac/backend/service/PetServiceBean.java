@@ -31,10 +31,10 @@ public class PetServiceBean implements PetService {
 
 	public List<Pet> getAllFilteredCompany(String description, String size, String breed, String typePet, String city,
 			String district, String companyGuid, String gender) {
-		if ((description.equals("") || description == null) && (size.equals("") || size == null)
-				&& (breed.equals("") || breed == null) && (typePet.equals("") || typePet == null)
-				&& (city.equals("") || city == null) && (district.equals("") || district == null)
-				&& (gender.equals("") || gender == null))
+		if ((description == null || description.equals("")) && (size == null || size.equals(""))
+				&& (breed == null || breed.equals("")) && (typePet == null || typePet.equals(""))
+				&& (city == null || city.equals("")) && (district == null || district.equals(""))
+				&& (gender == null || gender.equals("")))
 			return repository.getAllUnfilteredCompany(companyGuid);
 
 		return repository.getAllFilteredCompany(description, size, breed, typePet, city, district, companyGuid, gender);
@@ -42,10 +42,10 @@ public class PetServiceBean implements PetService {
 
 	public List<Pet> getAllFiltered(String description, String size, String breed, String typePet, String city,
 			String district, String companyName, String gender) {
-		if ((description.equals("") || description == null) && (size.equals("") || size == null)
-				&& (breed.equals("") || breed == null) && (typePet.equals("") || typePet == null)
-				&& (city.equals("") || city == null) && (district.equals("") || district == null)
-				&& (companyName.equals("") || companyName == null) && (gender.equals("") || gender == null))
+		if ((description == null || description.equals("")) && (size == null || size.equals(""))
+				&& (breed == null || breed.equals("")) && (typePet == null || typePet.equals(""))
+				&& (city == null || city.equals("")) && (district == null || district.equals(""))
+				&& (companyName == null || companyName.equals("")) && (gender == null || gender.equals("")))
 			return repository.getAllUnfiltered();
 
 		return repository.getAllFiltered(description, size, breed, typePet, city, district, gender, companyName);
