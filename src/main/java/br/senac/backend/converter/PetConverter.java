@@ -36,9 +36,6 @@ public class PetConverter {
 			pet.setSize(petRequest.getSize());
 			pet.setActive(EACTIVE.YES);
 			pet.setPhoto1(petRequest.getPhoto1());
-			pet.setPhoto2(petRequest.getPhoto2());
-			pet.setPhoto3(petRequest.getPhoto3());
-			pet.setPhoto4(petRequest.getPhoto4());
 			pet.setCompany(company);
 			pet.setVaccines(petRequest.getVaccines());
 			pet.setTypePet(petRequest.getTypePet());
@@ -60,9 +57,6 @@ public class PetConverter {
 			pet.setSize(petRequest.getSize());
 			pet.setVaccines(petRequest.getVaccines());
 			pet.setPhoto1(petRequest.getPhoto1());
-			pet.setPhoto2(petRequest.getPhoto2());
-			pet.setPhoto3(petRequest.getPhoto3());
-			pet.setPhoto4(petRequest.getPhoto4());
 			pet.setTypePet(petRequest.getTypePet());
 			pet.setGender(petRequest.getGender());
 			return pet;
@@ -89,9 +83,6 @@ public class PetConverter {
 			}
 			petResponse.setVaccines(pet.getVaccines());
 			petResponse.setPhoto1(pet.getPhoto1());
-			petResponse.setPhoto2(pet.getPhoto2());
-			petResponse.setPhoto3(pet.getPhoto3());
-			petResponse.setPhoto4(pet.getPhoto4());
 			petResponse.setTypePet(pet.getTypePet());
 			petResponse.setGender(pet.getGender());
 			return petResponse;
