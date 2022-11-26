@@ -12,5 +12,7 @@ public interface RatingService {
 	
 	List<Rating> getByCompanyGuid(String companyGuid);
 	
+	Double getByAverageRatingCompanyGuid(String companyGuid);
+	
 	Rating save(Rating rating);
 }

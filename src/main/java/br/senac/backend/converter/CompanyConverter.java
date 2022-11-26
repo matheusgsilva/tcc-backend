@@ -4,17 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Component;
 
 import br.senac.backend.model.Company;
 import br.senac.backend.request.CompanyRequest;
 import br.senac.backend.response.CompanyResponse;
+import br.senac.backend.service.RatingService;
 import br.senac.backend.util.EACTIVE;
 import br.senac.backend.util.ECOMPANY_PERMISSION;
 
 @Component
 public class CompanyConverter {
+	
+	@Autowired
+	private RatingService ratingService;
 
 	public Company companySave(CompanyRequest companyRequest) {
 
@@ -99,6 +104,7 @@ public class CompanyConverter {
 			companyResponse.setGuid(company.getGuid());
 			companyResponse.setPermission(company.getPermission());
 			companyResponse.setPhoto1(company.getPhoto1());
+			companyResponse.setAverageRating(ratingService.getByAverageRatingCompanyGuid(company.getGuid()));
 			return companyResponse;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -140,6 +146,7 @@ public class CompanyConverter {
 				companyResponse.setGuid(company.getGuid());
 				companyResponse.setPermission(company.getPermission());
 				companyResponse.setPhoto1(company.getPhoto1());
+				companyResponse.setAverageRating(ratingService.getByAverageRatingCompanyGuid(company.getGuid()));
 				list.add(companyResponse);
 			});
 			return list;

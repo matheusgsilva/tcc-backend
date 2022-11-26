@@ -21,6 +21,7 @@ public class CompanyResponse {
 	private String phone;
 	private String description;
 	private String photo1;
+	private Double averageRating;
 	private ECOMPANY_PERMISSION permission;
 
 	public String getGuid() {
@@ -141,6 +142,14 @@ public class CompanyResponse {
 
 	public void setPhoto1(String photo1) {
 		this.photo1 = photo1;
+	}
+
+	public Double getAverageRating() {
+		return averageRating;
+	}
+
+	public void setAverageRating(Double averageRating) {
+		this.averageRating = averageRating;
 	}
 
 }
