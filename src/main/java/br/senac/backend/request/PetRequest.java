@@ -9,6 +9,9 @@ public class PetRequest {
 	private String vaccines;
 	private String medication;
 	private String photo1;
+	private String photo2;
+	private String photo3;
+	private String photo4;
 	private String typePet;
 	private String gender;
 
@@ -82,6 +85,30 @@ public class PetRequest {
 
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+
+	public String getPhoto2() {
+		return photo2;
+	}
+
+	public void setPhoto2(String photo2) {
+		this.photo2 = photo2;
+	}
+
+	public String getPhoto3() {
+		return photo3;
+	}
+
+	public void setPhoto3(String photo3) {
+		this.photo3 = photo3;
+	}
+
+	public String getPhoto4() {
+		return photo4;
+	}
+
+	public void setPhoto4(String photo4) {
+		this.photo4 = photo4;
 	}
 
 }
