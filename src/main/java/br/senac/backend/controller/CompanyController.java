@@ -334,8 +334,7 @@ public class CompanyController {
 	
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/company/detail/name/guid/{guid}", method = RequestMethod.GET)
-	public ResponseEntity<ResponseAPI> getNameByGuid(@PathVariable String guid,
-			@RequestHeader(value = "token") String token) {
+	public ResponseEntity<ResponseAPI> getNameByGuid(@PathVariable String guid) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 
