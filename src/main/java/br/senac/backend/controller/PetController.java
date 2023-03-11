@@ -5,6 +5,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -23,6 +25,7 @@ import br.senac.backend.request.PetRequest;
 import br.senac.backend.response.PetResponse;
 import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.PetService;
+import br.senac.backend.task.NotificationTask;
 import br.senac.backend.util.EACTIVE;
 
 @Controller
@@ -36,6 +39,12 @@ public class PetController {
 
 	@Autowired
 	private PetConverter petConverter;
+	
+	@Autowired
+	private ApplicationContext applicationContext;
+
+	@Autowired
+	private TaskExecutor taskExecutor;
 
 	private Logger LOGGER = LoggerFactory.getLogger(PetController.class);
 
@@ -50,6 +59,9 @@ public class PetController {
 			Pet pet = petConverter.petSave(petRequest, companyGuid);
 			if (pet != null) {
 				pet = petService.save(pet);
+				NotificationTask notificationTask = applicationContext.getBean(NotificationTask.class);
+				notificationTask.setPetGuid(pet.getGuid());
+				taskExecutor.execute(notificationTask);
 				PetResponse petResponse = petConverter.petToResponse(pet);
 				if (petResponse != null)
 					handlerPet.handleAddMessages(responseAPI, 200, petResponse);

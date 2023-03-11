@@ -5,20 +5,20 @@ import org.springframework.stereotype.Component;
 import br.senac.backend.response.ResponseAPI;
 
 @Component
-public class HandlerPet {
+public class HandlerPreferences {
 
 	public void handleAddMessages(ResponseAPI response, int code, Object model) {
 		if (code == 200) {
 			response.setCode(200);
 			response.setData(model);
-			response.setMsg("SUCCESSFULLY_REGISTERED_PET");
+			response.setMsg("SUCCESSFULLY_REGISTERED_PREFERENCES");
 		} else if (code == 404) {
 			response.setCode(404);
 			response.setData(null);
-			response.setMsg("PET_ADDED_NOT_FOUND");
+			response.setMsg("PREFERENCES_ADDED_NOT_FOUND");
 		} else if (code == 304) {
 			response.setCode(304);
-			response.setMsg("PET_ALREADY_EXISTS");
+			response.setMsg("PREFERENCES_ALREADY_EXISTS");
 			response.setData(null);
 		} else if (code == 400) {
 			response.setCode(400);
@@ -31,14 +31,14 @@ public class HandlerPet {
 		if (code == 200) {
 			response.setCode(200);
 			response.setData(model);
-			response.setMsg("PET_UPDATED_SUCCESSFULLY");
+			response.setMsg("PREFERENCES_UPDATED_SUCCESSFULLY");
 		} else if (code == 404) {
 			response.setCode(404);
 			response.setData(null);
-			response.setMsg("PET_UPDATED_NOT_FOUND");
+			response.setMsg("PREFERENCES_UPDATED_NOT_FOUND");
 		} else if (code == 304) {
 			response.setCode(304);
-			response.setMsg("PET_ALREADY_EXISTS");
+			response.setMsg("PREFERENCES_ALREADY_EXISTS");
 			response.setData(null);
 		} else if (code == 400) {
 			response.setCode(400);
@@ -46,32 +46,16 @@ public class HandlerPet {
 			response.setData(null);
 		}
 	}
-
-	public void handleCepMessages(ResponseAPI response, int code, Object model) {
-		if (code == 200) {
-			response.setCode(200);
-			response.setData(model);
-			response.setMsg("CEP_DETAIL_SUCCESSFULLY");
-		} else if (code == 404) {
-			response.setCode(404);
-			response.setData(null);
-			response.setMsg("CEP_NOT_FOUND");
-		} else if (code == 400) {
-			response.setCode(400);
-			response.setMsg("BAD_REQUEST");
-			response.setData(null);
-		}
-	}	
 	
 	public void handleDetailMessages(ResponseAPI response, int code, Object model) {
 		if (code == 200) {
 			response.setCode(200);
 			response.setData(model);
-			response.setMsg("PET_DETAIL_SUCCESSFULLY");
+			response.setMsg("PREFERENCES_DETAIL_SUCCESSFULLY");
 		} else if (code == 404) {
 			response.setCode(404);
 			response.setData(null);
-			response.setMsg("PET_NOT_FOUND");
+			response.setMsg("PREFERENCES_NOT_FOUND");
 		} else if (code == 400) {
 			response.setCode(400);
 			response.setMsg("BAD_REQUEST");
@@ -83,30 +67,14 @@ public class HandlerPet {
 		if (code == 200) {
 			response.setCode(200);
 			response.setData(null);
-			response.setMsg("PET_DELETE_SUCCESSFULLY");
+			response.setMsg("PREFERENCES_DELETE_SUCCESSFULLY");
 		} else if (code == 404) {
 			response.setCode(404);
 			response.setData(null);
-			response.setMsg("PET_NOT_FOUND");
+			response.setMsg("PREFERENCES_NOT_FOUND");
 		} else if (code == 400) {
 			response.setCode(400);
 			response.setMsg("BAD_REQUEST");
-		}
-	}
-
-	public void handleListMessages(ResponseAPI response, int code, Object model) {
-		if (code == 200) {
-			response.setCode(200);
-			response.setData(model);
-			response.setMsg("PET_LIST_SUCCESSFULLY");
-		} else if (code == 404) {
-			response.setCode(404);
-			response.setData(null);
-			response.setMsg("PET_NOT_FOUND");
-		} else if (code == 400) {
-			response.setCode(400);
-			response.setMsg("BAD_REQUEST");
-			response.setData(null);
 		}
 	}
 }

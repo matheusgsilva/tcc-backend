@@ -68,6 +68,9 @@ public class User implements Serializable {
 	@OneToMany(mappedBy = "user", targetEntity = Rating.class, fetch = FetchType.LAZY)
 	private List<Rating> ratings = new ArrayList<Rating>();
 
+	@OneToMany(targetEntity = Pet.class, fetch = FetchType.LAZY)
+	private List<Pet> favoritePets = new ArrayList<Pet>();
+
 	public Long getId() {
 		return id;
 	}
@@ -154,6 +157,14 @@ public class User implements Serializable {
 
 	public void setType(ETYPE_USER type) {
 		this.type = type;
+	}
+
+	public List<Pet> getFavoritePets() {
+		return favoritePets;
+	}
+
+	public void setFavoritePets(List<Pet> favoritePets) {
+		this.favoritePets = favoritePets;
 	}
 
 }

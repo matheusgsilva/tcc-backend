@@ -15,7 +15,7 @@ public interface PetRepository extends PagingAndSortingRepository<Pet, Long> {
 	@Query("SELECT c FROM Pet c WHERE c.company.guid = :companyGuid and c.active = 0")
 	List<Pet> getByCompanyGuid(@Param("companyGuid") String companyGuid);
 
-	@Query("SELECT c from Pet c WHERE " + "((:description is null or c.description LIKE CONCAT('%',:description,'%')) "
+	@Query("SELECT c from Pet c WHERE ((:description is null or c.description LIKE CONCAT('%',:description,'%')) "
 			+ "and (:size is null or c.size LIKE CONCAT('%',:size,'%')) "
 			+ "and (:breed is null or c.breed LIKE CONCAT('%',:breed,'%'))"
 			+ "and (:typePet is null or c.typePet LIKE CONCAT('%',:typePet,'%')) "
@@ -29,7 +29,7 @@ public interface PetRepository extends PagingAndSortingRepository<Pet, Long> {
 			@Param("district") String district, @Param("gender") String gender,
 			@Param("companyName") String companyName);
 
-	@Query("SELECT c from Pet c WHERE " + "((:description is null or c.description LIKE CONCAT('%',:description,'%')) "
+	@Query("SELECT c from Pet c WHERE ((:description is null or c.description LIKE CONCAT('%',:description,'%')) "
 			+ "and (:size is null or c.size LIKE CONCAT('%',:size,'%')) "
 			+ "and (:breed is null or c.breed LIKE CONCAT('%',:breed,'%'))"
 			+ "and (:typePet is null or c.typePet LIKE CONCAT('%',:typePet,'%')) "
