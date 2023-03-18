@@ -112,9 +112,9 @@ public class FavoritePetsController {
 	}
 
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/favorite/list/{userGuid}", method = RequestMethod.POST)
-	public ResponseEntity<ResponseAPI> list(@RequestHeader(value = "token") String token, @PathVariable String userGuid,
-			@RequestBody FavoritePetsRequest favoritePetsRequest) {
+	@RequestMapping(value = "/api/favorite/list/{userGuid}", method = RequestMethod.GET)
+	public ResponseEntity<ResponseAPI> list(@RequestHeader(value = "token") String token,
+			@PathVariable String userGuid) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 
