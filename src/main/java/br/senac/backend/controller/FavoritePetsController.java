@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +25,6 @@ import br.senac.backend.request.FavoritePetsRequest;
 import br.senac.backend.response.PetResponse;
 import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.PetService;
-import br.senac.backend.service.TokenService;
 import br.senac.backend.service.UserService;
 
 @Controller
@@ -32,12 +32,9 @@ public class FavoritePetsController {
 
 	@Autowired
 	private UserService userService;
-	
-	@Autowired
-	private PetService petService;
 
 	@Autowired
-	private TokenService tokenService;
+	private PetService petService;
 
 	@Autowired
 	private HandlerPet handlerPet;
@@ -51,18 +48,18 @@ public class FavoritePetsController {
 	private Logger LOGGER = LoggerFactory.getLogger(FavoritePetsController.class);
 
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/favorite/add", method = RequestMethod.PUT)
-	public ResponseEntity<ResponseAPI> add(@RequestHeader(value = "token") String token,
+	@RequestMapping(value = "/api/favorite/add/{userGuid}", method = RequestMethod.POST)
+	public ResponseEntity<ResponseAPI> add(@RequestHeader(value = "token") String token, @PathVariable String userGuid,
 			@RequestBody FavoritePetsRequest favoritePetsRequest) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 
 		try {
-			User user = tokenService.getByToken(token).getUser();
+			User user = userService.getByGuid(userGuid);
 			if (user != null) {
 				Pet pet = petService.getByGuid(favoritePetsRequest.getPetGuid());
-				if(pet != null) {
-					if(!user.getFavoritePets().contains(pet)) {
+				if (pet != null) {
+					if (!user.getFavoritePets().contains(pet)) {
 						user.getFavoritePets().add(pet);
 						userService.save(user);
 					}
@@ -81,20 +78,20 @@ public class FavoritePetsController {
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/favorite/remove", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/api/favorite/remove/{userGuid}", method = RequestMethod.DELETE)
 	public ResponseEntity<ResponseAPI> remove(@RequestHeader(value = "token") String token,
-			@RequestBody FavoritePetsRequest favoritePetsRequest) {
+			@PathVariable String userGuid, @RequestBody FavoritePetsRequest favoritePetsRequest) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 
 		try {
-			User user = tokenService.getByToken(token).getUser();
+			User user = userService.getByGuid(userGuid);
 			if (user != null) {
 				Pet pet = petService.getByGuid(favoritePetsRequest.getPetGuid());
-				if(pet != null) {
-					if(user.getFavoritePets().contains(pet)) {
+				if (pet != null) {
+					if (user.getFavoritePets().contains(pet)) {
 						user.getFavoritePets().remove(pet);
 						userService.save(user);
 					}
@@ -113,16 +110,16 @@ public class FavoritePetsController {
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/favorite/list", method = RequestMethod.GET)
-	public ResponseEntity<ResponseAPI> list(@RequestHeader(value = "token") String token,
+	@RequestMapping(value = "/api/favorite/list/{userGuid}", method = RequestMethod.POST)
+	public ResponseEntity<ResponseAPI> list(@RequestHeader(value = "token") String token, @PathVariable String userGuid,
 			@RequestBody FavoritePetsRequest favoritePetsRequest) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 
 		try {
-			User user = tokenService.getByToken(token).getUser();
+			User user = userService.getByGuid(userGuid);
 			if (user != null) {
 				List<Pet> pets = user.getFavoritePets();
 				if (!pets.isEmpty()) {
