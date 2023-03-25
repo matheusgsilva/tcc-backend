@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Index;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -68,7 +69,7 @@ public class User implements Serializable {
 	@OneToMany(mappedBy = "user", targetEntity = Rating.class, fetch = FetchType.LAZY)
 	private List<Rating> ratings = new ArrayList<Rating>();
 
-	@OneToMany(targetEntity = Pet.class, fetch = FetchType.LAZY)
+	@ManyToMany(targetEntity = Pet.class, fetch = FetchType.LAZY)
 	private List<Pet> favoritePets = new ArrayList<Pet>();
 
 	public Long getId() {
