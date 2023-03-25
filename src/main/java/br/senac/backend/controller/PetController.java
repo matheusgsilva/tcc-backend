@@ -25,6 +25,7 @@ import br.senac.backend.request.PetRequest;
 import br.senac.backend.response.PetResponse;
 import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.PetService;
+import br.senac.backend.service.TokenService;
 import br.senac.backend.task.NotificationTask;
 import br.senac.backend.util.EACTIVE;
 
@@ -35,11 +36,14 @@ public class PetController {
 	private PetService petService;
 
 	@Autowired
+	private TokenService tokenService;
+
+	@Autowired
 	private HandlerPet handlerPet;
 
 	@Autowired
 	private PetConverter petConverter;
-	
+
 	@Autowired
 	private ApplicationContext applicationContext;
 
@@ -123,7 +127,7 @@ public class PetController {
 		try {
 			Pet pet = petService.getByGuid(guid);
 			if (pet != null) {
-				PetResponse petResponse = petConverter.petToResponse(pet);
+				PetResponse petResponse = petConverter.petToResponse(pet, tokenService.getByToken(token).getUser());
 				if (petResponse != null)
 					handlerPet.handleDetailMessages(responseAPI, 200, petResponse);
 				else

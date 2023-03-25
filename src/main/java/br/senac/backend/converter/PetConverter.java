@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import br.senac.backend.model.Company;
 import br.senac.backend.model.Pet;
+import br.senac.backend.model.User;
 import br.senac.backend.request.PetRequest;
 import br.senac.backend.response.PetResponse;
 import br.senac.backend.service.CompanyService;
@@ -71,7 +72,7 @@ public class PetConverter {
 			return null;
 		}
 	}
-
+	
 	public PetResponse petToResponse(Pet pet) {
 
 		try {
@@ -94,6 +95,36 @@ public class PetConverter {
 			petResponse.setPhoto4(pet.getPhoto4());
 			petResponse.setTypePet(pet.getTypePet());
 			petResponse.setGender(pet.getGender());
+			return petResponse;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public PetResponse petToResponse(Pet pet, User user) {
+
+		try {
+			PetResponse petResponse = new PetResponse();
+			petResponse.setAge(pet.getAge());
+			petResponse.setBreed(pet.getBreed());
+			petResponse.setDescription(pet.getDescription());
+			petResponse.setGuid(pet.getGuid());
+			petResponse.setMedication(pet.getMedication());
+			petResponse.setSize(pet.getSize());
+			if (pet.getCompany() != null) {
+				petResponse.setCompany(pet.getCompany().getName());
+				petResponse.setCompanyGuid(pet.getCompany().getGuid());
+				petResponse.setCompanyPhone(pet.getCompany().getPhone());
+			}
+			petResponse.setVaccines(pet.getVaccines());
+			petResponse.setPhoto1(pet.getPhoto1());
+			petResponse.setPhoto2(pet.getPhoto2());
+			petResponse.setPhoto3(pet.getPhoto3());
+			petResponse.setPhoto4(pet.getPhoto4());
+			petResponse.setTypePet(pet.getTypePet());
+			petResponse.setGender(pet.getGender());
+			petResponse.setIsFavorite(user.getFavoritePets().contains(pet));
 			return petResponse;
 		} catch (Exception e) {
 			e.printStackTrace();

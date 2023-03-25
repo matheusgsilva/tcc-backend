@@ -22,6 +22,7 @@ public class PetResponse {
 	private String photo4;
 	private String typePet;
 	private String gender;
+	private Boolean isFavorite;
 
 	public String getGuid() {
 		return guid;
@@ -157,6 +158,14 @@ public class PetResponse {
 
 	public void setPhoto4(String photo4) {
 		this.photo4 = photo4;
+	}
+
+	public Boolean getIsFavorite() {
+		return isFavorite;
+	}
+
+	public void setIsFavorite(Boolean isFavorite) {
+		this.isFavorite = isFavorite;
 	}
 
 }
