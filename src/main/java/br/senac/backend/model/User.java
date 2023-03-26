@@ -70,6 +70,7 @@ public class User implements Serializable {
 	private List<Rating> ratings = new ArrayList<Rating>();
 
 	@ManyToMany(targetEntity = Pet.class, fetch = FetchType.LAZY)
+	@Column(unique = false)
 	private List<Pet> favoritePets = new ArrayList<Pet>();
 
 	public Long getId() {
