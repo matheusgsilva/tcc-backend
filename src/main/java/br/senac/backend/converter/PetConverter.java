@@ -14,6 +14,7 @@ import br.senac.backend.request.PetRequest;
 import br.senac.backend.response.PetResponse;
 import br.senac.backend.service.CompanyService;
 import br.senac.backend.util.EACTIVE;
+import br.senac.backend.util.ETYPE_USER;
 
 @Component
 public class PetConverter {
@@ -72,7 +73,7 @@ public class PetConverter {
 			return null;
 		}
 	}
-	
+
 	public PetResponse petToResponse(Pet pet) {
 
 		try {
@@ -124,7 +125,8 @@ public class PetConverter {
 			petResponse.setPhoto4(pet.getPhoto4());
 			petResponse.setTypePet(pet.getTypePet());
 			petResponse.setGender(pet.getGender());
-			petResponse.setIsFavorite(user.getFavoritePets().contains(pet));
+			if (user != null)
+				petResponse.setIsFavorite(user.getFavoritePets().contains(pet));
 			return petResponse;
 		} catch (Exception e) {
 			e.printStackTrace();

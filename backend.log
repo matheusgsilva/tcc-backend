@@ -1587,3 +1587,4 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 2023-03-26 08:47:52.505  INFO 14096 --- [http-nio-9595-exec-2] b.s.b.controller.FavoritePetsController  :  :: Encerrando o método /api/favorite/add - 200 - OK :: 
 2023-03-26 08:47:59.671  INFO 14096 --- [http-nio-9595-exec-3] b.s.b.controller.FavoritePetsController  :  :: Encerrando o método /api/favorite/add - 200 - OK :: 
 2023-03-26 08:50:45.701  INFO 14096 --- [http-nio-9595-exec-6] b.s.b.controller.FavoritePetsController  :  :: Encerrando o método /api/favorite/list - 200 - OK :: 
+2023-03-26 08:51:57.645  INFO 14096 --- [http-nio-9595-exec-9] b.s.b.controller.FavoritePetsController  :  :: Encerrando o método /api/favorite/list - 200 - OK :: 
