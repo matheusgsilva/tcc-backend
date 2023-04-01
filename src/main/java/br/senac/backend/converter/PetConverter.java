@@ -14,7 +14,6 @@ import br.senac.backend.request.PetRequest;
 import br.senac.backend.response.PetResponse;
 import br.senac.backend.service.CompanyService;
 import br.senac.backend.util.EACTIVE;
-import br.senac.backend.util.ETYPE_USER;
 
 @Component
 public class PetConverter {
