@@ -7,7 +7,7 @@ public class PetRequest {
 	private String age;
 	private String breed;
 	private String vaccines;
-	private String medication;
+	private String color;
 	private String photo1;
 	private String photo2;
 	private String photo3;
@@ -55,12 +55,12 @@ public class PetRequest {
 		this.vaccines = vaccines;
 	}
 
-	public String getMedication() {
-		return medication;
+	public String getColor() {
+		return color;
 	}
 
-	public void setMedication(String medication) {
-		this.medication = medication;
+	public void setColor(String color) {
+		this.color = color;
 	}
 
 	public String getPhoto1() {

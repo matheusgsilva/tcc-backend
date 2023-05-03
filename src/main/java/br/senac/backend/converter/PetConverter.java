@@ -33,7 +33,7 @@ public class PetConverter {
 			pet.setBreed(petRequest.getBreed());
 			pet.setDescription(petRequest.getDescription());
 			pet.setGuid(UUID.randomUUID().toString());
-			pet.setMedication(petRequest.getMedication());
+			pet.setColor(petRequest.getColor());
 			pet.setSize(petRequest.getSize());
 			pet.setActive(EACTIVE.YES);
 			pet.setPhoto1(petRequest.getPhoto1());
@@ -57,7 +57,7 @@ public class PetConverter {
 			pet.setAge(petRequest.getAge());
 			pet.setBreed(petRequest.getBreed());
 			pet.setDescription(petRequest.getDescription());
-			pet.setMedication(petRequest.getMedication());
+			pet.setColor(petRequest.getColor());
 			pet.setSize(petRequest.getSize());
 			pet.setVaccines(petRequest.getVaccines());
 			pet.setPhoto1(petRequest.getPhoto1());
@@ -81,7 +81,7 @@ public class PetConverter {
 			petResponse.setBreed(pet.getBreed());
 			petResponse.setDescription(pet.getDescription());
 			petResponse.setGuid(pet.getGuid());
-			petResponse.setMedication(pet.getMedication());
+			petResponse.setColor(pet.getColor());
 			petResponse.setSize(pet.getSize());
 			if (pet.getCompany() != null) {
 				petResponse.setCompany(pet.getCompany().getName());
@@ -110,7 +110,7 @@ public class PetConverter {
 			petResponse.setBreed(pet.getBreed());
 			petResponse.setDescription(pet.getDescription());
 			petResponse.setGuid(pet.getGuid());
-			petResponse.setMedication(pet.getMedication());
+			petResponse.setColor(pet.getColor());
 			petResponse.setSize(pet.getSize());
 			if (pet.getCompany() != null) {
 				petResponse.setCompany(pet.getCompany().getName());
@@ -143,7 +143,7 @@ public class PetConverter {
 				petResponse.setBreed(pet.getBreed());
 				petResponse.setDescription(pet.getDescription());
 				petResponse.setGuid(pet.getGuid());
-				petResponse.setMedication(pet.getMedication());
+				petResponse.setColor(pet.getColor());
 				petResponse.setSize(pet.getSize());
 				if (pet.getCompany() != null) {
 					petResponse.setCompany(pet.getCompany().getName());

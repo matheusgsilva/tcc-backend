@@ -23,8 +23,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import br.senac.backend.util.EACTIVE;
 
 @Entity
-@Table(name = "PETS", indexes = { 
-		@Index(name = "GUID_INDEX", columnList = "guid", unique = true),
+@Table(name = "PETS", indexes = { @Index(name = "GUID_INDEX", columnList = "guid", unique = true),
 		@Index(name = "TYPE_PET_INDEX", columnList = "typePet", unique = false),
 		@Index(name = "SIZE_INDEX", columnList = "size", unique = false),
 		@Index(name = "AGE_INDEX", columnList = "age", unique = false),
@@ -63,8 +62,8 @@ public class Pet implements Serializable {
 	@Lob
 	private String vaccines;
 
-	@Lob
-	private String medication;
+	@Column(columnDefinition = "VARCHAR(200)", nullable = true)
+	private String color;
 
 	@Lob
 	private String photo1;
@@ -143,12 +142,12 @@ public class Pet implements Serializable {
 		this.vaccines = vaccines;
 	}
 
-	public String getMedication() {
-		return medication;
+	public String getColor() {
+		return color;
 	}
 
-	public void setMedication(String medication) {
-		this.medication = medication;
+	public void setColor(String color) {
+		this.color = color;
 	}
 
 	public EACTIVE getActive() {

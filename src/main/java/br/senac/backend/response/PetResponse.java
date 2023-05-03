@@ -11,7 +11,7 @@ public class PetResponse {
 	private String age;
 	private String breed;
 	private String vaccines;
-	private String medication;
+	private String color;
 	private String company;
 	private String companyGuid;
 	private String companyPhone;
@@ -72,12 +72,12 @@ public class PetResponse {
 		this.vaccines = vaccines;
 	}
 
-	public String getMedication() {
-		return medication;
+	public String getColor() {
+		return color;
 	}
 
-	public void setMedication(String medication) {
-		this.medication = medication;
+	public void setColor(String color) {
+		this.color = color;
 	}
 
 	public String getCompany() {
