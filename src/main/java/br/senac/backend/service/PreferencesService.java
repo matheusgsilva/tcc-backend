@@ -7,8 +7,10 @@ import br.senac.backend.model.Preferences;
 public interface PreferencesService {
 
 	Preferences save(Preferences preferences);
+	
+	Preferences getByGuid(String guid);
 
-	Preferences getByUserGuid(String userGuid);
+	List<Preferences> getByUserGuid(String userGuid);
 
 	List<Preferences> findPreferences(String age, String size, String breed, String typePet, String gender);
 	

@@ -13,7 +13,10 @@ import br.senac.backend.model.Preferences;
 public interface PreferencesRepository extends PagingAndSortingRepository<Preferences, Long> {
 
 	@Query("SELECT p FROM Preferences p WHERE p.user.guid = :userGuid")
-	Preferences getByUserGuid(@Param("userGuid") String userGuid);
+	List<Preferences> getByUserGuid(@Param("userGuid") String userGuid);
+	
+	@Query("SELECT p FROM Preferences p WHERE p.guid = :guid")
+	Preferences getByGuid(@Param("guid") String guid);
 
 	@Query("SELECT p from Preferences p WHERE ((:age is null or p.age LIKE CONCAT('%',:age,'%')) "
 			+ "and (:size is null or p.size LIKE CONCAT('%',:size,'%')) "

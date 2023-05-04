@@ -1,5 +1,7 @@
 package br.senac.backend.converter;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.stereotype.Component;
@@ -56,6 +58,27 @@ public class PreferencesConverter {
 			preferencesResponse.setTypePet(preferences.getTypePet());
 			preferencesResponse.setGender(preferences.getGender());
 			return preferencesResponse;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public List<PreferencesResponse> preferencesToResponseList(List<Preferences> preferences) {
+
+		try {
+			List<PreferencesResponse> list = new ArrayList<PreferencesResponse>();
+			for (Preferences preference : preferences) {
+				PreferencesResponse preferencesResponse = new PreferencesResponse();
+				preferencesResponse.setAge(preference.getAge());
+				preferencesResponse.setBreed(preference.getBreed());
+				preferencesResponse.setGuid(preference.getGuid());
+				preferencesResponse.setSize(preference.getSize());
+				preferencesResponse.setTypePet(preference.getTypePet());
+				preferencesResponse.setGender(preference.getGender());
+				list.add(preferencesResponse);
+			}
+			return list;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

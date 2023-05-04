@@ -20,8 +20,12 @@ public class PreferencesServiceBean implements PreferencesService {
 		return preferencesRepository.save(preferences);
 	}
 	
-	public Preferences getByUserGuid(String userGuid) {
+	public List<Preferences> getByUserGuid(String userGuid) {
 		return preferencesRepository.getByUserGuid(userGuid);
+	}
+	
+	public Preferences getByGuid(String userGuid) {
+		return preferencesRepository.getByGuid(userGuid);
 	}
 	
 	public List<Preferences> findPreferences(String age, String size, String breed, String typePet, String gender) {

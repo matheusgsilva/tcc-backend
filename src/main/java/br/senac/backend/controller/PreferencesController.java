@@ -1,5 +1,7 @@
 package br.senac.backend.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -73,8 +76,8 @@ public class PreferencesController {
 	}
 
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/preferences/update", method = RequestMethod.PUT)
-	public ResponseEntity<ResponseAPI> update(@RequestHeader(value = "token") String token,
+	@RequestMapping(value = "/api/preferences/update/guid/{guid}", method = RequestMethod.PUT)
+	public ResponseEntity<ResponseAPI> update(@RequestHeader(value = "token") String token, @PathVariable String guid,
 			@RequestBody PreferencesRequest preferencesRequest) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
@@ -82,7 +85,7 @@ public class PreferencesController {
 		try {
 			User user = tokenService.getByToken(token).getUser();
 			if (user != null) {
-				Preferences preferences = preferencesService.getByUserGuid(user.getGuid());
+				Preferences preferences = preferencesService.getByGuid(guid);
 				if (preferences != null) {
 					PreferencesResponse preferencesResponse = preferencesConverter
 							.preferencesToResponse(preferencesService
@@ -96,19 +99,19 @@ public class PreferencesController {
 			} else
 				handlerUser.handleDetailMessages(responseAPI, 404, null);
 
-			LOGGER.info(" :: Encerrando o método /api/preferences/update - 200 - OK :: ");
+			LOGGER.info(" :: Encerrando o método /api/preferences/update/guid - 200 - OK :: ");
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			LOGGER.error(" :: Encerrando o método /api/preferences/update - 400 - BAD REQUEST :: ");
+			LOGGER.error(" :: Encerrando o método /api/preferences/update/guid - 400 - BAD REQUEST :: ");
 			handlerPreferences.handleUpdateMessages(responseAPI, 400, null);
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
 
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/preferences/detail", method = RequestMethod.GET)
-	public ResponseEntity<ResponseAPI> detail(@RequestHeader(value = "token") String token) {
+	@RequestMapping(value = "/api/preferences/detail/guid/{guid}", method = RequestMethod.GET)
+	public ResponseEntity<ResponseAPI> detail(@RequestHeader(value = "token") String token, @PathVariable String guid) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 
@@ -116,7 +119,7 @@ public class PreferencesController {
 			User user = tokenService.getByToken(token).getUser();
 			if (user != null) {
 				PreferencesResponse preferencesResponse = preferencesConverter
-						.preferencesToResponse(preferencesService.getByUserGuid(user.getGuid()));
+						.preferencesToResponse(preferencesService.getByGuid(guid));
 				if (preferencesResponse != null) {
 					handlerPreferences.handleDetailMessages(responseAPI, 200, preferencesResponse);
 				} else
@@ -124,26 +127,54 @@ public class PreferencesController {
 			} else
 				handlerUser.handleDetailMessages(responseAPI, 404, null);
 
-			LOGGER.info(" :: Encerrando o método /api/preferences/detail - 200 - OK :: ");
+			LOGGER.info(" :: Encerrando o método /api/preferences/detail/guid - 200 - OK :: ");
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			LOGGER.error(" :: Encerrando o método /api/preferences/detail - 400 - BAD REQUEST :: ");
+			LOGGER.error(" :: Encerrando o método /api/preferences/detail/guid - 400 - BAD REQUEST :: ");
 			handlerPreferences.handleDetailMessages(responseAPI, 400, null);
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
-
+	
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/preferences/delete", method = RequestMethod.DELETE)
-	public ResponseEntity<ResponseAPI> delete(@RequestHeader(value = "token") String token) {
+	@RequestMapping(value = "/api/preferences/list", method = RequestMethod.GET)
+	public ResponseEntity<ResponseAPI> list(@RequestHeader(value = "token") String token) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 
 		try {
 			User user = tokenService.getByToken(token).getUser();
 			if (user != null) {
-				Preferences preferences = preferencesService.getByUserGuid(user.getGuid());
+				List<PreferencesResponse> preferencesResponse = preferencesConverter
+						.preferencesToResponseList(preferencesService.getByUserGuid(user.getGuid()));
+				if (preferencesResponse != null) {
+					handlerPreferences.handleDetailMessages(responseAPI, 200, preferencesResponse);
+				} else
+					handlerPreferences.handleDetailMessages(responseAPI, 404, null);
+			} else
+				handlerUser.handleDetailMessages(responseAPI, 404, null);
+
+			LOGGER.info(" :: Encerrando o método /api/preferences/list - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/preferences/list - 400 - BAD REQUEST :: ");
+			handlerPreferences.handleDetailMessages(responseAPI, 400, null);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/api/preferences/delete/guid/{guid}", method = RequestMethod.DELETE)
+	public ResponseEntity<ResponseAPI> delete(@RequestHeader(value = "token") String token, @PathVariable String guid) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			User user = tokenService.getByToken(token).getUser();
+			if (user != null) {
+				Preferences preferences = preferencesService.getByGuid(guid);
 				if (preferences != null) {
 					preferencesService.delete(preferences);
 					handlerPreferences.handleDeleteMessages(responseAPI, 200);
@@ -152,11 +183,11 @@ public class PreferencesController {
 			} else
 				handlerUser.handleDetailMessages(responseAPI, 404, null);
 
-			LOGGER.info(" :: Encerrando o método /api/preferences/delete - 200 - OK :: ");
+			LOGGER.info(" :: Encerrando o método /api/preferences/delete/guid - 200 - OK :: ");
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			LOGGER.error(" :: Encerrando o método /api/preferences/delete - 400 - BAD REQUEST :: ");
+			LOGGER.error(" :: Encerrando o método /api/preferences/delete/guid - 400 - BAD REQUEST :: ");
 			handlerPreferences.handleDeleteMessages(responseAPI, 400);
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
