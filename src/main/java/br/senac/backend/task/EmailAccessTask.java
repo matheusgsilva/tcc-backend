@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import br.senac.backend.model.Company;
 
 @Component
-public class EmailTask implements Runnable {
+public class EmailAccessTask implements Runnable {
 
 	@Autowired
 	private JavaMailSender javaMailSender;

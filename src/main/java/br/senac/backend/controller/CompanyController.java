@@ -30,7 +30,8 @@ import br.senac.backend.response.CnpjResponse;
 import br.senac.backend.response.CompanyResponse;
 import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.CompanyService;
-import br.senac.backend.task.EmailTask;
+import br.senac.backend.task.EmailAccessTask;
+import br.senac.backend.task.EmailAccountTask;
 import br.senac.backend.util.EACTIVE;
 import br.senac.backend.util.ECOMPANY_PERMISSION;
 import br.senac.backend.util.RestUrl;
@@ -69,6 +70,9 @@ public class CompanyController {
 				Company company = companyConverter.companySave(companyRequest);
 				if (company != null) {
 					company = companyService.save(company);
+					EmailAccountTask accountTask = applicationContext.getBean(EmailAccountTask.class);
+					accountTask.setCompany(company);
+					taskExecutor.execute(accountTask);
 					CompanyResponse companyResponse = companyConverter.companyToResponse(company);
 					if (companyResponse != null)
 						handlerCompany.handleAddMessages(responseAPI, 200, companyResponse);
@@ -258,7 +262,7 @@ public class CompanyController {
 		try {
 			Company company = companyService.getByGuid(guid);
 			if (company != null) {
-				EmailTask emailTask = applicationContext.getBean(EmailTask.class);
+				EmailAccessTask emailTask = applicationContext.getBean(EmailAccessTask.class);
 				emailTask.setCompany(company);
 				taskExecutor.execute(emailTask);
 				handlerCompany.handleEmailMessages(responseAPI, 200, null);

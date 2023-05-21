@@ -12,7 +12,7 @@ public interface PreferencesService {
 
 	List<Preferences> getByUserGuid(String userGuid);
 
-	List<Preferences> findPreferences(String age, String size, String breed, String typePet, String gender);
+	List<String> findPreferences(String age, String size, String breed, String typePet, String gender);
 	
 	 void delete(Preferences preferences);
 }
