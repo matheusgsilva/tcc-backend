@@ -19,10 +19,10 @@ public interface PreferencesRepository extends PagingAndSortingRepository<Prefer
 	Preferences getByGuid(@Param("guid") String guid);
 
 	@Query("SELECT p from Preferences p WHERE ((:age is null or p.age LIKE CONCAT('%',:age,'%')) "
-			+ "and (:size is null or p.size LIKE CONCAT('%',:size,'%')) "
-			+ "and (:breed is null or p.breed LIKE CONCAT('%',:breed,'%')) "
-			+ "and (:typePet is null or p.typePet LIKE CONCAT('%',:typePet,'%')) "
-			+ "and (:gender is null or p.gender LIKE CONCAT('%',:gender,'%')))")
+			+ "or (:size is null or p.size LIKE CONCAT('%',:size,'%')) "
+			+ "or (:breed is null or p.breed LIKE CONCAT('%',:breed,'%')) "
+			+ "or (:gender is null or p.gender LIKE CONCAT('%',:gender,'%'))) "
+			+ "and (:typePet is null or p.typePet LIKE CONCAT('%',:typePet,'%'))")
 	List<Preferences> findPreferences(@Param("age") String age, @Param("size") String size,
 			@Param("breed") String breed, @Param("typePet") String typePet, @Param("gender") String gender);
 }

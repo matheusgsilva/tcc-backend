@@ -1,11 +1,11 @@
-2023-05-03 21:06:43.258  INFO 13996 --- [main] br.senac.backend.BackendApplication      : Starting BackendApplication using Java 15.0.2 on DESKTOP-V54UVG9 with PID 13996 (C:\Users\Desktop\Desktop\GIT\tcc-backend\target\classes started by Desktop in C:\Users\Desktop\Desktop\GIT\tcc-backend)
-2023-05-03 21:06:43.264  INFO 13996 --- [main] br.senac.backend.BackendApplication      : The following profiles are active: dev
-2023-05-03 21:06:44.007  INFO 13996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-05-03 21:06:44.085  INFO 13996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 8 JPA repository interfaces.
-2023-05-03 21:06:44.515  INFO 13996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9595 (http)
-2023-05-03 21:06:44.524  INFO 13996 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-05-03 21:06:44.524  INFO 13996 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
-2023-05-03 21:06:44.755  WARN 13996 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-utils.jar] from classloader hierarchy
+2023-05-21 08:38:45.136  INFO 8744 --- [main] br.senac.backend.BackendApplication      : Starting BackendApplication using Java 15.0.2 on DESKTOP-V54UVG9 with PID 8744 (C:\Users\Desktop\Desktop\GIT\tcc-backend\target\classes started by Desktop in C:\Users\Desktop\Desktop\GIT\tcc-backend)
+2023-05-21 08:38:45.142  INFO 8744 --- [main] br.senac.backend.BackendApplication      : The following profiles are active: dev
+2023-05-21 08:38:45.861  INFO 8744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-21 08:38:45.936  INFO 8744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 7 JPA repository interfaces.
+2023-05-21 08:38:46.372  INFO 8744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9595 (http)
+2023-05-21 08:38:46.381  INFO 8744 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-21 08:38:46.382  INFO 8744 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2023-05-21 08:38:46.618  WARN 8744 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-utils.jar] from classloader hierarchy
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -57,7 +57,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
-	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
@@ -78,7 +78,7 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
 	... 52 common frames omitted
 
-2023-05-03 21:06:44.757  WARN 13996 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/jakarta.annotation-api.jar] from classloader hierarchy
+2023-05-21 08:38:46.620  WARN 8744 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/jakarta.annotation-api.jar] from classloader hierarchy
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -130,7 +130,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
-	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
@@ -151,7 +151,7 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
 	... 52 common frames omitted
 
-2023-05-03 21:06:44.759  WARN 13996 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/jakarta.inject.jar] from classloader hierarchy
+2023-05-21 08:38:46.621  WARN 8744 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/jakarta.inject.jar] from classloader hierarchy
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -203,7 +203,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
-	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
@@ -224,7 +224,7 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
 	... 52 common frames omitted
 
-2023-05-03 21:06:44.760  WARN 13996 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-api.jar] from classloader hierarchy
+2023-05-21 08:38:46.623  WARN 8744 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-api.jar] from classloader hierarchy
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -276,7 +276,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
-	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
@@ -297,7 +297,7 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
 	... 52 common frames omitted
 
-2023-05-03 21:06:44.762  WARN 13996 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-core.jar] from classloader hierarchy
+2023-05-21 08:38:46.624  WARN 8744 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-core.jar] from classloader hierarchy
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -349,7 +349,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
-	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
@@ -370,7 +370,7 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
 	... 52 common frames omitted
 
-2023-05-03 21:06:44.764  WARN 13996 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-locator.jar] from classloader hierarchy
+2023-05-21 08:38:46.625  WARN 8744 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-locator.jar] from classloader hierarchy
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -422,7 +422,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
-	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
@@ -443,7 +443,7 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
 	... 52 common frames omitted
 
-2023-05-03 21:06:44.765  WARN 13996 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/javassist.jar] from classloader hierarchy
+2023-05-21 08:38:46.627  WARN 8744 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/javassist.jar] from classloader hierarchy
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -495,7 +495,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
-	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
@@ -516,7 +516,7 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
 	... 52 common frames omitted
 
-2023-05-03 21:06:44.767  WARN 13996 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-runlevel.jar] from classloader hierarchy
+2023-05-21 08:38:46.629  WARN 8744 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-runlevel.jar] from classloader hierarchy
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -568,7 +568,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
-	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
@@ -589,7 +589,7 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
 	... 52 common frames omitted
 
-2023-05-03 21:06:44.768  WARN 13996 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/class-model.jar] from classloader hierarchy
+2023-05-21 08:38:46.630  WARN 8744 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/class-model.jar] from classloader hierarchy
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -641,7 +641,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
-	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
@@ -662,7 +662,7 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
 	... 52 common frames omitted
 
-2023-05-03 21:06:44.770  WARN 13996 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/asm.jar] from classloader hierarchy
+2023-05-21 08:38:46.632  WARN 8744 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/asm.jar] from classloader hierarchy
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -714,7 +714,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
-	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
@@ -735,45 +735,34 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
 	... 52 common frames omitted
 
-2023-05-03 21:06:44.772  INFO 13996 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2023-05-03 21:06:44.779  INFO 13996 --- [main] o.a.c.c.C.[.[localhost].[/backend]       : Initializing Spring embedded WebApplicationContext
-2023-05-03 21:06:44.779  INFO 13996 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1476 ms
-2023-05-03 21:06:44.915  INFO 13996 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-05-03 21:06:44.968  INFO 13996 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
-2023-05-03 21:06:45.109  INFO 13996 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-05-03 21:06:45.210  INFO 13996 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-05-03 21:06:45.353  INFO 13996 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-05-03 21:06:45.380  INFO 13996 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2023-05-03 21:06:46.194  INFO 13996 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-05-03 21:06:46.201  INFO 13996 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-05-03 21:06:46.556  WARN 13996 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-05-03 21:06:46.660  INFO 13996 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
-2023-05-03 21:06:46.661  INFO 13996 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'threadPoolTaskExecutor'
-2023-05-03 21:06:47.068  INFO 13996 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@27381497, org.springframework.security.web.context.SecurityContextPersistenceFilter@6dae5562, org.springframework.security.web.header.HeaderWriterFilter@44872224, org.springframework.security.web.authentication.logout.LogoutFilter@7314f4cb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ec28534, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67d6bb59, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@282c0891, org.springframework.security.web.session.SessionManagementFilter@1d09fb8e, org.springframework.security.web.access.ExceptionTranslationFilter@461c0572, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d9295e2]
-2023-05-03 21:06:47.083  INFO 13996 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-05-03 21:06:47.322  INFO 13996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9595 (http) with context path '/backend'
-2023-05-03 21:06:47.322  INFO 13996 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2023-05-03 21:06:47.340  INFO 13996 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2023-05-03 21:06:47.364  INFO 13996 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2023-05-03 21:06:47.460  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
-2023-05-03 21:06:47.490  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_2
-2023-05-03 21:06:47.493  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_1
-2023-05-03 21:06:47.501  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_2
-2023-05-03 21:06:47.508  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_3
-2023-05-03 21:06:47.511  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_1
-2023-05-03 21:06:47.512  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_1
-2023-05-03 21:06:47.522  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_1
-2023-05-03 21:06:47.527  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_4
-2023-05-03 21:06:47.529  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_2
-2023-05-03 21:06:47.534  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_3
-2023-05-03 21:06:47.536  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_2
-2023-05-03 21:06:47.540  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_3
-2023-05-03 21:06:47.542  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_2
-2023-05-03 21:06:47.544  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_4
-2023-05-03 21:06:47.554  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_5
-2023-05-03 21:06:47.555  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_4
-2023-05-03 21:06:47.557  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_3
-2023-05-03 21:06:47.558  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_5
-2023-05-03 21:06:47.561  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_3
-2023-05-03 21:06:47.563  INFO 13996 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updatePassUsingPOST_1
-2023-05-03 21:06:47.576  INFO 13996 --- [main] br.senac.backend.BackendApplication      : Started BackendApplication in 4.638 seconds (JVM running for 5.506)
+2023-05-21 08:38:46.634  INFO 8744 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-05-21 08:38:46.641  INFO 8744 --- [main] o.a.c.c.C.[.[localhost].[/backend]       : Initializing Spring embedded WebApplicationContext
+2023-05-21 08:38:46.641  INFO 8744 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1466 ms
+2023-05-21 08:38:46.768  INFO 8744 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-21 08:38:46.808  INFO 8744 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2023-05-21 08:38:46.949  INFO 8744 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-21 08:38:47.038  INFO 8744 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-21 08:38:47.223  INFO 8744 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-21 08:38:47.252  INFO 8744 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-21 08:38:48.055  INFO 8744 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-21 08:38:48.063  INFO 8744 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-21 08:38:48.411  WARN 8744 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-21 08:38:48.516  INFO 8744 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2023-05-21 08:38:48.517  INFO 8744 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'threadPoolTaskExecutor'
+2023-05-21 08:38:48.921  INFO 8744 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@79408109, org.springframework.security.web.context.SecurityContextPersistenceFilter@2b592f17, org.springframework.security.web.header.HeaderWriterFilter@4f8488ef, org.springframework.security.web.authentication.logout.LogoutFilter@514eefc4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@46c7c593, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@75707f05, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@33671907, org.springframework.security.web.session.SessionManagementFilter@4587675c, org.springframework.security.web.access.ExceptionTranslationFilter@3b09582d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@10bae3c0]
+2023-05-21 08:38:48.935  INFO 8744 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-05-21 08:38:49.179  INFO 8744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9595 (http) with context path '/backend'
+2023-05-21 08:38:49.180  INFO 8744 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-05-21 08:38:49.198  INFO 8744 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-05-21 08:38:49.222  INFO 8744 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-05-21 08:38:49.322  INFO 8744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-05-21 08:38:49.351  INFO 8744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_2
+2023-05-21 08:38:49.354  INFO 8744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_1
+2023-05-21 08:38:49.367  INFO 8744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_3
+2023-05-21 08:38:49.369  INFO 8744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_1
+2023-05-21 08:38:49.372  INFO 8744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_1
+2023-05-21 08:38:49.382  INFO 8744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_1
+2023-05-21 08:38:49.387  INFO 8744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_4
+2023-05-21 08:38:49.390  INFO 8744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_2
+2023-05-21 08:38:49.394  INFO 8744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_2
+2023-05-21 08:38:49.397  INFO 8744 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_2
