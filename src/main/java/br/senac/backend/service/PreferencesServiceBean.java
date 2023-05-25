@@ -24,6 +24,14 @@ public class PreferencesServiceBean implements PreferencesService {
 		return preferencesRepository.getByUserGuid(userGuid);
 	}
 	
+	public Boolean isExists(String gender, String typePet, String breed) {
+		return preferencesRepository.isExists(gender, typePet, breed);
+	}
+	
+	public Boolean isExists(String gender, String typePet, String breed, String guid) {
+		return preferencesRepository.isExists(gender, typePet, breed, guid);
+	}
+	
 	public Preferences getByGuid(String userGuid) {
 		return preferencesRepository.getByGuid(userGuid);
 	}

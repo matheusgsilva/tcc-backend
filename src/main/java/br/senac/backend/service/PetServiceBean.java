@@ -28,6 +28,10 @@ public class PetServiceBean implements PetService {
 	public List<Pet> getByCompanyGuid(String companyGuid) {
 		return repository.getByCompanyGuid(companyGuid);
 	}
+	
+	public Boolean isExists(String size, String breed, String typePet, String gender) {
+		return repository.isExists(size, breed, typePet, gender);
+	}
 
 	public List<Pet> getAllFilteredCompany(String description, String size, String breed, String typePet, String city,
 			String district, String companyGuid, String gender) {

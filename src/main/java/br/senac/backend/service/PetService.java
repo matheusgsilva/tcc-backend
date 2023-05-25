@@ -18,4 +18,6 @@ public interface PetService {
 			String district, String companyGuid, String gender);
 
 	void delete(Pet pet);
+	
+	Boolean isExists(String size, String breed, String typePet, String gender);
 }

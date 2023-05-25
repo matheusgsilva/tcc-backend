@@ -8,6 +8,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import br.senac.backend.model.Pet;
+import br.senac.backend.model.Preferences;
 
 @Service
 public class NotificationServiceBean implements NotificationService {
@@ -33,6 +34,24 @@ public class NotificationServiceBean implements NotificationService {
 					msg.setSubject("Alerta de Novos Pets - 4PET");
 					msg.setText(
 							"Foi encontrado um Pet de acordo com suas preferências.\nAcesse já o aplicativo!\nAtenciosamente,\nEquipe 4PET.");
+					javaMailSender.send(msg);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void makeNotificationPreferences(String preferencesGuid, String email) {
+		try {
+			Preferences preferences = preferencesService.getByGuid(preferencesGuid);
+			if (preferences != null) {
+				if (petService.isExists(preferences.getSize(), preferences.getBreed(), preferences.getTypePet(), preferences.getGender())) {
+					SimpleMailMessage msg = new SimpleMailMessage();
+					msg.setTo(email);
+					msg.setSubject("Alerta de Novos Pets - 4PET");
+					msg.setText(
+							"Foi encontrado Pets de acordo com as preferências criadas.\nAcesse já o aplicativo!\nAtenciosamente,\nEquipe 4PET.");
 					javaMailSender.send(msg);
 				}
 			}

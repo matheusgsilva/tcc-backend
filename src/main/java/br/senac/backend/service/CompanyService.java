@@ -9,6 +9,10 @@ public interface CompanyService {
 	Company getByGuid(String guid);
 	
 	List<Company> getAll();
+	
+	List<String> getNames();
+	
+	List<String> getCities();
 
 	Company save(Company company);
 

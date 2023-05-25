@@ -26,6 +26,14 @@ public class CompanyServiceBean implements CompanyService {
 		return repository.getByEmail(email);
 	}
 	
+	public List<String> getNames() {
+		return repository.getNames();
+	}
+	
+	public List<String> getCities() {
+		return repository.getCities();
+	}
+	
 	public List<Company> getAll() {
 		List<Company> listByClassinfications = repository.getAllByClassification();
 		List<Company> list = repository.getAll();

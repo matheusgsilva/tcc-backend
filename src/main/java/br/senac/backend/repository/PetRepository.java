@@ -40,6 +40,14 @@ public interface PetRepository extends PagingAndSortingRepository<Pet, Long> {
 	List<Pet> getAllFilteredCompany(@Param("description") String description, @Param("size") String size,
 			@Param("breed") String breed, @Param("typePet") String typePet, @Param("city") String city,
 			@Param("district") String district, @Param("companyGuid") String companyGuid, @Param("gender") String gender);
+	
+	@Query("SELECT CASE WHEN (COUNT(p) > 0) THEN true ELSE false END FROM Pet p WHERE "
+			+ "((:size is null or p.size LIKE CONCAT('%',:size,'%')) "
+			+ "or (:breed is null or p.breed LIKE CONCAT('%',:breed,'%')) "
+			+ "or (:gender is null or p.gender LIKE CONCAT('%',:gender,'%'))) "
+			+ "and (:typePet is null or p.typePet LIKE CONCAT('%',:typePet,'%')) and p.active = 0")
+	Boolean isExists(@Param("size") String size, @Param("breed") String breed, @Param("typePet") String typePet,
+			@Param("gender") String gender);
 
 	@Query("SELECT c from Pet c WHERE c.active = 0 and c.company.active = 0")
 	List<Pet> getAllUnfiltered();

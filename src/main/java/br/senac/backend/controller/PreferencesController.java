@@ -5,6 +5,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -25,6 +27,7 @@ import br.senac.backend.response.PreferencesResponse;
 import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.PreferencesService;
 import br.senac.backend.service.TokenService;
+import br.senac.backend.task.NotificationPreferencesTask;
 
 @Controller
 public class PreferencesController {
@@ -43,6 +46,12 @@ public class PreferencesController {
 
 	@Autowired
 	private PreferencesConverter preferencesConverter;
+	
+	@Autowired
+	private ApplicationContext applicationContext;
+
+	@Autowired
+	private TaskExecutor taskExecutor;
 
 	private Logger LOGGER = LoggerFactory.getLogger(PreferencesController.class);
 
@@ -56,12 +65,20 @@ public class PreferencesController {
 		try {
 			User user = tokenService.getByToken(token).getUser();
 			if (user != null) {
-				PreferencesResponse preferencesResponse = preferencesConverter.preferencesToResponse(
-						preferencesService.save(preferencesConverter.preferencesSave(preferencesRequest, user)));
-				if (preferencesResponse != null)
-					handlerPreferences.handleAddMessages(responseAPI, 200, preferencesResponse);
-				else
-					handlerPreferences.handleAddMessages(responseAPI, 404, null);
+				if (!preferencesService.isExists(preferencesRequest.getGender(), preferencesRequest.getTypePet(),
+						preferencesRequest.getBreed())) {
+					PreferencesResponse preferencesResponse = preferencesConverter.preferencesToResponse(
+							preferencesService.save(preferencesConverter.preferencesSave(preferencesRequest, user)));
+					if (preferencesResponse != null) {
+						NotificationPreferencesTask notificationPreferencesTask = applicationContext.getBean(NotificationPreferencesTask.class);
+						notificationPreferencesTask.setPreferencesGuid(preferencesResponse.getGuid());
+						notificationPreferencesTask.setEmail(user.getEmail());
+						taskExecutor.execute(notificationPreferencesTask);
+						handlerPreferences.handleAddMessages(responseAPI, 200, preferencesResponse);
+					}else
+						handlerPreferences.handleAddMessages(responseAPI, 404, null);
+				} else
+					handlerPreferences.handleAddMessages(responseAPI, 304, null);
 			} else
 				handlerUser.handleDetailMessages(responseAPI, 404, null);
 
@@ -87,13 +104,17 @@ public class PreferencesController {
 			if (user != null) {
 				Preferences preferences = preferencesService.getByGuid(guid);
 				if (preferences != null) {
-					PreferencesResponse preferencesResponse = preferencesConverter
-							.preferencesToResponse(preferencesService
-									.save(preferencesConverter.preferencesUpdate(preferencesRequest, preferences)));
-					if (preferencesResponse != null)
-						handlerPreferences.handleUpdateMessages(responseAPI, 200, preferencesResponse);
-					else
-						handlerPreferences.handleUpdateMessages(responseAPI, 404, null);
+					if (!preferencesService.isExists(preferencesRequest.getGender(), preferencesRequest.getTypePet(),
+							preferencesRequest.getBreed(), guid)) {
+						PreferencesResponse preferencesResponse = preferencesConverter
+								.preferencesToResponse(preferencesService
+										.save(preferencesConverter.preferencesUpdate(preferencesRequest, preferences)));
+						if (preferencesResponse != null)
+							handlerPreferences.handleUpdateMessages(responseAPI, 200, preferencesResponse);
+						else
+							handlerPreferences.handleUpdateMessages(responseAPI, 404, null);
+					} else
+						handlerPreferences.handleUpdateMessages(responseAPI, 304, null);
 				} else
 					handlerPreferences.handleUpdateMessages(responseAPI, 404, null);
 			} else
@@ -136,7 +157,7 @@ public class PreferencesController {
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/api/preferences/list", method = RequestMethod.GET)
 	public ResponseEntity<ResponseAPI> list(@RequestHeader(value = "token") String token) {
