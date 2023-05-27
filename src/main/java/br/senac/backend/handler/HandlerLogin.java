@@ -14,6 +14,10 @@ public class HandlerLogin {
 			response.setCode(200);
 			response.setData(model);
 			response.setMsg("SUCCESSFULLY_LOGGED_IN");
+		} else if (code == 403) {
+			response.setCode(403);
+			response.setData(null);
+			response.setMsg("USER_NOT_AUTHORIZED");
 		} else if (code == 404) {
 			response.setCode(404);
 			response.setData(null);

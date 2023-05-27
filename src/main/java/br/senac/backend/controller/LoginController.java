@@ -74,6 +74,10 @@ public class LoginController {
 				handlerLogin.handleLoginMessages(responseAPI, 200, login);
 				LOGGER.info(" :: Encerrando o método logon - 200 - OK :: ");
 				return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+			} else if(company != null && company.getPermission().equals(ECOMPANY_PERMISSION.UNAUTHORIZED)) {
+				handlerLogin.handleLoginMessages(responseAPI, 403, login);
+				LOGGER.info(" :: Encerrando o método logon - 403 - OK :: ");
+				return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
 			}
 
 			LOGGER.info(" :: Encerrando o método logon - 401 - UNAUTHORIZED :: ");

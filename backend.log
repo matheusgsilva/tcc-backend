@@ -7046,3 +7046,14 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 2023-05-24 21:33:54.977  INFO 4312 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_4
 2023-05-24 21:33:54.979  INFO 4312 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_2
 2023-05-24 21:33:54.983  INFO 4312 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_2
+2023-05-24 21:33:54.985  INFO 4312 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_2
+2023-05-24 21:33:54.990  INFO 4312 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_3
+2023-05-24 21:33:54.992  INFO 4312 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_2
+2023-05-24 21:33:54.993  INFO 4312 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_3
+2023-05-24 21:33:55.002  INFO 4312 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_5
+2023-05-24 21:33:55.004  INFO 4312 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_4
+2023-05-24 21:33:55.006  INFO 4312 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_3
+2023-05-24 21:33:55.007  INFO 4312 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_4
+2023-05-24 21:33:55.009  INFO 4312 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_3
+2023-05-24 21:33:55.011  INFO 4312 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updatePassUsingPOST_1
+2023-05-24 21:33:55.024  INFO 4312 --- [main] br.senac.backend.BackendApplication      : Started BackendApplication in 4.233 seconds (JVM running for 4.939)
