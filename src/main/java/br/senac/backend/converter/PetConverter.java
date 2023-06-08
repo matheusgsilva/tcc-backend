@@ -29,7 +29,7 @@ public class PetConverter {
 				return null;
 
 			Pet pet = new Pet();
-			pet.setAge(petRequest.getAge());
+			pet.setBirthDate(petRequest.getBirthDate());
 			pet.setBreed(petRequest.getBreed());
 			pet.setDescription(petRequest.getDescription());
 			pet.setGuid(UUID.randomUUID().toString());
@@ -54,7 +54,7 @@ public class PetConverter {
 	public Pet petUpdate(PetRequest petRequest, Pet pet) {
 
 		try {
-			pet.setAge(petRequest.getAge());
+			pet.setBirthDate(petRequest.getBirthDate());
 			pet.setBreed(petRequest.getBreed());
 			pet.setDescription(petRequest.getDescription());
 			pet.setColor(petRequest.getColor());
@@ -77,7 +77,7 @@ public class PetConverter {
 
 		try {
 			PetResponse petResponse = new PetResponse();
-			petResponse.setAge(pet.getAge());
+			petResponse.setBirthDate(pet.getBirthDate());
 			petResponse.setBreed(pet.getBreed());
 			petResponse.setDescription(pet.getDescription());
 			petResponse.setGuid(pet.getGuid());
@@ -106,7 +106,7 @@ public class PetConverter {
 
 		try {
 			PetResponse petResponse = new PetResponse();
-			petResponse.setAge(pet.getAge());
+			petResponse.setBirthDate(pet.getBirthDate());
 			petResponse.setBreed(pet.getBreed());
 			petResponse.setDescription(pet.getDescription());
 			petResponse.setGuid(pet.getGuid());
@@ -139,7 +139,7 @@ public class PetConverter {
 			List<PetResponse> list = new ArrayList<PetResponse>();
 			for (Pet pet : pets) {
 				PetResponse petResponse = new PetResponse();
-				petResponse.setAge(pet.getAge());
+				petResponse.setBirthDate(pet.getBirthDate());
 				petResponse.setBreed(pet.getBreed());
 				petResponse.setDescription(pet.getDescription());
 				petResponse.setGuid(pet.getGuid());

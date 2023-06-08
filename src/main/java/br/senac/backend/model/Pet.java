@@ -1,6 +1,7 @@
 package br.senac.backend.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +14,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -26,7 +29,6 @@ import br.senac.backend.util.EACTIVE;
 @Table(name = "PETS", indexes = { @Index(name = "GUID_INDEX", columnList = "guid", unique = true),
 		@Index(name = "TYPE_PET_INDEX", columnList = "typePet", unique = false),
 		@Index(name = "SIZE_INDEX", columnList = "size", unique = false),
-		@Index(name = "AGE_INDEX", columnList = "age", unique = false),
 		@Index(name = "BREED_INDEX", columnList = "breed", unique = false),
 		@Index(name = "GENDER_INDEX", columnList = "gender", unique = false) })
 @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
@@ -50,8 +52,8 @@ public class Pet implements Serializable {
 	@Column(columnDefinition = "VARCHAR(30)", nullable = true)
 	private String size;
 
-	@Column(columnDefinition = "VARCHAR(30)", nullable = true)
-	private String age;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date birthDate;
 
 	@Column(columnDefinition = "VARCHAR(50)", nullable = true)
 	private String breed;
@@ -118,12 +120,12 @@ public class Pet implements Serializable {
 		this.size = size;
 	}
 
-	public String getAge() {
-		return age;
+	public Date getBirthDate() {
+		return birthDate;
 	}
 
-	public void setAge(String age) {
-		this.age = age;
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
 	}
 
 	public String getBreed() {

@@ -26,7 +26,7 @@ public class NotificationServiceBean implements NotificationService {
 		try {
 			Pet pet = petService.getByGuid(petGuid);
 			if (pet != null) {
-				List<String> emails = preferencesService.findPreferences(pet.getAge(), pet.getSize(), pet.getBreed(),
+				List<String> emails = preferencesService.findPreferences(pet.getSize(), pet.getBreed(),
 						pet.getTypePet(), pet.getGender());
 				for (String email : emails) {
 					SimpleMailMessage msg = new SimpleMailMessage();

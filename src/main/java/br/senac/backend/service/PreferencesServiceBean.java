@@ -36,8 +36,8 @@ public class PreferencesServiceBean implements PreferencesService {
 		return preferencesRepository.getByGuid(userGuid);
 	}
 	
-	public List<String> findPreferences(String age, String size, String breed, String typePet, String gender) {
-		return preferencesRepository.findPreferences(age, size, breed, typePet, gender);
+	public List<String> findPreferences(String size, String breed, String typePet, String gender) {
+		return preferencesRepository.findPreferences(size, breed, typePet, gender);
 	}
 	
 	@Transactional
