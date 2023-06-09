@@ -27,6 +27,7 @@ import br.senac.backend.model.Rating;
 import br.senac.backend.model.User;
 import br.senac.backend.request.RatingEmailRequest;
 import br.senac.backend.request.RatingRequest;
+import br.senac.backend.response.AverageRatingResponse;
 import br.senac.backend.response.RatingResponse;
 import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.CompanyService;
@@ -58,7 +59,7 @@ public class RatingController {
 
 	@Autowired
 	private RatingConverter ratingConverter;
-	
+
 	@Value("${url.rating}")
 	private String url;
 
@@ -183,6 +184,31 @@ public class RatingController {
 			ex.printStackTrace();
 			LOGGER.error(" :: Encerrando o método /api/rating/list/companyguid - 400 - BAD REQUEST :: ");
 			handlerRating.handleListMessages(responseAPI, 400, null);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/api/rating/average/companyguid/{companyguid}", method = RequestMethod.GET)
+	public ResponseEntity<ResponseAPI> average(@RequestHeader(value = "token") String token,
+			@PathVariable String companyguid) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			AverageRatingResponse averageRatingResponse = ratingConverter
+					.ratingAverageToResponse(ratingService.getByCompanyGuid(companyguid));
+			if (averageRatingResponse != null)
+				handlerRating.handleDetailMessages(responseAPI, 200, averageRatingResponse);
+			else
+				handlerRating.handleDetailMessages(responseAPI, 404, null);
+
+			LOGGER.info(" :: Encerrando o método /api/rating/average/companyguid - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/rating/average/companyguid - 400 - BAD REQUEST :: ");
+			handlerRating.handleDetailMessages(responseAPI, 400, null);
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}

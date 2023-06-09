@@ -11,6 +11,7 @@ import br.senac.backend.model.Company;
 import br.senac.backend.model.Rating;
 import br.senac.backend.model.User;
 import br.senac.backend.request.RatingRequest;
+import br.senac.backend.response.AverageRatingResponse;
 import br.senac.backend.response.RatingResponse;
 import br.senac.backend.util.EACTIVE;
 
@@ -88,6 +89,28 @@ public class RatingConverter {
 				list.add(ratingResponse);
 			}
 			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public AverageRatingResponse ratingAverageToResponse(List<Rating> ratings) {
+
+		try {
+			AverageRatingResponse averageRatingResponse = new AverageRatingResponse();
+			if (ratings != null && !ratings.isEmpty()) {
+				averageRatingResponse.setAverage(String.format("%.1f", Double.valueOf("0")));
+			} else {
+				double sum = 0;
+				for (Rating rating : ratings) {
+					sum += rating.getClassification();
+				}
+				double average = sum / ratings.size();
+				double averageRounded = Math.round(average * 10.0) / 10.0;
+				averageRatingResponse.setAverage(String.format("%.1f", averageRounded));
+			}
+			return averageRatingResponse;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
