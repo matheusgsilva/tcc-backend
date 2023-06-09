@@ -1,12 +1,10 @@
 package br.senac.backend.request;
 
-import java.util.Date;
-
 public class PetRequest {
 
 	private String description;
 	private String size;
-	private Date birthDate;
+	private String birthDate;
 	private String breed;
 	private String vaccines;
 	private String color;
@@ -33,11 +31,11 @@ public class PetRequest {
 		this.size = size;
 	}
 
-	public Date getBirthDate() {
+	public String getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(Date birthDate) {
+	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
 

@@ -1,5 +1,9 @@
 package br.senac.backend.converter;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -27,9 +31,9 @@ public class PetConverter {
 			Company company = companyService.getByGuid(companyGuid);
 			if (company == null)
 				return null;
-
+			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 			Pet pet = new Pet();
-			pet.setBirthDate(petRequest.getBirthDate());
+			pet.setBirthDate(dateFormat.parse(petRequest.getBirthDate()));
 			pet.setBreed(petRequest.getBreed());
 			pet.setDescription(petRequest.getDescription());
 			pet.setGuid(UUID.randomUUID().toString());
@@ -54,7 +58,8 @@ public class PetConverter {
 	public Pet petUpdate(PetRequest petRequest, Pet pet) {
 
 		try {
-			pet.setBirthDate(petRequest.getBirthDate());
+			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+			pet.setBirthDate(dateFormat.parse(petRequest.getBirthDate()));
 			pet.setBreed(petRequest.getBreed());
 			pet.setDescription(petRequest.getDescription());
 			pet.setColor(petRequest.getColor());
@@ -76,8 +81,9 @@ public class PetConverter {
 	public PetResponse petToResponse(Pet pet) {
 
 		try {
+			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 			PetResponse petResponse = new PetResponse();
-			petResponse.setBirthDate(pet.getBirthDate());
+			petResponse.setBirthDate(dateFormat.format(pet.getBirthDate()));
 			petResponse.setBreed(pet.getBreed());
 			petResponse.setDescription(pet.getDescription());
 			petResponse.setGuid(pet.getGuid());
@@ -105,8 +111,9 @@ public class PetConverter {
 	public PetResponse petToResponse(Pet pet, User user) {
 
 		try {
+			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 			PetResponse petResponse = new PetResponse();
-			petResponse.setBirthDate(pet.getBirthDate());
+			petResponse.setBirthDate(dateFormat.format(pet.getBirthDate()));
 			petResponse.setBreed(pet.getBreed());
 			petResponse.setDescription(pet.getDescription());
 			petResponse.setGuid(pet.getGuid());
@@ -136,10 +143,23 @@ public class PetConverter {
 	public List<PetResponse> petsToResponseList(List<Pet> pets) {
 
 		try {
+			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 			List<PetResponse> list = new ArrayList<PetResponse>();
 			for (Pet pet : pets) {
 				PetResponse petResponse = new PetResponse();
-				petResponse.setBirthDate(pet.getBirthDate());
+				LocalDate birth = pet.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+				LocalDate now = LocalDate.now();
+				Period periodo = Period.between(birth, now);
+				int years = periodo.getYears();
+				int months = periodo.getMonths();
+				if (years != 0 && months != 0) {
+					petResponse.setAge((years > 1 ? years + " anos" : "1 ano") + (months > 1 ? " e " + months + " meses" : " e 1 mês"));
+		        } else if (years != 0) {
+		        	petResponse.setAge(years > 1 ? years + " anos" : "1 ano");
+		        } else {
+		        	petResponse.setAge(months > 1 ? months + " meses" : "1 mês");
+		        }
+				petResponse.setBirthDate(dateFormat.format(pet.getBirthDate()));
 				petResponse.setBreed(pet.getBreed());
 				petResponse.setDescription(pet.getDescription());
 				petResponse.setGuid(pet.getGuid());

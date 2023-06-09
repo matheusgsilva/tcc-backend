@@ -1,7 +1,5 @@
 package br.senac.backend.response;
 
-import java.util.Date;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -10,7 +8,8 @@ public class PetResponse {
 	private String guid;
 	private String description;
 	private String size;
-	private Date birthDate;
+	private String birthDate;
+	private String age;
 	private String breed;
 	private String vaccines;
 	private String color;
@@ -50,12 +49,20 @@ public class PetResponse {
 		this.size = size;
 	}
 
-	public Date getBirthDate() {
+	public String getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(Date birthDate) {
+	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
 	}
 
 	public String getBreed() {
