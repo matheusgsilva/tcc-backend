@@ -73,8 +73,8 @@ public class RatingController {
 
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/rating/save/companyguid/{companyguid}", method = RequestMethod.POST)
-	public ResponseEntity<ResponseAPI> save(@RequestHeader(value = "token") String token,
-			@PathVariable String companyguid, @RequestBody RatingRequest ratingRequest) {
+	public ResponseEntity<ResponseAPI> save(@PathVariable String companyguid,
+			@RequestBody RatingRequest ratingRequest) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 		try {
