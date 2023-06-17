@@ -23,4 +23,6 @@ public interface CompanyService {
 	Boolean isExists(String name, String email, String document, String guid);
 	
 	Company getByEmail(String email);
+	
+	Boolean isExists(String email);
 }

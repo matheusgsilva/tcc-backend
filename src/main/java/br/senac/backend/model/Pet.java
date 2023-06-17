@@ -67,6 +67,9 @@ public class Pet implements Serializable {
 	@Column(columnDefinition = "VARCHAR(200)", nullable = true)
 	private String color;
 
+	@Column(columnDefinition = "VARCHAR(10)")
+	private String identification;
+
 	@Lob
 	private String photo1;
 
@@ -214,6 +217,14 @@ public class Pet implements Serializable {
 
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+
+	public String getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(String identification) {
+		this.identification = identification;
 	}
 
 }

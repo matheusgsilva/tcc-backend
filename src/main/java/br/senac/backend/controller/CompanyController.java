@@ -31,6 +31,7 @@ import br.senac.backend.response.CnpjResponse;
 import br.senac.backend.response.CompanyResponse;
 import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.CompanyService;
+import br.senac.backend.service.UserService;
 import br.senac.backend.task.EmailAccessTask;
 import br.senac.backend.task.EmailAccountTask;
 import br.senac.backend.util.EACTIVE;
@@ -42,6 +43,9 @@ public class CompanyController {
 
 	@Autowired
 	private CompanyService companyService;
+
+	@Autowired
+	private UserService userService;
 
 	@Autowired
 	private HandlerCompany handlerCompany;
@@ -67,7 +71,7 @@ public class CompanyController {
 		ResponseAPI responseAPI = new ResponseAPI();
 		try {
 			if (!companyService.isExists(companyRequest.getName(), companyRequest.getEmail(),
-					companyRequest.getDocument())) {
+					companyRequest.getDocument()) && !userService.isExists(companyRequest.getEmail())) {
 				Company company = companyConverter.companySave(companyRequest);
 				if (company != null) {
 					company = companyService.save(company);
@@ -336,7 +340,7 @@ public class CompanyController {
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/company/detail/name/guid/{guid}", method = RequestMethod.GET)
 	public ResponseEntity<ResponseAPI> getNameByGuid(@PathVariable String guid) {
@@ -411,7 +415,7 @@ public class CompanyController {
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/api/company/list/name", method = RequestMethod.GET)
 	public ResponseEntity<ResponseAPI> listName(@RequestHeader(value = "token") String token) {
@@ -434,7 +438,7 @@ public class CompanyController {
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/api/company/list/city", method = RequestMethod.GET)
 	public ResponseEntity<ResponseAPI> listCity(@RequestHeader(value = "token") String token) {

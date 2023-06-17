@@ -6,6 +6,7 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +49,10 @@ public class PetConverter {
 			pet.setVaccines(petRequest.getVaccines());
 			pet.setTypePet(petRequest.getTypePet());
 			pet.setGender(petRequest.getGender());
+			pet.setIdentification(petRequest.getTypePet().equals("Cachorro") ? "CAO" + generateRandomNumber()
+					: petRequest.getTypePet().equals("Gato") ? "GAT" + generateRandomNumber()
+							: petRequest.getTypePet().equals("Passarinho") ? "PAS" + generateRandomNumber()
+									: "COE" + generateRandomNumber());
 			return pet;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -101,6 +106,7 @@ public class PetConverter {
 			petResponse.setPhoto4(pet.getPhoto4());
 			petResponse.setTypePet(pet.getTypePet());
 			petResponse.setGender(pet.getGender());
+			petResponse.setIdentification(pet.getIdentification());
 			return petResponse;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -131,6 +137,7 @@ public class PetConverter {
 			petResponse.setPhoto4(pet.getPhoto4());
 			petResponse.setTypePet(pet.getTypePet());
 			petResponse.setGender(pet.getGender());
+			petResponse.setIdentification(pet.getIdentification());
 			if (user != null)
 				petResponse.setIsFavorite(user.getFavoritePets().contains(pet));
 			return petResponse;
@@ -153,12 +160,13 @@ public class PetConverter {
 				int years = periodo.getYears();
 				int months = periodo.getMonths();
 				if (years != 0 && months != 0) {
-					petResponse.setAge((years > 1 ? years + " anos" : "1 ano") + (months > 1 ? " e " + months + " meses" : " e 1 mês"));
-		        } else if (years != 0) {
-		        	petResponse.setAge(years > 1 ? years + " anos" : "1 ano");
-		        } else {
-		        	petResponse.setAge(months > 1 ? months + " meses" : "1 mês");
-		        }
+					petResponse.setAge((years > 1 ? years + " anos" : "1 ano")
+							+ (months > 1 ? " e " + months + " meses" : " e 1 mês"));
+				} else if (years != 0) {
+					petResponse.setAge(years > 1 ? years + " anos" : "1 ano");
+				} else {
+					petResponse.setAge(months > 1 ? months + " meses" : "1 mês");
+				}
 				petResponse.setBirthDate(dateFormat.format(pet.getBirthDate()));
 				petResponse.setBreed(pet.getBreed());
 				petResponse.setDescription(pet.getDescription());
@@ -173,6 +181,7 @@ public class PetConverter {
 				petResponse.setPhoto1(pet.getPhoto1());
 				petResponse.setTypePet(pet.getTypePet());
 				petResponse.setGender(pet.getGender());
+				petResponse.setIdentification(pet.getIdentification());
 				list.add(petResponse);
 			}
 			return list;
@@ -180,5 +189,10 @@ public class PetConverter {
 			e.printStackTrace();
 			return null;
 		}
+	}
+
+	public static int generateRandomNumber() {
+		Random random = new Random();
+		return random.nextInt(9999999 - 1000000 + 1) + 1000000;
 	}
 }

@@ -24,6 +24,7 @@ public class PetResponse {
 	private String typePet;
 	private String gender;
 	private Boolean isFavorite;
+	private String identification;
 
 	public String getGuid() {
 		return guid;
@@ -175,6 +176,14 @@ public class PetResponse {
 
 	public void setIsFavorite(Boolean isFavorite) {
 		this.isFavorite = isFavorite;
+	}
+
+	public String getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(String identification) {
+		this.identification = identification;
 	}
 
 }

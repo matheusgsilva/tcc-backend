@@ -34,6 +34,9 @@ public interface CompanyRepository extends PagingAndSortingRepository<Company, L
 	
 	@Query("SELECT distinct c.city FROM Company c WHERE c.active = 0")
 	List<String> getCities();
+	
+	@Query("SELECT CASE WHEN (COUNT(u) > 0) THEN true ELSE false END FROM Company u WHERE u.email = :email and u.active = 0")
+	Boolean isExists( @Param("email") String email);
 
 	@Query("SELECT CASE WHEN (COUNT(u) > 0) THEN true ELSE false END FROM Company u WHERE (u.name = :name or u.document = :document or u.email = :email) and u.active = 0")
 	Boolean isExists(@Param("name") String name, @Param("document") String document, @Param("email") String email);

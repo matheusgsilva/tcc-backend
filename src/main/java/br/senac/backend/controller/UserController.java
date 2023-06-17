@@ -23,6 +23,7 @@ import br.senac.backend.request.UserRequest;
 import br.senac.backend.request.UpdatePassRequest;
 import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.response.UserResponse;
+import br.senac.backend.service.CompanyService;
 import br.senac.backend.service.UserService;
 import br.senac.backend.util.EACTIVE;
 
@@ -31,6 +32,9 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+
+	@Autowired
+	private CompanyService companyService;
 
 	@Autowired
 	private HandlerUser handlerUser;
@@ -46,14 +50,13 @@ public class UserController {
 
 		ResponseAPI responseAPI = new ResponseAPI();
 		try {
-			if (!userService.isExists(userRequest.getEmail())) {
+			if (!userService.isExists(userRequest.getEmail()) && !companyService.isExists(userRequest.getEmail())) {
 				UserResponse userResponse = userConverter
 						.userToResponse(userService.save(userConverter.userSave(userRequest)));
 				if (userResponse != null)
 					handlerUser.handleAddMessages(responseAPI, 200, userResponse);
 				else
 					handlerUser.handleAddMessages(responseAPI, 404, null);
-
 			} else
 				handlerUser.handleAddMessages(responseAPI, 304, null);
 
@@ -176,7 +179,7 @@ public class UserController {
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/api/user/list", method = RequestMethod.GET)
 	public ResponseEntity<ResponseAPI> list(@RequestHeader(value = "token") String token) {
