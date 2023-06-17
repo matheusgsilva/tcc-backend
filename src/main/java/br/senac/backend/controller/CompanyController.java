@@ -239,6 +239,9 @@ public class CompanyController {
 			if (company != null) {
 				company.setPermission(ECOMPANY_PERMISSION.AUTHORIZED);
 				company = companyService.save(company);
+				EmailAccessTask emailAccessTask = applicationContext.getBean(EmailAccessTask.class);
+				emailAccessTask.setCompany(company);
+				taskExecutor.execute(emailAccessTask);
 				CompanyResponse companyResponse = companyConverter.companyToResponse(company);
 				if (companyResponse != null)
 					handlerCompany.handleUpdateMessages(responseAPI, 200, companyResponse);
