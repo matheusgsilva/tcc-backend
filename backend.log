@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2023-06-17 09:48:22.893  INFO 2136 --- [main] br.senac.backend.BackendApplication      : Starting BackendApplication using Java 15.0.2 on DESKTOP-V54UVG9 with PID 2136 (C:\Users\Desktop\Desktop\GIT\tcc-backend\target\classes started by Desktop in C:\Users\Desktop\Desktop\GIT\tcc-backend)
 2023-06-17 09:48:22.900  INFO 2136 --- [main] br.senac.backend.BackendApplication      : The following profiles are active: dev
 2023-06-17 09:48:23.641  INFO 2136 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
@@ -6,6 +7,110 @@
 2023-06-17 09:48:24.153  INFO 2136 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 2023-06-17 09:48:24.153  INFO 2136 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
 2023-06-17 09:48:24.390  WARN 2136 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-utils.jar] from classloader hierarchy
+=======
+2023-06-16 18:31:04.442  INFO 15328 --- [main] b.senac.backend.BackendApplicationTests  : Starting BackendApplicationTests using Java 17.0.1 on DESKTOP-28NKPA9 with PID 15328 (started by mgds2 in C:\Users\mgds2\Desktop\tcc-backend)
+2023-06-16 18:31:04.442  INFO 15328 --- [main] b.senac.backend.BackendApplicationTests  : The following profiles are active: dev
+2023-06-16 18:31:06.316  INFO 15328 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-16 18:31:06.504  INFO 15328 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 176 ms. Found 7 JPA repository interfaces.
+2023-06-16 18:31:07.629  INFO 15328 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-16 18:31:07.800  INFO 15328 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2023-06-16 18:31:08.191  INFO 15328 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-16 18:31:08.550  INFO 15328 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-16 18:31:08.925  INFO 15328 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-16 18:31:08.988  INFO 15328 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-06-16 18:31:10.378  INFO 15328 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-16 18:31:10.394  INFO 15328 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-16 18:31:11.206  WARN 15328 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-16 18:31:11.503  INFO 15328 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2023-06-16 18:31:11.518  INFO 15328 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'threadPoolTaskExecutor'
+2023-06-16 18:31:12.815  INFO 15328 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7cddc50f, org.springframework.security.web.context.SecurityContextPersistenceFilter@4e773b8a, org.springframework.security.web.header.HeaderWriterFilter@4f466207, org.springframework.security.web.authentication.logout.LogoutFilter@5d1907fb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@490f2fad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74f9004c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1e60890c, org.springframework.security.web.session.SessionManagementFilter@4e6add8d, org.springframework.security.web.access.ExceptionTranslationFilter@1315d910, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@67e37d25]
+2023-06-16 18:31:12.893  INFO 15328 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-16 18:31:13.924  INFO 15328 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-16 18:31:13.971  INFO 15328 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-16 18:31:14.033  INFO 15328 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-16 18:31:14.236  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-06-16 18:31:14.283  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_2
+2023-06-16 18:31:14.299  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_1
+2023-06-16 18:31:14.315  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_3
+2023-06-16 18:31:14.315  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_1
+2023-06-16 18:31:14.315  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_1
+2023-06-16 18:31:14.346  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_1
+2023-06-16 18:31:14.346  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_4
+2023-06-16 18:31:14.346  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_2
+2023-06-16 18:31:14.346  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_2
+2023-06-16 18:31:14.361  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_2
+2023-06-16 18:31:14.361  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_3
+2023-06-16 18:31:14.377  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_2
+2023-06-16 18:31:14.377  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_3
+2023-06-16 18:31:14.393  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_5
+2023-06-16 18:31:14.393  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_4
+2023-06-16 18:31:14.393  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_3
+2023-06-16 18:31:14.393  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_4
+2023-06-16 18:31:14.408  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_3
+2023-06-16 18:31:14.408  INFO 15328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updatePassUsingPOST_1
+2023-06-16 18:31:14.439  INFO 15328 --- [main] b.senac.backend.BackendApplicationTests  : Started BackendApplicationTests in 10.513 seconds (JVM running for 28.27)
+2023-06-16 18:31:14.799  INFO 15328 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'threadPoolTaskExecutor'
+2023-06-16 18:31:14.814  INFO 15328 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-16 18:31:14.814  INFO 15328 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-16 18:31:14.830  INFO 15328 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-16 18:48:44.775  INFO 12924 --- [main] br.senac.backend.BackendApplication      : Starting BackendApplication using Java 17.0.1 on DESKTOP-28NKPA9 with PID 12924 (C:\Users\mgds2\Desktop\tcc-backend\target\classes started by mgds2 in C:\Users\mgds2\Desktop\tcc-backend)
+2023-06-16 18:48:44.781  INFO 12924 --- [main] br.senac.backend.BackendApplication      : The following profiles are active: dev
+2023-06-16 18:48:46.517  INFO 12924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-16 18:48:46.688  INFO 12924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 155 ms. Found 7 JPA repository interfaces.
+2023-06-16 18:49:14.432  INFO 15084 --- [main] b.senac.backend.BackendApplicationTests  : Starting BackendApplicationTests using Java 17.0.1 on DESKTOP-28NKPA9 with PID 15084 (started by mgds2 in C:\Users\mgds2\Desktop\tcc-backend)
+2023-06-16 18:49:14.435  INFO 15084 --- [main] b.senac.backend.BackendApplicationTests  : The following profiles are active: dev
+2023-06-16 18:49:16.082  INFO 15084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-16 18:49:16.231  INFO 15084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 133 ms. Found 7 JPA repository interfaces.
+2023-06-16 18:49:17.383  INFO 15084 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-16 18:49:17.539  INFO 15084 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2023-06-16 18:49:17.869  INFO 15084 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-16 18:49:18.173  INFO 15084 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-16 18:49:18.571  INFO 15084 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-16 18:49:18.614  INFO 15084 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-06-16 18:49:20.127  INFO 15084 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-16 18:49:20.147  INFO 15084 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-16 18:49:20.951  WARN 15084 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-16 18:49:21.255  INFO 15084 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2023-06-16 18:49:21.270  INFO 15084 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'threadPoolTaskExecutor'
+2023-06-16 18:49:22.717  INFO 15084 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7cddc50f, org.springframework.security.web.context.SecurityContextPersistenceFilter@4e773b8a, org.springframework.security.web.header.HeaderWriterFilter@4f466207, org.springframework.security.web.authentication.logout.LogoutFilter@5d1907fb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@490f2fad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74f9004c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1e60890c, org.springframework.security.web.session.SessionManagementFilter@4e6add8d, org.springframework.security.web.access.ExceptionTranslationFilter@1315d910, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@67e37d25]
+2023-06-16 18:49:22.816  INFO 15084 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-16 18:49:23.881  INFO 15084 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-16 18:49:23.930  INFO 15084 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-16 18:49:23.997  INFO 15084 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-16 18:49:24.215  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-06-16 18:49:24.295  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_2
+2023-06-16 18:49:24.302  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_1
+2023-06-16 18:49:24.325  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_3
+2023-06-16 18:49:24.330  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_1
+2023-06-16 18:49:24.334  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_1
+2023-06-16 18:49:24.353  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_1
+2023-06-16 18:49:24.361  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_4
+2023-06-16 18:49:24.366  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_2
+2023-06-16 18:49:24.374  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_2
+2023-06-16 18:49:24.381  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_2
+2023-06-16 18:49:24.396  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_3
+2023-06-16 18:49:24.400  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_2
+2023-06-16 18:49:24.404  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_3
+2023-06-16 18:49:24.427  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_5
+2023-06-16 18:49:24.430  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_4
+2023-06-16 18:49:24.433  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_3
+2023-06-16 18:49:24.437  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_4
+2023-06-16 18:49:24.441  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_3
+2023-06-16 18:49:24.446  INFO 15084 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updatePassUsingPOST_1
+2023-06-16 18:49:24.484  INFO 15084 --- [main] b.senac.backend.BackendApplicationTests  : Started BackendApplicationTests in 10.624 seconds (JVM running for 12.058)
+2023-06-16 18:49:24.911  INFO 15084 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'threadPoolTaskExecutor'
+2023-06-16 18:49:24.916  INFO 15084 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-16 18:49:24.921  INFO 15084 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-16 18:49:24.933  INFO 15084 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-16 18:50:27.652  INFO 13112 --- [main] br.senac.backend.BackendApplication      : Starting BackendApplication using Java 17.0.1 on DESKTOP-28NKPA9 with PID 13112 (C:\Users\mgds2\Desktop\tcc-backend\target\classes started by mgds2 in C:\Users\mgds2\Desktop\tcc-backend)
+2023-06-16 18:50:27.659  INFO 13112 --- [main] br.senac.backend.BackendApplication      : The following profiles are active: dev
+2023-06-16 18:50:28.741  INFO 13112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-16 18:50:28.839  INFO 13112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 7 JPA repository interfaces.
+2023-06-16 18:50:29.428  INFO 13112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9595 (http)
+2023-06-16 18:50:29.438  INFO 13112 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-16 18:50:29.438  INFO 13112 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2023-06-16 18:50:29.774  WARN 13112 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-utils.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -24,7 +129,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -32,6 +141,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1268,6 +1378,9 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1294,16 +1407,25 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 Caused by: java.lang.reflect.InvocationTargetException: null
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+<<<<<<< HEAD
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-utils.jar
+=======
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-utils.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -1314,6 +1436,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 13:14:39.299  WARN 1300 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/jakarta.annotation-api.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:50:29.778  WARN 13112 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/jakarta.annotation-api.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1332,7 +1466,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1340,7 +1478,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1367,16 +1509,25 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 Caused by: java.lang.reflect.InvocationTargetException: null
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+<<<<<<< HEAD
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\jakarta.annotation-api.jar
+=======
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\jakarta.annotation-api.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -1387,6 +1538,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 13:14:39.301  WARN 1300 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/jakarta.inject.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:50:29.781  WARN 13112 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/jakarta.inject.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1405,7 +1568,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1413,7 +1580,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1440,16 +1611,25 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 Caused by: java.lang.reflect.InvocationTargetException: null
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+<<<<<<< HEAD
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\jakarta.inject.jar
+=======
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\jakarta.inject.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -1460,6 +1640,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 13:14:39.303  WARN 1300 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-api.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:50:29.783  WARN 13112 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-api.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1478,7 +1670,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1486,7 +1682,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1513,16 +1713,25 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 Caused by: java.lang.reflect.InvocationTargetException: null
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+<<<<<<< HEAD
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-api.jar
+=======
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-api.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -1533,6 +1742,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 13:14:39.304  WARN 1300 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-core.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:50:29.786  WARN 13112 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-core.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1551,7 +1772,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1559,7 +1784,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1586,16 +1815,25 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 Caused by: java.lang.reflect.InvocationTargetException: null
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+<<<<<<< HEAD
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-core.jar
+=======
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-core.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -1606,6 +1844,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 13:14:39.306  WARN 1300 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-locator.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:50:29.789  WARN 13112 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-locator.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1624,7 +1874,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1632,7 +1886,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1659,16 +1917,25 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 Caused by: java.lang.reflect.InvocationTargetException: null
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+<<<<<<< HEAD
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-locator.jar
+=======
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-locator.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -1679,6 +1946,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 13:14:39.307  WARN 1300 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/javassist.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:50:29.792  WARN 13112 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/javassist.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1697,7 +1976,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1705,7 +1988,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1732,16 +2019,25 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 Caused by: java.lang.reflect.InvocationTargetException: null
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+<<<<<<< HEAD
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\javassist.jar
+=======
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\javassist.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -1752,6 +2048,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 13:14:39.308  WARN 1300 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-runlevel.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:50:29.796  WARN 13112 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-runlevel.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1770,7 +2078,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1778,7 +2090,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1805,16 +2121,25 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 Caused by: java.lang.reflect.InvocationTargetException: null
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+<<<<<<< HEAD
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-runlevel.jar
+=======
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-runlevel.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -1825,6 +2150,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 13:14:39.310  WARN 1300 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/class-model.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:50:29.801  WARN 13112 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/class-model.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1843,7 +2180,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1851,7 +2192,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1878,16 +2223,25 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 Caused by: java.lang.reflect.InvocationTargetException: null
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+<<<<<<< HEAD
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\class-model.jar
+=======
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\class-model.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -1898,6 +2252,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 13:14:39.311  WARN 1300 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/asm.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:50:29.805  WARN 13112 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/asm.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1916,7 +2282,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1924,7 +2294,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -1951,16 +2325,25 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 Caused by: java.lang.reflect.InvocationTargetException: null
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+<<<<<<< HEAD
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\asm.jar
+=======
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\asm.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -2057,6 +2440,74 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 2023-06-17 15:26:42.206  INFO 2596 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 2023-06-17 15:26:42.206  INFO 2596 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
 2023-06-17 15:26:42.435  WARN 2596 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-utils.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:50:29.809  INFO 13112 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-06-16 18:50:29.821  INFO 13112 --- [main] o.a.c.c.C.[.[localhost].[/backend]       : Initializing Spring embedded WebApplicationContext
+2023-06-16 18:50:29.821  INFO 13112 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2104 ms
+2023-06-16 18:50:30.025  INFO 13112 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-16 18:50:30.083  INFO 13112 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2023-06-16 18:50:30.269  INFO 13112 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-16 18:50:30.412  INFO 13112 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-16 18:50:30.603  INFO 13112 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-16 18:50:30.642  INFO 13112 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-06-16 18:50:31.686  INFO 13112 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-16 18:50:31.695  INFO 13112 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-16 18:50:32.261  WARN 13112 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-16 18:50:32.447  INFO 13112 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2023-06-16 18:50:32.448  INFO 13112 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'threadPoolTaskExecutor'
+2023-06-16 18:50:33.073  INFO 13112 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@57f9f387, org.springframework.security.web.context.SecurityContextPersistenceFilter@c509742, org.springframework.security.web.header.HeaderWriterFilter@509d999c, org.springframework.security.web.authentication.logout.LogoutFilter@5472c27a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d41aefd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6d224921, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6b4376e1, org.springframework.security.web.session.SessionManagementFilter@1d12eff1, org.springframework.security.web.access.ExceptionTranslationFilter@2ef5df8f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4cb0e39e]
+2023-06-16 18:50:33.096  INFO 13112 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-16 18:50:33.462  INFO 13112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9595 (http) with context path '/backend'
+2023-06-16 18:50:33.463  INFO 13112 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-16 18:50:33.486  INFO 13112 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-16 18:50:33.525  INFO 13112 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-16 18:50:33.665  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-06-16 18:50:33.723  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_2
+2023-06-16 18:50:33.727  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_1
+2023-06-16 18:50:33.747  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_3
+2023-06-16 18:50:33.751  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_1
+2023-06-16 18:50:33.761  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_1
+2023-06-16 18:50:33.776  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_1
+2023-06-16 18:50:33.786  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_4
+2023-06-16 18:50:33.789  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_2
+2023-06-16 18:50:33.796  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_2
+2023-06-16 18:50:33.801  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_2
+2023-06-16 18:50:33.810  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_3
+2023-06-16 18:50:33.814  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_2
+2023-06-16 18:50:33.816  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_3
+2023-06-16 18:50:33.832  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_5
+2023-06-16 18:50:33.835  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_4
+2023-06-16 18:50:33.838  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_3
+2023-06-16 18:50:33.841  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_4
+2023-06-16 18:50:33.845  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_3
+2023-06-16 18:50:33.849  INFO 13112 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updatePassUsingPOST_1
+2023-06-16 18:50:33.872  INFO 13112 --- [main] br.senac.backend.BackendApplication      : Started BackendApplication in 6.689 seconds (JVM running for 7.678)
+2023-06-16 18:50:36.834  INFO 13112 --- [http-nio-9595-exec-1] o.a.c.c.C.[.[localhost].[/backend]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-16 18:50:36.834  INFO 13112 --- [http-nio-9595-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-16 18:50:36.835  INFO 13112 --- [http-nio-9595-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-06-16 18:50:37.098  INFO 13112 --- [http-nio-9595-exec-1] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list - 200 - OK :: 
+2023-06-16 18:50:39.141  INFO 13112 --- [http-nio-9595-exec-2] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list/name - 200 - OK :: 
+2023-06-16 18:51:06.809  INFO 13112 --- [http-nio-9595-exec-3] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list - 200 - OK :: 
+2023-06-16 18:51:09.866  INFO 13112 --- [http-nio-9595-exec-4] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list/name - 200 - OK :: 
+2023-06-16 18:51:35.085  INFO 13112 --- [http-nio-9595-exec-5] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list - 200 - OK :: 
+2023-06-16 18:54:12.330  INFO 1892 --- [main] br.senac.backend.BackendApplication      : Starting BackendApplication using Java 17.0.1 on DESKTOP-28NKPA9 with PID 1892 (C:\Users\mgds2\Desktop\tcc-backend\target\classes started by mgds2 in C:\Users\mgds2\Desktop\tcc-backend)
+2023-06-16 18:54:12.336  INFO 1892 --- [main] br.senac.backend.BackendApplication      : The following profiles are active: dev
+2023-06-16 18:54:13.483  INFO 1892 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-16 18:54:13.601  INFO 1892 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 7 JPA repository interfaces.
+2023-06-16 18:54:14.268  INFO 1892 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9595 (http)
+2023-06-16 18:54:14.279  INFO 1892 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-16 18:54:14.279  INFO 1892 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2023-06-16 18:54:14.578  WARN 1892 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-utils.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2075,7 +2526,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2083,7 +2538,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2108,6 +2567,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
+<<<<<<< HEAD
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
@@ -2115,11 +2575,21 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-utils.jar
+=======
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-utils.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -2130,6 +2600,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 15:26:42.437  WARN 2596 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/jakarta.annotation-api.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:54:14.581  WARN 1892 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/jakarta.annotation-api.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2148,7 +2630,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2156,7 +2642,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2181,6 +2671,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
+<<<<<<< HEAD
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
@@ -2188,11 +2679,21 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\jakarta.annotation-api.jar
+=======
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\jakarta.annotation-api.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -2203,6 +2704,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 15:26:42.439  WARN 2596 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/jakarta.inject.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:54:14.585  WARN 1892 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/jakarta.inject.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2221,7 +2734,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2229,7 +2746,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2254,6 +2775,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
+<<<<<<< HEAD
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
@@ -2261,11 +2783,21 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\jakarta.inject.jar
+=======
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\jakarta.inject.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -2276,6 +2808,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 15:26:42.441  WARN 2596 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-api.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:54:14.588  WARN 1892 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-api.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2294,7 +2838,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2302,7 +2850,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2327,6 +2879,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
+<<<<<<< HEAD
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
@@ -2334,11 +2887,21 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-api.jar
+=======
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-api.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -2349,6 +2912,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 15:26:42.442  WARN 2596 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-core.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:54:14.591  WARN 1892 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-core.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2367,7 +2942,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2375,7 +2954,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2400,6 +2983,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
+<<<<<<< HEAD
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
@@ -2407,11 +2991,21 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-core.jar
+=======
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-core.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -2422,6 +3016,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 15:26:42.444  WARN 2596 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-locator.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:54:14.593  WARN 1892 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-locator.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2440,7 +3046,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2448,7 +3058,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2473,6 +3087,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
+<<<<<<< HEAD
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
@@ -2480,11 +3095,21 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-locator.jar
+=======
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-locator.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -2495,6 +3120,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 15:26:42.445  WARN 2596 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/javassist.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:54:14.596  WARN 1892 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/javassist.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2513,7 +3150,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2521,7 +3162,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2546,6 +3191,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
+<<<<<<< HEAD
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
@@ -2553,11 +3199,21 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\javassist.jar
+=======
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\javassist.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -2568,6 +3224,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 15:26:42.447  WARN 2596 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-runlevel.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:54:14.601  WARN 1892 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-runlevel.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2586,7 +3254,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2594,7 +3266,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2619,6 +3295,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
+<<<<<<< HEAD
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
@@ -2626,11 +3303,21 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-runlevel.jar
+=======
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-runlevel.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -2641,6 +3328,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 15:26:42.449  WARN 2596 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/class-model.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:54:14.605  WARN 1892 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/class-model.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2659,7 +3358,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2667,7 +3370,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2692,6 +3399,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
+<<<<<<< HEAD
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
@@ -2699,11 +3407,21 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\class-model.jar
+=======
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\class-model.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -2714,6 +3432,18 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 	... 52 common frames omitted
 
 2023-06-17 15:26:42.450  WARN 2596 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/asm.jar] from classloader hierarchy
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:54:14.608  WARN 1892 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/mgds2/.m2/repository/org/glassfish/hk2/hk2/2.6.1/asm.jar] from classloader hierarchy
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 
 java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2732,7 +3462,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2740,7 +3474,11 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
 	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+<<<<<<< HEAD
 	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+=======
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145) ~[na:na]
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
@@ -2765,6 +3503,7 @@ java.io.IOException: java.lang.reflect.InvocationTargetException
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
 	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
 Caused by: java.lang.reflect.InvocationTargetException: null
+<<<<<<< HEAD
 	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
@@ -2772,11 +3511,21 @@ Caused by: java.lang.reflect.InvocationTargetException: null
 	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
 	... 47 common frames omitted
 Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\asm.jar
+=======
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\mgds2\.m2\repository\org\glassfish\hk2\hk2\2.6.1\asm.jar
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0
 	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
 	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
 	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+<<<<<<< HEAD
 	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
 	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
 	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
@@ -2816,3 +3565,122 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 2023-06-17 15:26:44.958  INFO 2596 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_4
 2023-06-17 15:26:44.960  INFO 2596 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_2
 2023-06-17 15:26:44.964  INFO 2596 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_2
+=======
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:199) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1851) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1264) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:709) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:243) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:172) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-06-16 18:54:14.611  INFO 1892 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-06-16 18:54:14.620  INFO 1892 --- [main] o.a.c.c.C.[.[localhost].[/backend]       : Initializing Spring embedded WebApplicationContext
+2023-06-16 18:54:14.620  INFO 1892 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2225 ms
+2023-06-16 18:54:14.800  INFO 1892 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-16 18:54:14.865  INFO 1892 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2023-06-16 18:54:15.054  INFO 1892 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-16 18:54:15.173  INFO 1892 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-16 18:54:15.356  INFO 1892 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-16 18:54:15.391  INFO 1892 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-06-16 18:54:16.462  INFO 1892 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-16 18:54:16.471  INFO 1892 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-16 18:54:16.988  WARN 1892 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-16 18:54:17.156  INFO 1892 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2023-06-16 18:54:17.157  INFO 1892 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'threadPoolTaskExecutor'
+2023-06-16 18:54:17.807  INFO 1892 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@593d0173, org.springframework.security.web.context.SecurityContextPersistenceFilter@6203f10f, org.springframework.security.web.header.HeaderWriterFilter@2e674698, org.springframework.security.web.authentication.logout.LogoutFilter@6101fd7d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76ea1cb5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f1bd673, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4a0a93ce, org.springframework.security.web.session.SessionManagementFilter@7d661205, org.springframework.security.web.access.ExceptionTranslationFilter@35ffe3ac, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7fec6c2f]
+2023-06-16 18:54:17.840  INFO 1892 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-16 18:54:18.220  INFO 1892 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9595 (http) with context path '/backend'
+2023-06-16 18:54:18.221  INFO 1892 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-16 18:54:18.246  INFO 1892 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-16 18:54:18.285  INFO 1892 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-16 18:54:18.431  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-06-16 18:54:18.478  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_2
+2023-06-16 18:54:18.482  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_1
+2023-06-16 18:54:18.498  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_3
+2023-06-16 18:54:18.502  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_1
+2023-06-16 18:54:18.504  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_1
+2023-06-16 18:54:18.518  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_1
+2023-06-16 18:54:18.526  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_4
+2023-06-16 18:54:18.530  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_2
+2023-06-16 18:54:18.535  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_2
+2023-06-16 18:54:18.540  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_2
+2023-06-16 18:54:18.548  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_3
+2023-06-16 18:54:18.551  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_2
+2023-06-16 18:54:18.555  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_3
+2023-06-16 18:54:18.567  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_5
+2023-06-16 18:54:18.570  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_4
+2023-06-16 18:54:18.573  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_3
+2023-06-16 18:54:18.575  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_4
+2023-06-16 18:54:18.578  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_3
+2023-06-16 18:54:18.581  INFO 1892 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updatePassUsingPOST_1
+2023-06-16 18:54:18.600  INFO 1892 --- [main] br.senac.backend.BackendApplication      : Started BackendApplication in 6.719 seconds (JVM running for 7.786)
+2023-06-16 18:54:24.107  INFO 1892 --- [http-nio-9595-exec-1] o.a.c.c.C.[.[localhost].[/backend]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-16 18:54:24.107  INFO 1892 --- [http-nio-9595-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-16 18:54:24.108  INFO 1892 --- [http-nio-9595-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-06-16 18:54:24.357  INFO 1892 --- [http-nio-9595-exec-1] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list - 200 - OK :: 
+2023-06-16 18:54:31.050  INFO 1892 --- [http-nio-9595-exec-2] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list/name - 200 - OK :: 
+2023-06-16 18:54:38.278  INFO 1892 --- [http-nio-9595-exec-3] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list - 200 - OK :: 
+2023-06-16 18:55:08.552  INFO 1892 --- [http-nio-9595-exec-4] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list - 200 - OK :: 
+2023-06-16 18:55:11.068  INFO 1892 --- [http-nio-9595-exec-5] b.s.b.controller.FavoritePetsController  :  :: Encerrando o método /api/favorite/list - 200 - OK :: 
+2023-06-16 18:56:09.718  INFO 1892 --- [http-nio-9595-exec-6] b.s.backend.controller.UserController    :  :: Encerrando o método /api/user/add - 200 - OK :: 
+2023-06-16 18:56:32.628  INFO 1892 --- [http-nio-9595-exec-7] b.s.backend.controller.LoginController   :  :: Encerrando o método logon - 200 - OK :: 
+2023-06-16 18:56:32.791  INFO 1892 --- [http-nio-9595-exec-9] b.s.backend.controller.UserController    :  :: Encerrando o método /api/user/detail/guid - 200 - OK :: 
+2023-06-16 18:56:32.847  INFO 1892 --- [http-nio-9595-exec-8] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list - 200 - OK :: 
+2023-06-16 18:56:35.888  INFO 1892 --- [http-nio-9595-exec-10] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list/name - 200 - OK :: 
+2023-06-16 18:56:37.188  INFO 1892 --- [http-nio-9595-exec-1] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list/name - 200 - OK :: 
+2023-06-16 18:56:38.417  INFO 1892 --- [http-nio-9595-exec-2] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list/name - 200 - OK :: 
+2023-06-16 18:56:39.447  INFO 1892 --- [http-nio-9595-exec-3] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list - 200 - OK :: 
+2023-06-16 18:56:41.910  INFO 1892 --- [http-nio-9595-exec-4] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list - 200 - OK :: 
+2023-06-16 18:56:43.741  INFO 1892 --- [http-nio-9595-exec-5] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list/name - 200 - OK :: 
+2023-06-16 18:56:44.772  INFO 1892 --- [http-nio-9595-exec-6] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list/name - 200 - OK :: 
+2023-06-16 18:56:46.792  INFO 1892 --- [http-nio-9595-exec-7] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list/name - 200 - OK :: 
+2023-06-16 18:56:49.240  INFO 1892 --- [http-nio-9595-exec-9] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list - 200 - OK :: 
+2023-06-16 18:56:52.010  INFO 1892 --- [http-nio-9595-exec-8] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list - 200 - OK :: 
+2023-06-16 18:57:22.979  INFO 4708 --- [main] b.senac.backend.BackendApplicationTests  : Starting BackendApplicationTests using Java 17.0.1 on DESKTOP-28NKPA9 with PID 4708 (started by mgds2 in C:\Users\mgds2\Desktop\tcc-backend)
+2023-06-16 18:57:22.979  INFO 4708 --- [main] b.senac.backend.BackendApplicationTests  : The following profiles are active: dev
+2023-06-16 18:57:24.668  INFO 4708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-16 18:57:24.793  INFO 4708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 115 ms. Found 7 JPA repository interfaces.
+2023-06-16 18:57:25.762  INFO 4708 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-16 18:57:25.856  INFO 4708 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2023-06-16 18:57:26.059  INFO 4708 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-16 18:57:26.309  INFO 4708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-16 18:57:26.637  INFO 4708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-16 18:57:26.668  INFO 4708 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-06-16 18:57:27.808  INFO 4708 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-16 18:57:27.808  INFO 4708 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-16 18:57:28.558  WARN 4708 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-16 18:57:28.902  INFO 4708 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2023-06-16 18:57:28.917  INFO 4708 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'threadPoolTaskExecutor'
+2023-06-16 18:57:30.183  INFO 4708 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7896e96a, org.springframework.security.web.context.SecurityContextPersistenceFilter@23ee31b8, org.springframework.security.web.header.HeaderWriterFilter@14927cd4, org.springframework.security.web.authentication.logout.LogoutFilter@569b3009, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5dfb65d5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23974cac, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e451f9a, org.springframework.security.web.session.SessionManagementFilter@2bfe4df9, org.springframework.security.web.access.ExceptionTranslationFilter@2a728076, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3437fc4f]
+2023-06-16 18:57:30.261  INFO 4708 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-06-16 18:57:31.198  INFO 4708 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-06-16 18:57:31.229  INFO 4708 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-06-16 18:57:31.292  INFO 4708 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-06-16 18:57:31.526  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-06-16 18:57:31.589  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_2
+2023-06-16 18:57:31.604  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_1
+2023-06-16 18:57:31.620  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_3
+2023-06-16 18:57:31.620  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_1
+2023-06-16 18:57:31.620  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_1
+2023-06-16 18:57:31.635  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_1
+2023-06-16 18:57:31.635  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_4
+2023-06-16 18:57:31.635  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_2
+2023-06-16 18:57:31.651  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_2
+2023-06-16 18:57:31.651  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_2
+2023-06-16 18:57:31.651  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_3
+2023-06-16 18:57:31.667  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_2
+2023-06-16 18:57:31.667  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_3
+2023-06-16 18:57:31.667  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_5
+2023-06-16 18:57:31.682  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_4
+2023-06-16 18:57:31.682  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_3
+2023-06-16 18:57:31.682  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_4
+2023-06-16 18:57:31.682  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_3
+2023-06-16 18:57:31.682  INFO 4708 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updatePassUsingPOST_1
+2023-06-16 18:57:31.729  INFO 4708 --- [main] b.senac.backend.BackendApplicationTests  : Started BackendApplicationTests in 9.255 seconds (JVM running for 10.541)
+2023-06-16 18:57:32.042  INFO 4708 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'threadPoolTaskExecutor'
+2023-06-16 18:57:32.057  INFO 4708 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-16 18:57:32.057  INFO 4708 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-16 18:57:32.073  INFO 4708 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+>>>>>>> 7e0f0c27f44fb9abe56d1c96d9e5ca830b6919e0

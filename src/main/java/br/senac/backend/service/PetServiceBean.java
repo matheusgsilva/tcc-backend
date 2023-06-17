@@ -28,7 +28,7 @@ public class PetServiceBean implements PetService {
 	public List<Pet> getByCompanyGuid(String companyGuid) {
 		return repository.getByCompanyGuid(companyGuid);
 	}
-	
+
 	public Boolean isExists(String size, String breed, String typePet, String gender) {
 		return repository.isExists(size, breed, typePet, gender);
 	}
@@ -41,7 +41,8 @@ public class PetServiceBean implements PetService {
 				&& (gender == null || gender.equals("")))
 			return repository.getAllUnfilteredCompany(companyGuid);
 
-		return repository.getAllFilteredCompany(description, size, breed, typePet, city, district, companyGuid, gender);
+		return repository.getAllFilteredCompany(description, size, typePet.equals("Cachorro") ? breed : "", typePet,
+				city, district, companyGuid, gender);
 	}
 
 	public List<Pet> getAllFiltered(String description, String size, String breed, String typePet, String city,
@@ -52,7 +53,11 @@ public class PetServiceBean implements PetService {
 				&& (companyName == null || companyName.equals("")) && (gender == null || gender.equals("")))
 			return repository.getAllUnfiltered();
 
-		return repository.getAllFiltered(description, size, breed, typePet, city, district, gender, companyName);
+		if (typePet.equals("Cachorro"))
+			return repository.getAllFiltered(description, size, breed, typePet, city, district, gender, companyName);
+		else
+			return repository.getAllFilteredWithOutBreed(description, size, typePet, city, district, gender,
+					companyName);
 	}
 
 	@Transactional

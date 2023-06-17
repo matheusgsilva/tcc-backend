@@ -99,8 +99,8 @@ public class RatingConverter {
 
 		try {
 			AverageRatingResponse averageRatingResponse = new AverageRatingResponse();
-			if (ratings != null && !ratings.isEmpty()) {
-				averageRatingResponse.setAverage(String.format("%.1f", Double.valueOf("0")));
+			if (ratings.isEmpty()) {
+				averageRatingResponse.setAverage("Esta Instituição não foi avaliada ainda.");
 			} else {
 				double sum = 0;
 				for (Rating rating : ratings) {
