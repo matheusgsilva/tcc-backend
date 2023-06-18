@@ -10,6 +10,7 @@ public class UserResponse {
 	private String document;
 	private String email;
 	private String phone;
+	private Boolean isAdmin;
 
 	public String getGuid() {
 		return guid;
@@ -49,6 +50,14 @@ public class UserResponse {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public Boolean getIsAdmin() {
+		return isAdmin;
+	}
+
+	public void setIsAdmin(Boolean isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 
 }

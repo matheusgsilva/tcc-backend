@@ -34,7 +34,6 @@ import br.senac.backend.service.CompanyService;
 import br.senac.backend.service.UserService;
 import br.senac.backend.task.EmailAccessTask;
 import br.senac.backend.task.EmailAccountTask;
-import br.senac.backend.util.EACTIVE;
 import br.senac.backend.util.ECOMPANY_PERMISSION;
 import br.senac.backend.util.RestUrl;
 
@@ -380,8 +379,7 @@ public class CompanyController {
 		try {
 			Company company = companyService.getByGuid(guid);
 			if (company != null) {
-				company.setActive(EACTIVE.NO);
-				company = companyService.save(company);
+				companyService.delete(company);
 				handlerCompany.handleDeleteMessages(responseAPI, 200);
 			} else
 				handlerCompany.handleDeleteMessages(responseAPI, 404);

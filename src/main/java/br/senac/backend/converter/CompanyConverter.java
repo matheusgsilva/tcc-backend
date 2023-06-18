@@ -12,7 +12,6 @@ import br.senac.backend.model.Company;
 import br.senac.backend.request.CompanyRequest;
 import br.senac.backend.response.CompanyResponse;
 import br.senac.backend.service.RatingService;
-import br.senac.backend.util.EACTIVE;
 import br.senac.backend.util.ECOMPANY_PERMISSION;
 
 @Component
@@ -25,7 +24,6 @@ public class CompanyConverter {
 
 		try {
 			Company company = new Company();
-			company.setActive(EACTIVE.YES);
 			company.setDistrict(companyRequest.getDistrict());
 			company.setCep(companyRequest.getCep());
 			company.setCity(companyRequest.getCity());

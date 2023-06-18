@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.senac.backend.model.Pet;
+import br.senac.backend.model.User;
 import br.senac.backend.repository.PetRepository;
 
 @Service
@@ -15,6 +16,9 @@ public class PetServiceBean implements PetService {
 
 	@Autowired
 	private PetRepository repository;
+
+	@Autowired
+	private UserService userService;
 
 	@Transactional
 	public Pet save(Pet pet) {
@@ -62,6 +66,12 @@ public class PetServiceBean implements PetService {
 
 	@Transactional
 	public void delete(Pet pet) {
+		for (User user : userService.getAll()) {
+			if (user.getFavoritePets().contains(pet)) {
+				user.getFavoritePets().remove(pet);
+				userService.save(user);
+			}
+		}
 		pet.setCompany(null);
 		pet = save(pet);
 		repository.delete(pet);

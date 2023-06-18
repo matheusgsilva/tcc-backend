@@ -10,30 +10,41 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.senac.backend.model.Company;
 import br.senac.backend.repository.CompanyRepository;
-import br.senac.backend.util.EACTIVE;
 
 @Service
 public class CompanyServiceBean implements CompanyService {
 
 	@Autowired
 	private CompanyRepository repository;
+	
+	@Autowired
+	private ChangePasswordService changePasswordService;
+	
+	@Autowired
+	private PetService petService;
+	
+	@Autowired
+	private TokenService tokenService;
+	
+	@Autowired
+	private RatingService ratingService;
 
 	public Company getByGuid(String guid) {
 		return repository.getByGuid(guid);
 	}
-	
+
 	public Company getByEmail(String email) {
 		return repository.getByEmail(email);
 	}
-	
+
 	public List<String> getNames() {
 		return repository.getNames();
 	}
-	
+
 	public List<String> getCities() {
 		return repository.getCities();
 	}
-	
+
 	public List<Company> getAll() {
 		List<Company> listByClassinfications = repository.getAllByClassification();
 		List<Company> list = repository.getAll();
@@ -53,9 +64,8 @@ public class CompanyServiceBean implements CompanyService {
 		if ((!email.equals("")) && (!password.equals(""))) {
 			Company u = repository.getByEmail(email);
 			if (u != null)
-				if (u.getActive().equals(EACTIVE.YES))
-					if (BCrypt.checkpw(password, u.getPassword()))
-						return u;
+				if (BCrypt.checkpw(password, u.getPassword()))
+					return u;
 		}
 		return null;
 	}
@@ -67,8 +77,21 @@ public class CompanyServiceBean implements CompanyService {
 	public Boolean isExists(String name, String email, String document, String guid) {
 		return repository.isExists(name, document, email, guid);
 	}
-	
+
 	public Boolean isExists(String email) {
 		return repository.isExists(email);
+	}
+
+	@Transactional
+	public void delete(Company company) {
+		changePasswordService.findItemsByUserGuid(company.getGuid()).forEach(item -> {
+			changePasswordService.delete(item);
+		});
+		ratingService.delete(company);
+		petService.getByCompanyGuid(company.getGuid()).forEach(item -> {
+			petService.delete(item);
+		});
+		tokenService.delete(company);
+		repository.delete(company);
 	}
 }

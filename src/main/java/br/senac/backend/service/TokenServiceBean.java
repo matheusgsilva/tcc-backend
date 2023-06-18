@@ -51,6 +51,25 @@ public class TokenServiceBean implements TokenService {
 	public void delete(Long id) {
 		repository.deleteById(id);
 	}
+	
+	@Transactional
+	public void delete(Token token) {
+		repository.delete(token);
+	}
+	
+	@Transactional
+	public void delete(User user) {
+		repository.getAllByUser(user).forEach(item -> {
+			delete(item);
+		});
+	}
+	
+	@Transactional
+	public void delete(Company company) {
+		repository.getAllByCompany(company).forEach(item -> {
+			delete(item);
+		});
+	}
 
 	@Transactional
 	public Token save(Token obj) {

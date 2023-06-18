@@ -7,6 +7,7 @@ public class UserRequest {
 	private String email;
 	private String phone;
 	private String password;
+	private Boolean isAdmin;
 
 	public String getName() {
 		return name;
@@ -46,6 +47,14 @@ public class UserRequest {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Boolean getIsAdmin() {
+		return isAdmin;
+	}
+
+	public void setIsAdmin(Boolean isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 
 }

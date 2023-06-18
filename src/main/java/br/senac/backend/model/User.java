@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -22,7 +23,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-import br.senac.backend.util.EACTIVE;
 import br.senac.backend.util.ETYPE_USER;
 
 @Entity
@@ -57,16 +57,14 @@ public class User implements Serializable {
 	@Column(nullable = false, columnDefinition = "VARCHAR(100)")
 	private String password;
 
-	private EACTIVE active;
-
 	@Column(columnDefinition = "INT(1) default 0")
 	private ETYPE_USER type;
 
 	@JsonIgnore
-	@OneToMany(mappedBy = "user", targetEntity = Token.class, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "user", targetEntity = Token.class, fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 	private List<Token> tokens = new ArrayList<Token>();
 
-	@OneToMany(mappedBy = "user", targetEntity = Rating.class, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "user", targetEntity = Rating.class, fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 	private List<Rating> ratings = new ArrayList<Rating>();
 
 	@ManyToMany(targetEntity = Pet.class, fetch = FetchType.LAZY)
@@ -127,14 +125,6 @@ public class User implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public EACTIVE getActive() {
-		return active;
-	}
-
-	public void setActive(EACTIVE active) {
-		this.active = active;
 	}
 
 	public List<Token> getTokens() {

@@ -1,7 +1,10 @@
 package br.senac.backend.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.senac.backend.model.ChangePassword;
 import br.senac.backend.repository.ChangePasswordRepository;
@@ -26,5 +29,15 @@ public class ChangePasswordServiceBean implements ChangePasswordService {
 	@Override
 	public ChangePassword findByUserGuid(String userGuid) {
 		return changePasswordRepository.findByUserGuid(userGuid, EACTIVE.YES);
+	}
+	
+	@Override
+	public List<ChangePassword> findItemsByUserGuid(String userGuid) {
+		return changePasswordRepository.findByUserGuid(userGuid);
+	}
+	
+	@Transactional
+	public void delete(ChangePassword changePassword) {
+		changePasswordRepository.delete(changePassword);
 	}
 }

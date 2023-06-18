@@ -27,7 +27,6 @@ import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.PetService;
 import br.senac.backend.service.TokenService;
 import br.senac.backend.task.NotificationTask;
-import br.senac.backend.util.EACTIVE;
 
 @Controller
 public class PetController {
@@ -154,8 +153,7 @@ public class PetController {
 		try {
 			Pet pet = petService.getByGuid(guid);
 			if (pet != null) {
-				pet.setActive(EACTIVE.NO);
-				petService.save(pet);
+				petService.delete(pet);
 				handlerPet.handleDeleteMessages(responseAPI, 200);
 			} else
 				handlerPet.handleDeleteMessages(responseAPI, 404);

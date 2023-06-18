@@ -13,7 +13,6 @@ import br.senac.backend.model.User;
 import br.senac.backend.request.RatingRequest;
 import br.senac.backend.response.AverageRatingResponse;
 import br.senac.backend.response.RatingResponse;
-import br.senac.backend.util.EACTIVE;
 
 @Component
 public class RatingConverter {
@@ -22,7 +21,6 @@ public class RatingConverter {
 
 		try {
 			Rating rating = new Rating();
-			rating.setActive(EACTIVE.YES);
 			rating.setGuid(UUID.randomUUID().toString());
 			rating.setClassification(ratingRequest.getClassification());
 			rating.setDate(new Date());

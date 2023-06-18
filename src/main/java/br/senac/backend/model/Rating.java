@@ -22,8 +22,6 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-import br.senac.backend.util.EACTIVE;
-
 @Entity
 @Table(name = "RATING", indexes = { @Index(name = "GUID_INDEX", columnList = "guid", unique = true) })
 @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
@@ -43,8 +41,6 @@ public class Rating implements Serializable {
 
 	@Column(name = "classification", columnDefinition = "int(1)", nullable = false)
 	private Integer classification;
-
-	private EACTIVE active;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
@@ -95,14 +91,6 @@ public class Rating implements Serializable {
 
 	public void setCompany(Company company) {
 		this.company = company;
-	}
-
-	public EACTIVE getActive() {
-		return active;
-	}
-
-	public void setActive(EACTIVE active) {
-		this.active = active;
 	}
 
 	public Date getDate() {

@@ -23,8 +23,6 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-import br.senac.backend.util.EACTIVE;
-
 @Entity
 @Table(name = "PETS", indexes = { @Index(name = "GUID_INDEX", columnList = "guid", unique = true),
 		@Index(name = "TYPE_PET_INDEX", columnList = "typePet", unique = false),
@@ -84,8 +82,6 @@ public class Pet implements Serializable {
 
 	@Column(columnDefinition = "VARCHAR(50)", nullable = true)
 	private String typePet;
-
-	private EACTIVE active;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "company")
@@ -153,14 +149,6 @@ public class Pet implements Serializable {
 
 	public void setColor(String color) {
 		this.color = color;
-	}
-
-	public EACTIVE getActive() {
-		return active;
-	}
-
-	public void setActive(EACTIVE active) {
-		this.active = active;
 	}
 
 	public Company getCompany() {

@@ -12,10 +12,13 @@ import br.senac.backend.model.Rating;
 @Repository
 public interface RatingRepository extends PagingAndSortingRepository<Rating, Long> {
 
-	@Query("SELECT r FROM Rating r WHERE r.company.guid = :companyGuid and r.active = 0 order by r.date desc")
+	@Query("SELECT r FROM Rating r WHERE r.company.guid = :companyGuid order by r.date desc")
 	List<Rating> getByCompanyGuid(@Param("companyGuid") String companyGuid);
 	
-	@Query("SELECT r FROM Rating r WHERE r.user.guid = :userGuid and r.company.guid = :companyGuid and r.active = 0")
+	@Query("SELECT r FROM Rating r WHERE r.user.guid = :userGuid")
+	List<Rating> getByUserGuid(@Param("userGuid") String userGuid);
+	
+	@Query("SELECT r FROM Rating r WHERE r.user.guid = :userGuid and r.company.guid = :companyGuid")
 	Rating getByUserAndCompany(@Param("userGuid") String userGuid, @Param("companyGuid") String companyGuid);
 	
 	@Query("SELECT r FROM Rating r WHERE r.guid = :guid")

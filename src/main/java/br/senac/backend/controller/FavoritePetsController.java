@@ -2,7 +2,6 @@ package br.senac.backend.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +26,6 @@ import br.senac.backend.response.PetResponse;
 import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.PetService;
 import br.senac.backend.service.UserService;
-import br.senac.backend.util.EACTIVE;
 
 @Controller
 public class FavoritePetsController {
@@ -123,7 +121,7 @@ public class FavoritePetsController {
 		try {
 			User user = userService.getByGuid(userGuid);
 			if (user != null) {
-				List<Pet> pets = user.getFavoritePets().stream().filter(pet -> pet.getActive().equals(EACTIVE.YES)).collect(Collectors.toList());
+				List<Pet> pets = user.getFavoritePets();
 				if (!pets.isEmpty()) {
 					List<PetResponse> listResponse = petConverter.petsToResponseList(pets);
 					if (!listResponse.isEmpty())

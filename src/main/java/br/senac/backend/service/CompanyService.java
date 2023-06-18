@@ -25,4 +25,6 @@ public interface CompanyService {
 	Company getByEmail(String email);
 	
 	Boolean isExists(String email);
+	
+	void delete(Company company);
 }

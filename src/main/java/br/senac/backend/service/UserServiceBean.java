@@ -9,13 +9,24 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.senac.backend.model.User;
 import br.senac.backend.repository.UserRepository;
-import br.senac.backend.util.EACTIVE;
 
 @Service
 public class UserServiceBean implements UserService {
 
 	@Autowired
 	private UserRepository repository;
+
+	@Autowired
+	private PreferencesService preferencesService;
+
+	@Autowired
+	private RatingService ratingService;
+	
+	@Autowired
+	private TokenService tokenService;
+
+	@Autowired
+	private ChangePasswordService changePasswordService;
 
 	public User getByGuid(String guid) {
 		if (guid == null)
@@ -32,9 +43,8 @@ public class UserServiceBean implements UserService {
 		if ((!email.equals("")) && (!password.equals(""))) {
 			User u = repository.getByEmail(email);
 			if (u != null)
-				if (u.getActive().equals(EACTIVE.YES))
-					if (BCrypt.checkpw(password, u.getPassword()))
-						return u;
+				if (BCrypt.checkpw(password, u.getPassword()))
+					return u;
 		}
 		return null;
 	}
@@ -42,7 +52,7 @@ public class UserServiceBean implements UserService {
 	public Boolean isExists(String email) {
 		return repository.isExists(email);
 	}
-	
+
 	public Boolean isExists(String email, String guid) {
 		return repository.isExists(email, guid);
 	}
@@ -50,13 +60,23 @@ public class UserServiceBean implements UserService {
 	public User locateByEmail(String email) {
 		return repository.getByEmail(email);
 	}
-	
+
 	public List<User> getAll() {
 		return repository.getAll();
 	}
 
 	@Transactional
 	public void delete(User user) {
+		preferencesService.getByUserGuid(user.getGuid()).forEach(item -> {
+			preferencesService.delete(item);
+		});
+		ratingService.delete(user);
+		changePasswordService.findItemsByUserGuid(user.getGuid()).forEach(item -> {
+			changePasswordService.delete(item);
+		});
+		tokenService.delete(user);
+		user.setFavoritePets(null);
+		user = save(user);
 		repository.delete(user);
 	}
 }

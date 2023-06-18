@@ -34,7 +34,6 @@ import br.senac.backend.service.CompanyService;
 import br.senac.backend.service.RatingService;
 import br.senac.backend.service.UserService;
 import br.senac.backend.task.EmailRatingTask;
-import br.senac.backend.util.EACTIVE;
 
 @Controller
 public class RatingController {
@@ -147,8 +146,7 @@ public class RatingController {
 		try {
 			Rating rating = ratingService.getByGuid(guid);
 			if (rating != null) {
-				rating.setActive(EACTIVE.NO);
-				rating = ratingService.save(rating);
+				ratingService.delete(rating);
 				handlerRating.handleDeleteMessages(responseAPI, 200);
 			} else
 				handlerRating.handleDeleteMessages(responseAPI, 404);

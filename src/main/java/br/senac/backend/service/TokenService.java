@@ -19,4 +19,8 @@ public interface TokenService {
 	Token getNewTokenPersisted(Company company);
 
 	Token getLastTokenForToday(Token tbToken);
+	
+	void delete(User user);
+	
+	void delete(Company company);
 }

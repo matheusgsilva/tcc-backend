@@ -21,7 +21,6 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-import br.senac.backend.util.EACTIVE;
 import br.senac.backend.util.ECOMPANY_PERMISSION;
 
 @Entity
@@ -76,8 +75,6 @@ public class Company implements Serializable {
 
 	@Column(columnDefinition = "VARCHAR(255)", nullable = true)
 	private String description;
-
-	private EACTIVE active;
 
 	private ECOMPANY_PERMISSION permission;
 
@@ -200,14 +197,6 @@ public class Company implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public EACTIVE getActive() {
-		return active;
-	}
-
-	public void setActive(EACTIVE active) {
-		this.active = active;
 	}
 
 	public ECOMPANY_PERMISSION getPermission() {

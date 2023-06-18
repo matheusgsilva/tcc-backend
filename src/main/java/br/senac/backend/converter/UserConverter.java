@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 import br.senac.backend.model.User;
 import br.senac.backend.request.UserRequest;
 import br.senac.backend.response.UserResponse;
-import br.senac.backend.util.EACTIVE;
 import br.senac.backend.util.ETYPE_USER;
 
 @Component
@@ -20,14 +19,16 @@ public class UserConverter {
 
 		try {
 			User user = new User();
-			user.setActive(EACTIVE.YES);
 			user.setDocument(userRequest.getDocument());
 			user.setEmail(userRequest.getEmail());
 			user.setGuid(UUID.randomUUID().toString());
 			user.setName(userRequest.getName());
 			user.setPassword(BCrypt.hashpw(userRequest.getPassword(), BCrypt.gensalt()));
 			user.setPhone(userRequest.getPhone());
-			user.setType(ETYPE_USER.NORMAL);
+			if (userRequest.getIsAdmin() == null || !userRequest.getIsAdmin())
+				user.setType(ETYPE_USER.NORMAL);
+			else
+				user.setType(ETYPE_USER.BACKOFFICE);
 			return user;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -42,6 +43,10 @@ public class UserConverter {
 			user.setEmail(userRequest.getEmail());
 			user.setName(userRequest.getName());
 			user.setPhone(userRequest.getPhone());
+			if (userRequest.getIsAdmin() == null || !userRequest.getIsAdmin())
+				user.setType(ETYPE_USER.NORMAL);
+			else
+				user.setType(ETYPE_USER.BACKOFFICE);
 			return user;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -58,6 +63,7 @@ public class UserConverter {
 			userResponse.setName(user.getName());
 			userResponse.setPhone(user.getPhone());
 			userResponse.setGuid(user.getGuid());
+			userResponse.setIsAdmin(user.getType().equals(ETYPE_USER.NORMAL) ? false : true);
 			return userResponse;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -77,6 +83,7 @@ public class UserConverter {
 				userResponse.setName(user.getName());
 				userResponse.setPhone(user.getPhone());
 				userResponse.setGuid(user.getGuid());
+				userResponse.setIsAdmin(user.getType().equals(ETYPE_USER.NORMAL) ? false : true);
 				list.add(userResponse);
 			}
 			return list;

@@ -18,7 +18,6 @@ import br.senac.backend.model.User;
 import br.senac.backend.request.PetRequest;
 import br.senac.backend.response.PetResponse;
 import br.senac.backend.service.CompanyService;
-import br.senac.backend.util.EACTIVE;
 
 @Component
 public class PetConverter {
@@ -40,7 +39,6 @@ public class PetConverter {
 			pet.setGuid(UUID.randomUUID().toString());
 			pet.setColor(petRequest.getColor());
 			pet.setSize(petRequest.getSize());
-			pet.setActive(EACTIVE.YES);
 			pet.setPhoto1(petRequest.getPhoto1());
 			pet.setPhoto2(petRequest.getPhoto2());
 			pet.setPhoto3(petRequest.getPhoto3());

@@ -21,26 +21,25 @@ public interface CompanyRepository extends PagingAndSortingRepository<Company, L
 	@Query(value = "SELECT *, sum(r.classification) as sumClassifications "
 			+ "FROM company as c "
 			+ "inner join rating as r on r.company = c.id "
-			+ "WHERE c.active = 0 "
 			+ "group by c.name "
 			+ "order by sumClassifications desc", nativeQuery = true)
 	List<Company> getAllByClassification();
 	
-	@Query("SELECT c FROM Company c WHERE c.active = 0")
+	@Query("SELECT c FROM Company c")
 	List<Company> getAll();
 	
-	@Query("SELECT c.name FROM Company c WHERE c.active = 0")
+	@Query("SELECT c.name FROM Company c")
 	List<String> getNames();
 	
-	@Query("SELECT distinct c.city FROM Company c WHERE c.active = 0")
+	@Query("SELECT distinct c.city FROM Company c")
 	List<String> getCities();
 	
-	@Query("SELECT CASE WHEN (COUNT(u) > 0) THEN true ELSE false END FROM Company u WHERE u.email = :email and u.active = 0")
+	@Query("SELECT CASE WHEN (COUNT(u) > 0) THEN true ELSE false END FROM Company u WHERE u.email = :email")
 	Boolean isExists( @Param("email") String email);
 
-	@Query("SELECT CASE WHEN (COUNT(u) > 0) THEN true ELSE false END FROM Company u WHERE (u.name = :name or u.document = :document or u.email = :email) and u.active = 0")
+	@Query("SELECT CASE WHEN (COUNT(u) > 0) THEN true ELSE false END FROM Company u WHERE (u.name = :name or u.document = :document or u.email = :email)")
 	Boolean isExists(@Param("name") String name, @Param("document") String document, @Param("email") String email);
 	
-	@Query("SELECT CASE WHEN (COUNT(u) > 0) THEN true ELSE false END FROM Company u WHERE (u.name = :name or u.document = :document or u.email = :email) and u.guid <> :guid and u.active = 0")
+	@Query("SELECT CASE WHEN (COUNT(u) > 0) THEN true ELSE false END FROM Company u WHERE (u.name = :name or u.document = :document or u.email = :email) and u.guid <> :guid")
 	Boolean isExists(@Param("name") String name, @Param("document") String document, @Param("email") String email, @Param("guid") String guid);
 }

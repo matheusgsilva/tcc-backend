@@ -1,5 +1,7 @@
 package br.senac.backend.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
@@ -15,4 +17,7 @@ public interface ChangePasswordRepository extends PagingAndSortingRepository<Cha
 
 	@Query("SELECT c FROM ChangePassword c WHERE c.userGuid = :userGuid AND c.active = :active")
 	ChangePassword findByUserGuid(String userGuid, EACTIVE active);
+	
+	@Query("SELECT c FROM ChangePassword c WHERE c.userGuid = :userGuid")
+	List<ChangePassword> findByUserGuid(String userGuid);
 }
