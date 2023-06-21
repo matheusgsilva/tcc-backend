@@ -14,9 +14,9 @@ public interface PreferencesService {
 
 	List<String> findPreferences(String size, String breed, String typePet, String gender);
 	
-	Boolean isExists(String gender, String typePet, String breed);
+	Boolean isExists(String gender, String typePet, String breed, String size);
 	
-	Boolean isExists(String gender, String typePet, String breed, String guid);
+	Boolean isExists(String gender, String typePet, String breed, String guid, String size);
 	
 	void delete(Preferences preferences);
 }

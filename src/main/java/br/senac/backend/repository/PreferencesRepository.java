@@ -25,9 +25,12 @@ public interface PreferencesRepository extends PagingAndSortingRepository<Prefer
 	List<String> findPreferences(@Param("size") String size,
 			@Param("breed") String breed, @Param("typePet") String typePet, @Param("gender") String gender);
 	
-	@Query("SELECT CASE WHEN (COUNT(u) > 0) THEN true ELSE false END FROM Preferences u WHERE u.gender = :gender AND u.typePet = :typePet AND u.breed = :breed")
-	Boolean isExists(@Param("gender") String gender, @Param("typePet") String typePet, @Param("breed") String breed);
+	@Query("SELECT CASE WHEN (COUNT(u) > 0) THEN true ELSE false END FROM Preferences u WHERE u.gender = :gender AND u.typePet = :typePet AND u.breed = :breed AND u.size = :size")
+	Boolean isExists(@Param("gender") String gender, @Param("typePet") String typePet, @Param("breed") String breed, @Param("size") String size);
 	
-	@Query("SELECT CASE WHEN (COUNT(u) > 0) THEN true ELSE false END FROM Preferences u WHERE (u.gender = :gender AND u.typePet = :typePet AND u.breed = :breed) and u.guid <> :guid")
-	Boolean isExists(@Param("gender") String gender, @Param("typePet") String typePet, @Param("breed") String breed, @Param("guid") String guid);
+	@Query("SELECT CASE WHEN (COUNT(u) > 0) THEN true ELSE false END FROM Preferences u WHERE u.gender = :gender AND u.typePet = :typePet AND u.size = :size")
+	Boolean isExists(@Param("gender") String gender, @Param("typePet") String typePet, @Param("size") String size);
+	
+	@Query("SELECT CASE WHEN (COUNT(u) > 0) THEN true ELSE false END FROM Preferences u WHERE (u.gender = :gender AND u.typePet = :typePet AND u.breed = :breed AND u.size = :size) and u.guid <> :guid")
+	Boolean isExists(@Param("gender") String gender, @Param("typePet") String typePet, @Param("breed") String breed, @Param("guid") String guid, @Param("size") String size);
 }
