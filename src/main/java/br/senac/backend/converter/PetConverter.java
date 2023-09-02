@@ -73,6 +73,11 @@ public class PetConverter {
 			pet.setPhoto4(petRequest.getPhoto4());
 			pet.setTypePet(petRequest.getTypePet());
 			pet.setGender(petRequest.getGender());
+			if (pet.getIdentification() == null)
+				pet.setIdentification(petRequest.getTypePet().equals("Cachorro") ? "CAO" + generateRandomNumber()
+						: petRequest.getTypePet().equals("Gato") ? "GAT" + generateRandomNumber()
+								: petRequest.getTypePet().equals("Passarinho") ? "PAS" + generateRandomNumber()
+										: "COE" + generateRandomNumber());
 			return pet;
 		} catch (Exception e) {
 			e.printStackTrace();

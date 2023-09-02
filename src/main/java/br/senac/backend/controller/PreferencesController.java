@@ -66,7 +66,7 @@ public class PreferencesController {
 			User user = tokenService.getByToken(token).getUser();
 			if (user != null) {
 				if (!preferencesService.isExists(preferencesRequest.getGender(), preferencesRequest.getTypePet(),
-						preferencesRequest.getBreed())) {
+						preferencesRequest.getBreed(), preferencesRequest.getSize())) {
 					PreferencesResponse preferencesResponse = preferencesConverter.preferencesToResponse(
 							preferencesService.save(preferencesConverter.preferencesSave(preferencesRequest, user)));
 					if (preferencesResponse != null) {
