@@ -84,6 +84,9 @@ public class Company implements Serializable {
 	@Column(nullable = false, columnDefinition = "VARCHAR(100)")
 	private String password;
 
+	@Column(columnDefinition = "INT(1) default 0", nullable = true)
+	private Integer daysPetReservation;
+
 	@OneToMany(mappedBy = "company", targetEntity = Rating.class, fetch = FetchType.LAZY)
 	private List<Rating> ratings = new ArrayList<Rating>();
 
@@ -229,6 +232,14 @@ public class Company implements Serializable {
 
 	public void setRatings(List<Rating> ratings) {
 		this.ratings = ratings;
+	}
+
+	public Integer getDaysPetReservation() {
+		return daysPetReservation;
+	}
+
+	public void setDaysPetReservation(Integer daysPetReservation) {
+		this.daysPetReservation = daysPetReservation;
 	}
 
 }

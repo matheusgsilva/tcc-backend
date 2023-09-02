@@ -2,12 +2,14 @@ package br.senac.backend.repository;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import br.senac.backend.model.Pet;
+import br.senac.backend.util.ESTATUS_PET;
 
 @Repository
 public interface PetRepository extends PagingAndSortingRepository<Pet, Long> {
@@ -68,4 +70,11 @@ public interface PetRepository extends PagingAndSortingRepository<Pet, Long> {
 
 	@Query("SELECT c FROM Pet c WHERE c.guid = :guid")
 	Pet getByGuid(@Param("guid") String guid);
+	
+	@Modifying
+	@Query("UPDATE Pet p SET p.status = :status, p.reservationDate = NULL, p.adopterUser = NULL " +
+	      "WHERE p.company.daysPetReservation IS NOT NULL AND p.reservationDate IS NOT NULL AND " +
+	      "DATEDIFF(CURRENT_DATE, p.reservationDate) > p.company.daysPetReservation")
+	void updateStatusPets(@Param("status") ESTATUS_PET status);
+
 }

@@ -5,11 +5,13 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
 import br.senac.backend.model.Pet;
 import br.senac.backend.model.User;
 import br.senac.backend.repository.PetRepository;
+import br.senac.backend.util.ESTATUS_PET;
 
 @Service
 public class PetServiceBean implements PetService {
@@ -75,5 +77,11 @@ public class PetServiceBean implements PetService {
 		pet.setCompany(null);
 		pet = save(pet);
 		repository.delete(pet);
+	}
+	
+	@Transactional
+	@Modifying
+	public void updateStatusPets() {
+		repository.updateStatusPets(ESTATUS_PET.AVAILABLE);
 	}
 }

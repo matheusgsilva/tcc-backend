@@ -16,7 +16,7 @@ import br.senac.backend.util.ECOMPANY_PERMISSION;
 
 @Component
 public class CompanyConverter {
-	
+
 	@Autowired
 	private RatingService ratingService;
 
@@ -63,13 +63,15 @@ public class CompanyConverter {
 			company.setPhone(companyRequest.getPhone());
 			company.setUf(companyRequest.getUf());
 			company.setCountry(companyRequest.getCountry());
+			if (companyRequest.getDaysPetReservation() != null)
+				company.setDaysPetReservation(companyRequest.getDaysPetReservation());
 			return company;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
-	
+
 	public CompanyResponse companyToResponseName(Company company) {
 
 		try {
@@ -109,7 +111,7 @@ public class CompanyConverter {
 			return null;
 		}
 	}
-	
+
 	public CompanyResponse companyToResponseContact(Company company) {
 
 		try {

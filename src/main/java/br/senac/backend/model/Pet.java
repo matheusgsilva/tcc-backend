@@ -13,6 +13,7 @@ import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -22,6 +23,8 @@ import org.hibernate.annotations.GenericGenerator;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+import br.senac.backend.util.ESTATUS_PET;
 
 @Entity
 @Table(name = "PETS", indexes = { @Index(name = "GUID_INDEX", columnList = "guid", unique = true),
@@ -80,12 +83,23 @@ public class Pet implements Serializable {
 	@Lob
 	private String photo4;
 
+	@Column(columnDefinition = "INT(1) default 0")
+	private ESTATUS_PET status;
+
 	@Column(columnDefinition = "VARCHAR(50)", nullable = true)
 	private String typePet;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "company")
 	private Company company;
+
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "user", nullable = true)
+	private User adopterUser;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(nullable = true)
+	private Date reservationDate;
 
 	public Long getId() {
 		return id;
@@ -213,6 +227,30 @@ public class Pet implements Serializable {
 
 	public void setIdentification(String identification) {
 		this.identification = identification;
+	}
+
+	public User getAdopterUser() {
+		return adopterUser;
+	}
+
+	public void setAdopterUser(User adopterUser) {
+		this.adopterUser = adopterUser;
+	}
+
+	public ESTATUS_PET getStatus() {
+		return status;
+	}
+
+	public void setStatus(ESTATUS_PET status) {
+		this.status = status;
+	}
+
+	public Date getReservationDate() {
+		return reservationDate;
+	}
+
+	public void setReservationDate(Date reservationDate) {
+		this.reservationDate = reservationDate;
 	}
 
 }

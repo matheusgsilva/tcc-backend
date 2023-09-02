@@ -16,6 +16,7 @@ public class CompanyRequest {
 	private String description;
 	private String password;
 	private String photo1;
+	private Integer daysPetReservation;
 
 	public String getName() {
 		return name;
@@ -127,6 +128,14 @@ public class CompanyRequest {
 
 	public void setPhoto1(String photo1) {
 		this.photo1 = photo1;
+	}
+
+	public Integer getDaysPetReservation() {
+		return daysPetReservation;
+	}
+
+	public void setDaysPetReservation(Integer daysPetReservation) {
+		this.daysPetReservation = daysPetReservation;
 	}
 
 }

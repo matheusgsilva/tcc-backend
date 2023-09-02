@@ -20,4 +20,6 @@ public interface PetService {
 	void delete(Pet pet);
 	
 	Boolean isExists(String size, String breed, String typePet, String gender);
+	
+	void updateStatusPets();
 }

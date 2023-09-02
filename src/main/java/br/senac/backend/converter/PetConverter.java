@@ -18,6 +18,7 @@ import br.senac.backend.model.User;
 import br.senac.backend.request.PetRequest;
 import br.senac.backend.response.PetResponse;
 import br.senac.backend.service.CompanyService;
+import br.senac.backend.util.ESTATUS_PET;
 
 @Component
 public class PetConverter {
@@ -47,10 +48,8 @@ public class PetConverter {
 			pet.setVaccines(petRequest.getVaccines());
 			pet.setTypePet(petRequest.getTypePet());
 			pet.setGender(petRequest.getGender());
-			pet.setIdentification(petRequest.getTypePet().equals("Cachorro") ? "CAO" + generateRandomNumber()
-					: petRequest.getTypePet().equals("Gato") ? "GAT" + generateRandomNumber()
-							: petRequest.getTypePet().equals("Passarinho") ? "PAS" + generateRandomNumber()
-									: "COE" + generateRandomNumber());
+			pet.setStatus(ESTATUS_PET.AVAILABLE);
+			pet.setIdentification(petRequest.getTypePet().equals("Cachorro") ? "CAO" + generateRandomNumber() : "GAT" + generateRandomNumber());
 			return pet;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -135,6 +134,7 @@ public class PetConverter {
 			petResponse.setPhoto4(pet.getPhoto4());
 			petResponse.setTypePet(pet.getTypePet());
 			petResponse.setGender(pet.getGender());
+			petResponse.setStatus(pet.getStatus());
 			petResponse.setIdentification(pet.getIdentification());
 			if (user != null)
 				petResponse.setIsFavorite(user.getFavoritePets().contains(pet));
@@ -179,6 +179,7 @@ public class PetConverter {
 				petResponse.setPhoto1(pet.getPhoto1());
 				petResponse.setTypePet(pet.getTypePet());
 				petResponse.setGender(pet.getGender());
+				petResponse.setStatus(pet.getStatus());
 				petResponse.setIdentification(pet.getIdentification());
 				list.add(petResponse);
 			}

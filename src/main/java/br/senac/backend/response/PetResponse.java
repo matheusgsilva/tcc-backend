@@ -2,6 +2,8 @@ package br.senac.backend.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import br.senac.backend.util.ESTATUS_PET;
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PetResponse {
 
@@ -25,6 +27,7 @@ public class PetResponse {
 	private String gender;
 	private Boolean isFavorite;
 	private String identification;
+	private ESTATUS_PET status;
 
 	public String getGuid() {
 		return guid;
@@ -184,6 +187,14 @@ public class PetResponse {
 
 	public void setIdentification(String identification) {
 		this.identification = identification;
+	}
+
+	public ESTATUS_PET getStatus() {
+		return status;
+	}
+
+	public void setStatus(ESTATUS_PET status) {
+		this.status = status;
 	}
 
 }

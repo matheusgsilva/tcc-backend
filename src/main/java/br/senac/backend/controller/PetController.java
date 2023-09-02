@@ -1,5 +1,6 @@
 package br.senac.backend.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import br.senac.backend.converter.PetConverter;
 import br.senac.backend.handler.HandlerPet;
 import br.senac.backend.model.Pet;
+import br.senac.backend.model.User;
 import br.senac.backend.request.ListPetRequest;
 import br.senac.backend.request.PetRequest;
 import br.senac.backend.response.PetResponse;
@@ -27,6 +29,7 @@ import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.PetService;
 import br.senac.backend.service.TokenService;
 import br.senac.backend.task.NotificationTask;
+import br.senac.backend.util.ESTATUS_PET;
 
 @Controller
 public class PetController {
@@ -143,6 +146,71 @@ public class PetController {
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
+	
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/api/pet/reserve/guid/{guid}", method = RequestMethod.PUT)
+	public ResponseEntity<ResponseAPI> reservePet(@PathVariable String guid,
+			@RequestHeader(value = "token") String token) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			Pet pet = petService.getByGuid(guid);
+			if (pet != null) {
+				User user = tokenService.getByToken(token).getUser();
+				pet.setStatus(ESTATUS_PET.RESERVED);
+				pet.setAdopterUser(user);
+				pet.setReservationDate(new Date());
+				pet = petService.save(pet);
+				PetResponse petResponse = petConverter.petToResponse(pet, user);
+				if (petResponse != null)
+					handlerPet.handleReserveMessages(responseAPI, 200, petResponse);
+				else
+					handlerPet.handleReserveMessages(responseAPI, 404, null);
+			} else
+				handlerPet.handleReserveMessages(responseAPI, 404, null);
+
+			LOGGER.info(" :: Encerrando o método /api/pet/reserve/guid - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/pet/reserve/guid - 400 - BAD REQUEST :: ");
+			handlerPet.handleReserveMessages(responseAPI, 400, null);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/api/pet/cancel/reserve/guid/{guid}", method = RequestMethod.PUT)
+	public ResponseEntity<ResponseAPI> cancelReservePet(@PathVariable String guid,
+			@RequestHeader(value = "token") String token) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			Pet pet = petService.getByGuid(guid);
+			if (pet != null) {
+				pet.setStatus(ESTATUS_PET.AVAILABLE);
+				pet.setAdopterUser(null);
+				pet.setReservationDate(null);
+				pet = petService.save(pet);
+				PetResponse petResponse = petConverter.petToResponse(pet, null);
+				if (petResponse != null)
+					handlerPet.handleReserveMessages(responseAPI, 200, petResponse);
+				else
+					handlerPet.handleReserveMessages(responseAPI, 404, null);
+			} else
+				handlerPet.handleReserveMessages(responseAPI, 404, null);
+
+			LOGGER.info(" :: Encerrando o método /api/pet/reserve/guid - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/pet/reserve/guid - 400 - BAD REQUEST :: ");
+			handlerPet.handleReserveMessages(responseAPI, 400, null);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
 
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/api/pet/delete/guid/{guid}", method = RequestMethod.DELETE)
@@ -204,6 +272,7 @@ public class PetController {
 		ResponseAPI responseAPI = new ResponseAPI();
 
 		try {
+			petService.updateStatusPets();
 			List<Pet> pets = petService.getAllFiltered(listPetRequest.getDescription(), listPetRequest.getSize(),
 					listPetRequest.getBreed(), listPetRequest.getTypePet(), listPetRequest.getCity(),
 					listPetRequest.getDistrict(), listPetRequest.getCompanyName(), listPetRequest.getGender());
@@ -234,6 +303,7 @@ public class PetController {
 		ResponseAPI responseAPI = new ResponseAPI();
 
 		try {
+			petService.updateStatusPets();
 			List<Pet> pets = petService.getAllFilteredCompany(listPetRequest.getDescription(), listPetRequest.getSize(),
 					listPetRequest.getBreed(), listPetRequest.getTypePet(), listPetRequest.getCity(),
 					listPetRequest.getDistrict(), guid, listPetRequest.getGender());
