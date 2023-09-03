@@ -1,5 +1,7 @@
 package br.senac.backend.response;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import br.senac.backend.util.ESTATUS_PET;
@@ -13,7 +15,7 @@ public class PetResponse {
 	private String birthDate;
 	private String age;
 	private String breed;
-	private String vaccines;
+	private List<String> vaccines;
 	private String color;
 	private String company;
 	private String companyGuid;
@@ -28,6 +30,7 @@ public class PetResponse {
 	private Boolean isFavorite;
 	private String identification;
 	private ESTATUS_PET status;
+	private String reservationInfo;
 
 	public String getGuid() {
 		return guid;
@@ -77,11 +80,11 @@ public class PetResponse {
 		this.breed = breed;
 	}
 
-	public String getVaccines() {
+	public List<String> getVaccines() {
 		return vaccines;
 	}
 
-	public void setVaccines(String vaccines) {
+	public void setVaccines(List<String> vaccines) {
 		this.vaccines = vaccines;
 	}
 
@@ -195,6 +198,14 @@ public class PetResponse {
 
 	public void setStatus(ESTATUS_PET status) {
 		this.status = status;
+	}
+
+	public String getReservationInfo() {
+		return reservationInfo;
+	}
+
+	public void setReservationInfo(String reservationInfo) {
+		this.reservationInfo = reservationInfo;
 	}
 
 }

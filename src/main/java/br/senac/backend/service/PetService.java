@@ -22,4 +22,6 @@ public interface PetService {
 	Boolean isExists(String size, String breed, String typePet, String gender);
 	
 	void updateStatusPets();
+	
+	Integer getDaysSinceReservationByGuid(String guid);
 }

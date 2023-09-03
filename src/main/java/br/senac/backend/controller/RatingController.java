@@ -20,9 +20,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import br.senac.backend.converter.RatingConverter;
 import br.senac.backend.handler.HandlerCompany;
+import br.senac.backend.handler.HandlerPet;
 import br.senac.backend.handler.HandlerRating;
 import br.senac.backend.handler.HandlerUser;
 import br.senac.backend.model.Company;
+import br.senac.backend.model.Pet;
 import br.senac.backend.model.Rating;
 import br.senac.backend.model.User;
 import br.senac.backend.request.RatingEmailRequest;
@@ -31,6 +33,7 @@ import br.senac.backend.response.AverageRatingResponse;
 import br.senac.backend.response.RatingResponse;
 import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.CompanyService;
+import br.senac.backend.service.PetService;
 import br.senac.backend.service.RatingService;
 import br.senac.backend.service.UserService;
 import br.senac.backend.task.EmailRatingTask;
@@ -45,10 +48,16 @@ public class RatingController {
 	private UserService userService;
 
 	@Autowired
+	private PetService petService;
+
+	@Autowired
 	private RatingService ratingService;
 
 	@Autowired
 	private HandlerUser handlerUser;
+
+	@Autowired
+	private HandlerPet handlerPet;
 
 	@Autowired
 	private HandlerCompany handlerCompany;
@@ -219,16 +228,20 @@ public class RatingController {
 		ResponseAPI responseAPI = new ResponseAPI();
 
 		try {
-			User user = userService.locateByEmail(ratingEmailRequest.getEmail());
-			if (user != null) {
-				EmailRatingTask emailTask = applicationContext.getBean(EmailRatingTask.class);
-				emailTask.setCompanyGuid(ratingEmailRequest.getCompanyGuid());
-				emailTask.setEmail(ratingEmailRequest.getEmail());
-				emailTask.setUrl(url);
-				taskExecutor.execute(emailTask);
-				handlerRating.handleSendEmailMessages(responseAPI, 200, null);
+			Pet pet = petService.getByGuid(ratingEmailRequest.getPetGuid());
+			if (pet != null) {
+				User user = pet.getAdopterUser();
+				if (user != null) {
+					EmailRatingTask emailTask = applicationContext.getBean(EmailRatingTask.class);
+					emailTask.setCompanyGuid(ratingEmailRequest.getCompanyGuid());
+					emailTask.setEmail(user.getEmail());
+					emailTask.setUrl(url);
+					taskExecutor.execute(emailTask);
+					handlerRating.handleSendEmailMessages(responseAPI, 200, null);
+				} else
+					handlerUser.handleDetailMessages(responseAPI, 404, null);
 			} else
-				handlerUser.handleDetailMessages(responseAPI, 404, null);
+				handlerPet.handleDetailMessages(responseAPI, 404, null);
 
 			LOGGER.info(" :: Encerrando o método /api/rating/send/email - 200 - OK :: ");
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);

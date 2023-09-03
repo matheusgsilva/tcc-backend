@@ -46,12 +46,36 @@ public class HandlerPet {
 			response.setData(null);
 		}
 	}
-	
+
 	public void handleReserveMessages(ResponseAPI response, int code, Object model) {
 		if (code == 200) {
 			response.setCode(200);
 			response.setData(model);
 			response.setMsg("PET_RESERVATION_UPDATED_SUCCESSFULLY");
+		} else if (code == 304) {
+			response.setCode(304);
+			response.setMsg("PET_RESERVATION_ALREADY_EXISTS");
+			response.setData(null);
+		} else if (code == 404) {
+			response.setCode(404);
+			response.setData(null);
+			response.setMsg("PET_NOT_FOUND");
+		} else if (code == 400) {
+			response.setCode(400);
+			response.setMsg("BAD_REQUEST");
+			response.setData(null);
+		}
+	}
+	
+	public void handleAdoptionMessages(ResponseAPI response, int code, Object model) {
+		if (code == 200) {
+			response.setCode(200);
+			response.setData(model);
+			response.setMsg("PET_ADOPTION_UPDATED_SUCCESSFULLY");
+		} else if (code == 304) {
+			response.setCode(304);
+			response.setMsg("INVALID_STATUS_FOR_ADOPTION");
+			response.setData(null);
 		} else if (code == 404) {
 			response.setCode(404);
 			response.setData(null);
@@ -77,8 +101,8 @@ public class HandlerPet {
 			response.setMsg("BAD_REQUEST");
 			response.setData(null);
 		}
-	}	
-	
+	}
+
 	public void handleDetailMessages(ResponseAPI response, int code, Object model) {
 		if (code == 200) {
 			response.setCode(200);

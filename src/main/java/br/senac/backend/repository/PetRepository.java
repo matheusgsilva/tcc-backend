@@ -70,11 +70,14 @@ public interface PetRepository extends PagingAndSortingRepository<Pet, Long> {
 
 	@Query("SELECT c FROM Pet c WHERE c.guid = :guid")
 	Pet getByGuid(@Param("guid") String guid);
-	
+
 	@Modifying
-	@Query("UPDATE Pet p SET p.status = :status, p.reservationDate = NULL, p.adopterUser = NULL " +
-	      "WHERE p.company.daysPetReservation IS NOT NULL AND p.reservationDate IS NOT NULL AND " +
-	      "DATEDIFF(CURRENT_DATE, p.reservationDate) > p.company.daysPetReservation")
+	@Query("UPDATE Pet p SET p.status = :status, p.reservationDate = NULL, p.adopterUser = NULL "
+			+ "WHERE p.company.daysPetReservation IS NOT NULL AND p.reservationDate IS NOT NULL AND "
+			+ "(DATEDIFF(CURRENT_DATE, p.reservationDate) - p.company.daysPetReservation) >= 0")
 	void updateStatusPets(@Param("status") ESTATUS_PET status);
+
+	@Query("SELECT DATEDIFF(CURRENT_DATE, p.reservationDate) FROM Pet p WHERE p.guid = :guid")
+	Integer getDaysSinceReservationByGuid(@Param("guid") String guid);
 
 }

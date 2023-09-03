@@ -146,7 +146,7 @@ public class PetController {
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/api/pet/reserve/guid/{guid}", method = RequestMethod.PUT)
 	public ResponseEntity<ResponseAPI> reservePet(@PathVariable String guid,
@@ -157,16 +157,19 @@ public class PetController {
 		try {
 			Pet pet = petService.getByGuid(guid);
 			if (pet != null) {
-				User user = tokenService.getByToken(token).getUser();
-				pet.setStatus(ESTATUS_PET.RESERVED);
-				pet.setAdopterUser(user);
-				pet.setReservationDate(new Date());
-				pet = petService.save(pet);
-				PetResponse petResponse = petConverter.petToResponse(pet, user);
-				if (petResponse != null)
-					handlerPet.handleReserveMessages(responseAPI, 200, petResponse);
-				else
-					handlerPet.handleReserveMessages(responseAPI, 404, null);
+				if (pet.getStatus().equals(ESTATUS_PET.AVAILABLE)) {
+					User user = tokenService.getByToken(token).getUser();
+					pet.setStatus(ESTATUS_PET.RESERVED);
+					pet.setAdopterUser(user);
+					pet.setReservationDate(new Date());
+					pet = petService.save(pet);
+					PetResponse petResponse = petConverter.petToResponse(pet, user);
+					if (petResponse != null)
+						handlerPet.handleReserveMessages(responseAPI, 200, petResponse);
+					else
+						handlerPet.handleReserveMessages(responseAPI, 404, null);
+				} else
+					handlerPet.handleReserveMessages(responseAPI, 304, null);
 			} else
 				handlerPet.handleReserveMessages(responseAPI, 404, null);
 
@@ -179,7 +182,7 @@ public class PetController {
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/api/pet/cancel/reserve/guid/{guid}", method = RequestMethod.PUT)
 	public ResponseEntity<ResponseAPI> cancelReservePet(@PathVariable String guid,
@@ -208,6 +211,40 @@ public class PetController {
 			ex.printStackTrace();
 			LOGGER.error(" :: Encerrando o método /api/pet/reserve/guid - 400 - BAD REQUEST :: ");
 			handlerPet.handleReserveMessages(responseAPI, 400, null);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/api/pet/adopt/guid/{guid}", method = RequestMethod.PUT)
+	public ResponseEntity<ResponseAPI> adoptPet(@PathVariable String guid,
+			@RequestHeader(value = "token") String token) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			Pet pet = petService.getByGuid(guid);
+			if (pet != null) {
+				if (pet.getStatus().equals(ESTATUS_PET.RESERVED)) {
+					pet.setStatus(ESTATUS_PET.ADOPTED);
+					pet.setReservationDate(null);
+					pet = petService.save(pet);
+					PetResponse petResponse = petConverter.petToResponse(pet, null);
+					if (petResponse != null)
+						handlerPet.handleAdoptionMessages(responseAPI, 200, petResponse);
+					else
+						handlerPet.handleAdoptionMessages(responseAPI, 404, null);
+				} else
+					handlerPet.handleAdoptionMessages(responseAPI, 304, null);
+			} else
+				handlerPet.handleAdoptionMessages(responseAPI, 404, null);
+
+			LOGGER.info(" :: Encerrando o método /api/pet/adopt/guid - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/pet/adopt/guid - 400 - BAD REQUEST :: ");
+			handlerPet.handleAdoptionMessages(responseAPI, 400, null);
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}

@@ -2,15 +2,15 @@ package br.senac.backend.request;
 
 public class RatingEmailRequest {
 
-	private String email;
+	private String petGuid;
 	private String companyGuid;
 
-	public String getEmail() {
-		return email;
+	public String getPetGuid() {
+		return petGuid;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setPetGuid(String petGuid) {
+		this.petGuid = petGuid;
 	}
 
 	public String getCompanyGuid() {

@@ -1,9 +1,13 @@
 package br.senac.backend.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -62,8 +66,10 @@ public class Pet implements Serializable {
 	@Column(columnDefinition = "VARCHAR(50)", nullable = true)
 	private String gender;
 
-	@Lob
-	private String vaccines;
+	@ElementCollection
+	@CollectionTable(name = "pet_vaccines", joinColumns = @JoinColumn(name = "pet_id"))
+	@Column(name = "vaccine")
+	private List<String> vaccines = new ArrayList<String>();
 
 	@Column(columnDefinition = "VARCHAR(200)", nullable = true)
 	private String color;
@@ -149,12 +155,12 @@ public class Pet implements Serializable {
 		this.breed = breed;
 	}
 
-	public String getVaccines() {
-		return vaccines;
+	public List<String> getVaccines() {
+	    return vaccines;
 	}
 
-	public void setVaccines(String vaccines) {
-		this.vaccines = vaccines;
+	public void setVaccines(List<String> vaccines) {
+	    this.vaccines = vaccines;
 	}
 
 	public String getColor() {

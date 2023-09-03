@@ -84,4 +84,8 @@ public class PetServiceBean implements PetService {
 	public void updateStatusPets() {
 		repository.updateStatusPets(ESTATUS_PET.AVAILABLE);
 	}
+	
+	public Integer getDaysSinceReservationByGuid(String guid) {
+		return repository.getDaysSinceReservationByGuid(guid);
+	}
 }

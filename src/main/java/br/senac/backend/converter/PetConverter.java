@@ -18,6 +18,7 @@ import br.senac.backend.model.User;
 import br.senac.backend.request.PetRequest;
 import br.senac.backend.response.PetResponse;
 import br.senac.backend.service.CompanyService;
+import br.senac.backend.service.PetService;
 import br.senac.backend.util.ESTATUS_PET;
 
 @Component
@@ -25,6 +26,9 @@ public class PetConverter {
 
 	@Autowired
 	private CompanyService companyService;
+	
+	@Autowired
+	private PetService petService;
 
 	public Pet petSave(PetRequest petRequest, String companyGuid) {
 
@@ -140,6 +144,10 @@ public class PetConverter {
 			petResponse.setTypePet(pet.getTypePet());
 			petResponse.setGender(pet.getGender());
 			petResponse.setStatus(pet.getStatus());
+			if(pet.getStatus().equals(ESTATUS_PET.RESERVED)) {
+				Integer days = petService.getDaysSinceReservationByGuid(pet.getGuid());
+				petResponse.setReservationInfo("Restam " + days + (days == 1 ? " dia " : " dias ") + "para finalizar a reserva.");
+			}
 			petResponse.setIdentification(pet.getIdentification());
 			if (user != null)
 				petResponse.setIsFavorite(user.getFavoritePets().contains(pet));
@@ -185,6 +193,10 @@ public class PetConverter {
 				petResponse.setTypePet(pet.getTypePet());
 				petResponse.setGender(pet.getGender());
 				petResponse.setStatus(pet.getStatus());
+				if(pet.getStatus().equals(ESTATUS_PET.RESERVED)) {
+					Integer days = petService.getDaysSinceReservationByGuid(pet.getGuid());
+					petResponse.setReservationInfo("Restam " + days + (days == 1 ? " dia " : " dias ") + "para finalizar a reserva.");
+				}
 				petResponse.setIdentification(pet.getIdentification());
 				list.add(petResponse);
 			}

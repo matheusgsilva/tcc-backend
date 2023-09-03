@@ -84,7 +84,7 @@ public class Company implements Serializable {
 	@Column(nullable = false, columnDefinition = "VARCHAR(100)")
 	private String password;
 
-	@Column(columnDefinition = "INT(1) default 0", nullable = true)
+	@Column(columnDefinition = "INT(1) default 3", nullable = true)
 	private Integer daysPetReservation;
 
 	@OneToMany(mappedBy = "company", targetEntity = Rating.class, fetch = FetchType.LAZY)

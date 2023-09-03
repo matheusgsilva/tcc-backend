@@ -1,12 +1,14 @@
 package br.senac.backend.request;
 
+import java.util.List;
+
 public class PetRequest {
 
 	private String description;
 	private String size;
 	private String birthDate;
 	private String breed;
-	private String vaccines;
+	private List<String> vaccines;
 	private String color;
 	private String photo1;
 	private String photo2;
@@ -47,11 +49,11 @@ public class PetRequest {
 		this.breed = breed;
 	}
 
-	public String getVaccines() {
+	public List<String> getVaccines() {
 		return vaccines;
 	}
 
-	public void setVaccines(String vaccines) {
+	public void setVaccines(List<String> vaccines) {
 		this.vaccines = vaccines;
 	}
 
