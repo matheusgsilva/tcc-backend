@@ -10096,3 +10096,949 @@ Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\or
 2023-09-03 15:16:26.702  INFO 20252 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_3
 2023-09-03 15:16:26.704  INFO 20252 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updatePassUsingPOST_1
 2023-09-03 15:16:26.717  INFO 20252 --- [main] br.senac.backend.BackendApplication      : Started BackendApplication in 4.385 seconds (JVM running for 5.108)
+2023-09-03 15:25:41.551  INFO 18236 --- [main] br.senac.backend.BackendApplication      : Starting BackendApplication using Java 15.0.2 on DESKTOP-V54UVG9 with PID 18236 (C:\Users\Desktop\Desktop\GIT\tcc-backend\target\classes started by Desktop in C:\Users\Desktop\Desktop\GIT\tcc-backend)
+2023-09-03 15:25:41.555  INFO 18236 --- [main] br.senac.backend.BackendApplication      : The following profiles are active: dev
+2023-09-03 15:25:42.331  INFO 18236 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-03 15:25:42.435  INFO 18236 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 7 JPA repository interfaces.
+2023-09-03 15:25:42.956  INFO 18236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9595 (http)
+2023-09-03 15:25:42.965  INFO 18236 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-03 15:25:42.965  INFO 18236 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2023-09-03 15:25:43.212  WARN 18236 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-utils.jar] from classloader hierarchy
+
+java.io.IOException: java.lang.reflect.InvocationTargetException
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFileUrlJar.<init>(JarFileUrlJar.java:65) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFactory.newInstance(JarFactory.java:49) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:383) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.processURLs(StandardJarScanner.java:318) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.doScanClassPath(StandardJarScanner.java:282) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:233) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scanJars(TldScanner.java:262) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scan(TldScanner.java:104) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.JasperInitializer.onStartup(JasperInitializer.java:83) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5161) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577) ~[spring-context-5.3.6.jar:5.3.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
+	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-utils.jar
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:701) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:240) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:171) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-09-03 15:25:43.214  WARN 18236 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/jakarta.annotation-api.jar] from classloader hierarchy
+
+java.io.IOException: java.lang.reflect.InvocationTargetException
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFileUrlJar.<init>(JarFileUrlJar.java:65) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFactory.newInstance(JarFactory.java:49) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:383) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.processURLs(StandardJarScanner.java:318) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.doScanClassPath(StandardJarScanner.java:282) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:233) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scanJars(TldScanner.java:262) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scan(TldScanner.java:104) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.JasperInitializer.onStartup(JasperInitializer.java:83) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5161) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577) ~[spring-context-5.3.6.jar:5.3.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
+	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\jakarta.annotation-api.jar
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:701) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:240) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:171) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-09-03 15:25:43.215  WARN 18236 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/jakarta.inject.jar] from classloader hierarchy
+
+java.io.IOException: java.lang.reflect.InvocationTargetException
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFileUrlJar.<init>(JarFileUrlJar.java:65) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFactory.newInstance(JarFactory.java:49) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:383) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.processURLs(StandardJarScanner.java:318) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.doScanClassPath(StandardJarScanner.java:282) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:233) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scanJars(TldScanner.java:262) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scan(TldScanner.java:104) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.JasperInitializer.onStartup(JasperInitializer.java:83) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5161) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577) ~[spring-context-5.3.6.jar:5.3.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
+	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\jakarta.inject.jar
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:701) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:240) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:171) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-09-03 15:25:43.217  WARN 18236 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-api.jar] from classloader hierarchy
+
+java.io.IOException: java.lang.reflect.InvocationTargetException
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFileUrlJar.<init>(JarFileUrlJar.java:65) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFactory.newInstance(JarFactory.java:49) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:383) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.processURLs(StandardJarScanner.java:318) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.doScanClassPath(StandardJarScanner.java:282) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:233) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scanJars(TldScanner.java:262) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scan(TldScanner.java:104) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.JasperInitializer.onStartup(JasperInitializer.java:83) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5161) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577) ~[spring-context-5.3.6.jar:5.3.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
+	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-api.jar
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:701) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:240) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:171) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-09-03 15:25:43.218  WARN 18236 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-core.jar] from classloader hierarchy
+
+java.io.IOException: java.lang.reflect.InvocationTargetException
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFileUrlJar.<init>(JarFileUrlJar.java:65) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFactory.newInstance(JarFactory.java:49) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:383) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.processURLs(StandardJarScanner.java:318) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.doScanClassPath(StandardJarScanner.java:282) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:233) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scanJars(TldScanner.java:262) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scan(TldScanner.java:104) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.JasperInitializer.onStartup(JasperInitializer.java:83) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5161) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577) ~[spring-context-5.3.6.jar:5.3.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
+	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-core.jar
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:701) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:240) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:171) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-09-03 15:25:43.220  WARN 18236 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-locator.jar] from classloader hierarchy
+
+java.io.IOException: java.lang.reflect.InvocationTargetException
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFileUrlJar.<init>(JarFileUrlJar.java:65) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFactory.newInstance(JarFactory.java:49) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:383) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.processURLs(StandardJarScanner.java:318) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.doScanClassPath(StandardJarScanner.java:282) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:233) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scanJars(TldScanner.java:262) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scan(TldScanner.java:104) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.JasperInitializer.onStartup(JasperInitializer.java:83) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5161) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577) ~[spring-context-5.3.6.jar:5.3.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
+	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-locator.jar
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:701) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:240) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:171) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-09-03 15:25:43.222  WARN 18236 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/javassist.jar] from classloader hierarchy
+
+java.io.IOException: java.lang.reflect.InvocationTargetException
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFileUrlJar.<init>(JarFileUrlJar.java:65) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFactory.newInstance(JarFactory.java:49) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:383) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.processURLs(StandardJarScanner.java:318) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.doScanClassPath(StandardJarScanner.java:282) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:233) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scanJars(TldScanner.java:262) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scan(TldScanner.java:104) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.JasperInitializer.onStartup(JasperInitializer.java:83) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5161) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577) ~[spring-context-5.3.6.jar:5.3.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
+	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\javassist.jar
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:701) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:240) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:171) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-09-03 15:25:43.224  WARN 18236 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/hk2-runlevel.jar] from classloader hierarchy
+
+java.io.IOException: java.lang.reflect.InvocationTargetException
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFileUrlJar.<init>(JarFileUrlJar.java:65) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFactory.newInstance(JarFactory.java:49) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:383) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.processURLs(StandardJarScanner.java:318) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.doScanClassPath(StandardJarScanner.java:282) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:233) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scanJars(TldScanner.java:262) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scan(TldScanner.java:104) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.JasperInitializer.onStartup(JasperInitializer.java:83) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5161) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577) ~[spring-context-5.3.6.jar:5.3.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
+	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\hk2-runlevel.jar
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:701) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:240) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:171) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-09-03 15:25:43.225  WARN 18236 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/class-model.jar] from classloader hierarchy
+
+java.io.IOException: java.lang.reflect.InvocationTargetException
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFileUrlJar.<init>(JarFileUrlJar.java:65) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFactory.newInstance(JarFactory.java:49) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:383) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.processURLs(StandardJarScanner.java:318) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.doScanClassPath(StandardJarScanner.java:282) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:233) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scanJars(TldScanner.java:262) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scan(TldScanner.java:104) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.JasperInitializer.onStartup(JasperInitializer.java:83) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5161) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577) ~[spring-context-5.3.6.jar:5.3.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
+	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\class-model.jar
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:701) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:240) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:171) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-09-03 15:25:43.226  WARN 18236 --- [main] o.a.tomcat.util.scan.StandardJarScanner  : Failed to scan [file:/C:/Users/Desktop/.m2/repository/org/glassfish/hk2/hk2/2.6.1/asm.jar] from classloader hierarchy
+
+java.io.IOException: java.lang.reflect.InvocationTargetException
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:209) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFileUrlJar.<init>(JarFileUrlJar.java:65) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.JarFactory.newInstance(JarFactory.java:49) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:383) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.processURLs(StandardJarScanner.java:318) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.doScanClassPath(StandardJarScanner.java:282) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:233) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scanJars(TldScanner.java:262) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.TldScanner.scan(TldScanner.java:104) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.jasper.servlet.JasperInitializer.onStartup(JasperInitializer.java:83) ~[tomcat-embed-jasper-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5161) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577) ~[spring-context-5.3.6.jar:5.3.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340) ~[spring-boot-2.4.5.jar:2.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329) ~[spring-boot-2.4.5.jar:2.4.5]
+	at br.senac.backend.BackendApplication.main(BackendApplication.java:21) ~[classes/:na]
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor32.newInstance(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[na:na]
+	at org.apache.tomcat.util.compat.Jre9Compat.jarFileNewInstance(Jre9Compat.java:206) ~[tomcat-embed-core-9.0.45.jar:9.0.45]
+	... 47 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: C:\Users\Desktop\.m2\repository\org\glassfish\hk2\hk2\2.6.1\asm.jar
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198) ~[na:na]
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1843) ~[na:na]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1198) ~[na:na]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:701) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:240) ~[na:na]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:171) ~[na:na]
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:347) ~[na:na]
+	... 52 common frames omitted
+
+2023-09-03 15:25:43.228  INFO 18236 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-09-03 15:25:43.234  INFO 18236 --- [main] o.a.c.c.C.[.[localhost].[/backend]       : Initializing Spring embedded WebApplicationContext
+2023-09-03 15:25:43.234  INFO 18236 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1645 ms
+2023-09-03 15:25:43.358  INFO 18236 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-03 15:25:43.397  INFO 18236 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.30.Final
+2023-09-03 15:25:43.497  INFO 18236 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-03 15:25:43.578  INFO 18236 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-03 15:25:43.717  INFO 18236 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-03 15:25:43.741  INFO 18236 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-09-03 15:25:44.415  INFO 18236 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-03 15:25:44.423  INFO 18236 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-03 15:25:44.791  WARN 18236 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-03 15:25:45.010  INFO 18236 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2023-09-03 15:25:45.010  INFO 18236 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'threadPoolTaskExecutor'
+2023-09-03 15:25:45.347  INFO 18236 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37351baa, org.springframework.security.web.context.SecurityContextPersistenceFilter@31b827a6, org.springframework.security.web.header.HeaderWriterFilter@712eb075, org.springframework.security.web.authentication.logout.LogoutFilter@1ced1fb9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@203b98cf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71ad1d0b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@79de00af, org.springframework.security.web.session.SessionManagementFilter@7df1fc5a, org.springframework.security.web.access.ExceptionTranslationFilter@2fb9695a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4290fcd7]
+2023-09-03 15:25:45.363  INFO 18236 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-09-03 15:25:45.606  INFO 18236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9595 (http) with context path '/backend'
+2023-09-03 15:25:45.612  INFO 18236 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-09-03 15:25:45.629  INFO 18236 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-09-03 15:25:45.654  INFO 18236 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-09-03 15:25:45.754  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_1
+2023-09-03 15:25:45.787  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_2
+2023-09-03 15:25:45.790  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_1
+2023-09-03 15:25:45.807  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_3
+2023-09-03 15:25:45.812  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_1
+2023-09-03 15:25:45.814  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_1
+2023-09-03 15:25:45.830  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_1
+2023-09-03 15:25:45.835  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_4
+2023-09-03 15:25:45.837  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_2
+2023-09-03 15:25:45.841  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_2
+2023-09-03 15:25:45.843  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_2
+2023-09-03 15:25:45.849  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_3
+2023-09-03 15:25:45.851  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_2
+2023-09-03 15:25:45.853  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_3
+2023-09-03 15:25:45.863  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUsingPOST_5
+2023-09-03 15:25:45.865  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_4
+2023-09-03 15:25:45.867  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getByGuidUsingGET_3
+2023-09-03 15:25:45.868  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listUsingGET_4
+2023-09-03 15:25:45.870  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_3
+2023-09-03 15:25:45.872  INFO 18236 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updatePassUsingPOST_1
+2023-09-03 15:25:45.884  INFO 18236 --- [main] br.senac.backend.BackendApplication      : Started BackendApplication in 4.652 seconds (JVM running for 5.394)
+2023-09-03 15:27:05.985  INFO 18236 --- [http-nio-9595-exec-1] o.a.c.c.C.[.[localhost].[/backend]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-03 15:27:05.986  INFO 18236 --- [http-nio-9595-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-03 15:27:05.987  INFO 18236 --- [http-nio-9595-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-03 15:27:06.135  INFO 18236 --- [http-nio-9595-exec-1] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:13:13.306  INFO 18236 --- [http-nio-9595-exec-4] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:13:13.338  INFO 18236 --- [http-nio-9595-exec-6] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:25:45.672  INFO 18236 --- [http-nio-9595-exec-8] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:25:45.709  INFO 18236 --- [http-nio-9595-exec-9] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:25:50.751  INFO 18236 --- [http-nio-9595-exec-10] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:25:50.786  INFO 18236 --- [http-nio-9595-exec-1] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:28:22.268  INFO 18236 --- [http-nio-9595-exec-3] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:28:22.303  INFO 18236 --- [http-nio-9595-exec-4] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:30:54.554  INFO 18236 --- [http-nio-9595-exec-6] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:30:54.592  INFO 18236 --- [http-nio-9595-exec-7] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:32:04.969  INFO 18236 --- [http-nio-9595-exec-9] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:32:05.011  INFO 18236 --- [http-nio-9595-exec-10] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:32:08.848  INFO 18236 --- [http-nio-9595-exec-1] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:32:08.882  INFO 18236 --- [http-nio-9595-exec-2] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:32:29.095  INFO 18236 --- [http-nio-9595-exec-3] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:32:29.124  INFO 18236 --- [http-nio-9595-exec-4] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:32:30.862  INFO 18236 --- [http-nio-9595-exec-5] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:32:30.890  INFO 18236 --- [http-nio-9595-exec-6] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:32:45.290  INFO 18236 --- [http-nio-9595-exec-7] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:32:45.320  INFO 18236 --- [http-nio-9595-exec-8] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:33:46.313  INFO 18236 --- [http-nio-9595-exec-10] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:33:46.342  INFO 18236 --- [http-nio-9595-exec-1] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:33:58.279  INFO 18236 --- [http-nio-9595-exec-2] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:33:58.316  INFO 18236 --- [http-nio-9595-exec-3] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:35:08.410  INFO 18236 --- [http-nio-9595-exec-5] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:35:08.438  INFO 18236 --- [http-nio-9595-exec-6] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:35:32.689  INFO 18236 --- [http-nio-9595-exec-7] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:35:32.717  INFO 18236 --- [http-nio-9595-exec-8] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:36:12.103  INFO 18236 --- [http-nio-9595-exec-9] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:36:12.133  INFO 18236 --- [http-nio-9595-exec-10] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:36:20.572  INFO 18236 --- [http-nio-9595-exec-1] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:36:20.602  INFO 18236 --- [http-nio-9595-exec-2] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:36:29.105  INFO 18236 --- [http-nio-9595-exec-3] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:36:41.831  INFO 18236 --- [http-nio-9595-exec-5] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/detail/guid - 200 - OK :: 
+2023-09-03 16:36:47.953  INFO 18236 --- [http-nio-9595-exec-7] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/update - 200 - OK :: 
+2023-09-03 16:36:47.991  INFO 18236 --- [http-nio-9595-exec-8] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:38:35.730  INFO 18236 --- [http-nio-9595-exec-1] b.s.backend.controller.UserController    :  :: Encerrando o método /api/user/list - 200 - OK :: 
+2023-09-03 16:38:39.835  INFO 18236 --- [http-nio-9595-exec-2] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:38:39.865  INFO 18236 --- [http-nio-9595-exec-3] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:38:49.032  INFO 18236 --- [http-nio-9595-exec-4] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:38:49.099  INFO 18236 --- [http-nio-9595-exec-5] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:39:11.003  INFO 18236 --- [http-nio-9595-exec-6] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:39:11.072  INFO 18236 --- [http-nio-9595-exec-7] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:39:38.509  INFO 18236 --- [http-nio-9595-exec-8] b.s.backend.controller.UserController    :  :: Encerrando o método /api/user/list - 200 - OK :: 
+2023-09-03 16:39:42.410  INFO 18236 --- [http-nio-9595-exec-9] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:39:42.444  INFO 18236 --- [http-nio-9595-exec-10] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:44:35.608  INFO 18236 --- [http-nio-9595-exec-2] b.s.backend.controller.UserController    :  :: Encerrando o método /api/user/list - 200 - OK :: 
+2023-09-03 16:44:39.516  INFO 18236 --- [http-nio-9595-exec-4] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:44:39.550  INFO 18236 --- [http-nio-9595-exec-6] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:47:02.679  INFO 18236 --- [http-nio-9595-exec-8] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:47:02.733  INFO 18236 --- [http-nio-9595-exec-9] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:47:07.176  INFO 18236 --- [http-nio-9595-exec-10] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:47:21.369  INFO 18236 --- [http-nio-9595-exec-1] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:47:21.439  INFO 18236 --- [http-nio-9595-exec-2] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:47:50.529  INFO 18236 --- [http-nio-9595-exec-3] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:47:50.599  INFO 18236 --- [http-nio-9595-exec-4] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:49:19.916  INFO 18236 --- [http-nio-9595-exec-6] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:49:19.978  INFO 18236 --- [http-nio-9595-exec-7] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:49:37.001  INFO 18236 --- [http-nio-9595-exec-8] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:49:37.066  INFO 18236 --- [http-nio-9595-exec-9] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:51:31.440  INFO 18236 --- [http-nio-9595-exec-1] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:51:31.494  INFO 18236 --- [http-nio-9595-exec-2] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:52:09.708  INFO 18236 --- [http-nio-9595-exec-3] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:52:09.766  INFO 18236 --- [http-nio-9595-exec-4] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:52:12.352  INFO 18236 --- [http-nio-9595-exec-5] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:52:12.405  INFO 18236 --- [http-nio-9595-exec-6] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:52:18.877  INFO 18236 --- [http-nio-9595-exec-7] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:52:18.932  INFO 18236 --- [http-nio-9595-exec-8] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:52:34.425  INFO 18236 --- [http-nio-9595-exec-9] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:54:05.838  INFO 18236 --- [http-nio-9595-exec-1] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:54:05.933  INFO 18236 --- [http-nio-9595-exec-2] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:54:07.693  INFO 18236 --- [http-nio-9595-exec-3] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:54:07.758  INFO 18236 --- [http-nio-9595-exec-4] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:54:19.429  INFO 18236 --- [http-nio-9595-exec-5] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:54:19.496  INFO 18236 --- [http-nio-9595-exec-6] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:56:35.237  INFO 18236 --- [http-nio-9595-exec-8] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:56:35.303  INFO 18236 --- [http-nio-9595-exec-9] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:59:15.293  INFO 18236 --- [http-nio-9595-exec-1] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:59:15.358  INFO 18236 --- [http-nio-9595-exec-2] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 16:59:22.185  INFO 18236 --- [http-nio-9595-exec-3] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 16:59:22.252  INFO 18236 --- [http-nio-9595-exec-4] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:02:39.494  INFO 18236 --- [http-nio-9595-exec-6] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:02:39.566  INFO 18236 --- [http-nio-9595-exec-7] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:02:54.107  INFO 18236 --- [http-nio-9595-exec-8] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:02:54.178  INFO 18236 --- [http-nio-9595-exec-9] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:03:03.549  INFO 18236 --- [http-nio-9595-exec-10] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:03:03.620  INFO 18236 --- [http-nio-9595-exec-1] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:09:53.123  INFO 18236 --- [http-nio-9595-exec-3] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:09:53.188  INFO 18236 --- [http-nio-9595-exec-4] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:12:51.285  INFO 18236 --- [http-nio-9595-exec-6] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:12:51.360  INFO 18236 --- [http-nio-9595-exec-7] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:12:59.322  INFO 18236 --- [http-nio-9595-exec-8] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:12:59.391  INFO 18236 --- [http-nio-9595-exec-9] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:14:16.218  INFO 18236 --- [http-nio-9595-exec-1] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:14:16.292  INFO 18236 --- [http-nio-9595-exec-2] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:15:07.384  INFO 18236 --- [http-nio-9595-exec-4] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:15:26.383  INFO 18236 --- [http-nio-9595-exec-5] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:18:39.009  INFO 18236 --- [http-nio-9595-exec-8] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:18:39.081  INFO 18236 --- [http-nio-9595-exec-9] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:19:09.435  INFO 18236 --- [http-nio-9595-exec-10] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:19:09.510  INFO 18236 --- [http-nio-9595-exec-1] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:19:13.052  INFO 18236 --- [http-nio-9595-exec-2] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:19:13.118  INFO 18236 --- [http-nio-9595-exec-3] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:19:16.305  INFO 18236 --- [http-nio-9595-exec-5] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/detail/guid - 200 - OK :: 
+2023-09-03 17:19:22.025  INFO 18236 --- [http-nio-9595-exec-7] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/update - 200 - OK :: 
+2023-09-03 17:19:22.033  INFO 18236 --- [http-nio-9595-exec-8] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:20:02.658  INFO 18236 --- [http-nio-9595-exec-9] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:20:02.704  INFO 18236 --- [http-nio-9595-exec-10] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:20:08.273  INFO 18236 --- [http-nio-9595-exec-1] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:20:10.413  INFO 18236 --- [http-nio-9595-exec-2] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/detail/guid - 200 - OK :: 
+2023-09-03 17:20:15.247  INFO 18236 --- [http-nio-9595-exec-3] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/update - 200 - OK :: 
+2023-09-03 17:20:15.281  INFO 18236 --- [http-nio-9595-exec-4] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:20:35.184  INFO 18236 --- [http-nio-9595-exec-5] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:20:35.238  INFO 18236 --- [http-nio-9595-exec-6] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:21:19.809  INFO 18236 --- [http-nio-9595-exec-7] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:21:19.865  INFO 18236 --- [http-nio-9595-exec-8] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:22:26.636  INFO 18236 --- [http-nio-9595-exec-10] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:22:26.686  INFO 18236 --- [http-nio-9595-exec-1] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:23:04.844  INFO 18236 --- [http-nio-9595-exec-2] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:23:04.897  INFO 18236 --- [http-nio-9595-exec-3] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:23:21.912  INFO 18236 --- [http-nio-9595-exec-4] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:23:21.964  INFO 18236 --- [http-nio-9595-exec-5] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:24:48.322  INFO 18236 --- [http-nio-9595-exec-7] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:24:48.379  INFO 18236 --- [http-nio-9595-exec-8] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:24:55.466  INFO 18236 --- [http-nio-9595-exec-9] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:24:55.516  INFO 18236 --- [http-nio-9595-exec-10] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:24:57.757  INFO 18236 --- [http-nio-9595-exec-1] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:24:58.763  INFO 18236 --- [http-nio-9595-exec-2] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:25:37.948  INFO 18236 --- [http-nio-9595-exec-4] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/add - 200 - OK :: 
+2023-09-03 17:25:37.965  INFO 18236 --- [http-nio-9595-exec-5] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:27:03.838  INFO 18236 --- [http-nio-9595-exec-7] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:27:03.888  INFO 18236 --- [http-nio-9595-exec-8] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:27:23.076  INFO 18236 --- [http-nio-9595-exec-9] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:27:23.152  INFO 18236 --- [http-nio-9595-exec-10] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:29:51.844  INFO 18236 --- [http-nio-9595-exec-2] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:29:51.892  INFO 18236 --- [http-nio-9595-exec-3] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:29:55.381  INFO 18236 --- [http-nio-9595-exec-4] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:29:55.433  INFO 18236 --- [http-nio-9595-exec-5] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:30:01.515  INFO 18236 --- [http-nio-9595-exec-6] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:30:01.567  INFO 18236 --- [http-nio-9595-exec-7] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:30:31.518  INFO 18236 --- [http-nio-9595-exec-8] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/add - 200 - OK :: 
+2023-09-03 17:30:31.535  INFO 18236 --- [http-nio-9595-exec-9] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:30:32.679  INFO 18236 --- [http-nio-9595-exec-1] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/detail/guid - 200 - OK :: 
+2023-09-03 17:30:40.913  INFO 18236 --- [http-nio-9595-exec-3] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/update - 200 - OK :: 
+2023-09-03 17:30:40.928  INFO 18236 --- [http-nio-9595-exec-4] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:31:53.283  INFO 18236 --- [http-nio-9595-exec-6] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:31:53.341  INFO 18236 --- [http-nio-9595-exec-7] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:31:59.288  INFO 18236 --- [http-nio-9595-exec-8] b.s.b.controller.CompanyController       :  :: Encerrando o método /api/company/list - 200 - OK :: 
+2023-09-03 17:31:59.336  INFO 18236 --- [http-nio-9595-exec-9] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:33:08.742  INFO 18236 --- [http-nio-9595-exec-1] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/detail/guid - 200 - OK :: 
+2023-09-03 17:33:12.156  INFO 18236 --- [http-nio-9595-exec-2] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/detail/guid - 200 - OK :: 
+2023-09-03 17:33:16.836  INFO 18236 --- [http-nio-9595-exec-3] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/detail/guid - 200 - OK :: 
+2023-09-03 17:33:30.444  INFO 18236 --- [http-nio-9595-exec-4] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/detail/guid - 200 - OK :: 
+2023-09-03 17:33:55.806  INFO 18236 --- [http-nio-9595-exec-5] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/add - 200 - OK :: 
+2023-09-03 17:33:55.821  INFO 18236 --- [http-nio-9595-exec-6] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:33:58.867  INFO 18236 --- [http-nio-9595-exec-7] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:34:03.162  INFO 18236 --- [http-nio-9595-exec-8] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:34:06.389  INFO 18236 --- [http-nio-9595-exec-1] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/detail/guid - 200 - OK :: 
+2023-09-03 17:34:11.256  INFO 18236 --- [http-nio-9595-exec-3] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/update - 200 - OK :: 
+2023-09-03 17:34:11.277  INFO 18236 --- [http-nio-9595-exec-4] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:34:18.253  INFO 18236 --- [http-nio-9595-exec-5] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/detail/guid - 200 - OK :: 
+2023-09-03 17:34:24.339  INFO 18236 --- [http-nio-9595-exec-6] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:34:30.734  INFO 18236 --- [http-nio-9595-exec-7] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 
+2023-09-03 17:36:56.769  INFO 18236 --- [http-nio-9595-exec-9] b.s.backend.controller.PetController     :  :: Encerrando o método /api/pet/list/companyguid - 200 - OK :: 

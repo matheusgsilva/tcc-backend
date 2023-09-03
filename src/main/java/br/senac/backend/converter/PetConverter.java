@@ -199,7 +199,7 @@ public class PetConverter {
 				petResponse.setIsAdopted(pet.getStatus().equals(ESTATUS_PET.ADOPTED));
 				if(pet.getStatus().equals(ESTATUS_PET.RESERVED)) {
 					Integer days = petService.getDaysSinceReservationByGuid(pet.getGuid());
-					petResponse.setReservationInfo("Restam " + days + (days == 1 ? " dia " : " dias ") + "para finalizar a reserva.");
+					petResponse.setReservationInfo("Restam " + days + (days == 1 ? " dia " : " dias ") + "para cancelar a reserva.");
 				}
 				petResponse.setIdentification(pet.getIdentification());
 				list.add(petResponse);
