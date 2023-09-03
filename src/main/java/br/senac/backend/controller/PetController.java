@@ -272,6 +272,118 @@ public class PetController {
 			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
 		}
 	}
+	
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/api/pet/list/reserved/companyguid/{guid}", method = RequestMethod.GET)
+	public ResponseEntity<ResponseAPI> listPetsReservedByCompany(@PathVariable String guid,
+			@RequestHeader(value = "token") String token) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			List<Pet> pets = petService.getByStatusAndCompany(guid, ESTATUS_PET.RESERVED);
+			if (!pets.isEmpty()) {
+				List<PetResponse> responseList = petConverter.petsToResponseList(pets);
+				if (!responseList.isEmpty())
+					handlerPet.handleListMessages(responseAPI, 200, responseList);
+				else
+					handlerPet.handleListMessages(responseAPI, 404, null);
+			} else
+				handlerPet.handleListMessages(responseAPI, 404, null);
+
+			LOGGER.info(" :: Encerrando o método /api/pet/list/reserved/companyguid - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/pet/list/reserved/companyguid - 400 - BAD REQUEST :: ");
+			handlerPet.handleListMessages(responseAPI, 400, null);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/api/pet/list/reserved", method = RequestMethod.GET)
+	public ResponseEntity<ResponseAPI> listPetsReservedByUser(@RequestHeader(value = "token") String token) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			User user = tokenService.getByToken(token).getUser();
+			List<Pet> pets = petService.getByStatusAndUser(user.getGuid(), ESTATUS_PET.RESERVED);
+			if (!pets.isEmpty()) {
+				List<PetResponse> responseList = petConverter.petsToResponseList(pets);
+				if (!responseList.isEmpty())
+					handlerPet.handleListMessages(responseAPI, 200, responseList);
+				else
+					handlerPet.handleListMessages(responseAPI, 404, null);
+			} else
+				handlerPet.handleListMessages(responseAPI, 404, null);
+
+			LOGGER.info(" :: Encerrando o método /api/pet/list/reserved - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/pet/list/reserved - 400 - BAD REQUEST :: ");
+			handlerPet.handleListMessages(responseAPI, 400, null);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/api/pet/list/adopted/companyguid/{guid}", method = RequestMethod.GET)
+	public ResponseEntity<ResponseAPI> listPetsAdoptedByCompany(@PathVariable String guid,
+			@RequestHeader(value = "token") String token) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			List<Pet> pets = petService.getByStatusAndCompany(guid, ESTATUS_PET.ADOPTED);
+			if (!pets.isEmpty()) {
+				List<PetResponse> responseList = petConverter.petsToResponseList(pets);
+				if (!responseList.isEmpty())
+					handlerPet.handleListMessages(responseAPI, 200, responseList);
+				else
+					handlerPet.handleListMessages(responseAPI, 404, null);
+			} else
+				handlerPet.handleListMessages(responseAPI, 404, null);
+
+			LOGGER.info(" :: Encerrando o método /api/pet/list/adopted/companyguid - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/pet/list/adopted/companyguid - 400 - BAD REQUEST :: ");
+			handlerPet.handleListMessages(responseAPI, 400, null);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/api/pet/list/adopted", method = RequestMethod.GET)
+	public ResponseEntity<ResponseAPI> listPetsAdoptedByUser(@RequestHeader(value = "token") String token) {
+
+		ResponseAPI responseAPI = new ResponseAPI();
+
+		try {
+			User user = tokenService.getByToken(token).getUser();
+			List<Pet> pets = petService.getByStatusAndUser(user.getGuid(), ESTATUS_PET.ADOPTED);
+			if (!pets.isEmpty()) {
+				List<PetResponse> responseList = petConverter.petsToResponseList(pets);
+				if (!responseList.isEmpty())
+					handlerPet.handleListMessages(responseAPI, 200, responseList);
+				else
+					handlerPet.handleListMessages(responseAPI, 404, null);
+			} else
+				handlerPet.handleListMessages(responseAPI, 404, null);
+
+			LOGGER.info(" :: Encerrando o método /api/pet/list/adopted - 200 - OK :: ");
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.OK);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			LOGGER.error(" :: Encerrando o método /api/pet/list/adopted - 400 - BAD REQUEST :: ");
+			handlerPet.handleListMessages(responseAPI, 400, null);
+			return new ResponseEntity<ResponseAPI>(responseAPI, HttpStatus.BAD_REQUEST);
+		}
+	}
 
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/api/pet/list/companyguid/{guid}", method = RequestMethod.GET)

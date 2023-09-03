@@ -30,6 +30,8 @@ public class PetResponse {
 	private Boolean isFavorite;
 	private String identification;
 	private ESTATUS_PET status;
+	private Boolean isReserved;
+	private Boolean isAdopted;
 	private String reservationInfo;
 
 	public String getGuid() {
@@ -206,6 +208,22 @@ public class PetResponse {
 
 	public void setReservationInfo(String reservationInfo) {
 		this.reservationInfo = reservationInfo;
+	}
+
+	public Boolean getIsReserved() {
+		return isReserved;
+	}
+
+	public void setIsReserved(Boolean isReserved) {
+		this.isReserved = isReserved;
+	}
+
+	public Boolean getIsAdopted() {
+		return isAdopted;
+	}
+
+	public void setIsAdopted(Boolean isAdopted) {
+		this.isAdopted = isAdopted;
 	}
 
 }

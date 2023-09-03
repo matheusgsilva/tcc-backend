@@ -3,6 +3,7 @@ package br.senac.backend.service;
 import java.util.List;
 
 import br.senac.backend.model.Pet;
+import br.senac.backend.util.ESTATUS_PET;
 
 public interface PetService {
 
@@ -24,4 +25,8 @@ public interface PetService {
 	void updateStatusPets();
 	
 	Integer getDaysSinceReservationByGuid(String guid);
+	
+	List<Pet> getByStatusAndUser(String userGuid,ESTATUS_PET status);
+	
+	List<Pet> getByStatusAndCompany(String companyGuid,ESTATUS_PET status);
 }

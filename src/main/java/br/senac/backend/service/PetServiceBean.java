@@ -88,4 +88,12 @@ public class PetServiceBean implements PetService {
 	public Integer getDaysSinceReservationByGuid(String guid) {
 		return repository.getDaysSinceReservationByGuid(guid);
 	}
+	
+	public List<Pet> getByStatusAndUser(String userGuid,ESTATUS_PET status) {
+		return repository.getByStatusAndUser(userGuid, status);
+	}
+	
+	public List<Pet> getByStatusAndCompany(String companyGuid,ESTATUS_PET status) {
+		return repository.getByStatusAndCompany(companyGuid, status);
+	}
 }

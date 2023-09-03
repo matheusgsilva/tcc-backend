@@ -79,5 +79,11 @@ public interface PetRepository extends PagingAndSortingRepository<Pet, Long> {
 
 	@Query("SELECT DATEDIFF(CURRENT_DATE, p.reservationDate) FROM Pet p WHERE p.guid = :guid")
 	Integer getDaysSinceReservationByGuid(@Param("guid") String guid);
+	
+	@Query("SELECT p FROM Pet p WHERE p.adopterUser.guid = :userGuid AND p.status = :status")
+	List<Pet> getByStatusAndUser(@Param("userGuid") String userGuid, @Param("status") ESTATUS_PET status);
+	
+	@Query("SELECT p FROM Pet p WHERE p.company.guid = :companyGuid AND p.status = :status")
+	List<Pet> getByStatusAndCompany(@Param("companyGuid") String companyGuid, @Param("status") ESTATUS_PET status);
 
 }
