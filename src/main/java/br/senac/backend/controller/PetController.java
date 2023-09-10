@@ -421,7 +421,6 @@ public class PetController {
 		ResponseAPI responseAPI = new ResponseAPI();
 
 		try {
-			petService.updateStatusPets();
 			List<Pet> pets = petService.getAllFiltered(listPetRequest.getDescription(), listPetRequest.getSize(),
 					listPetRequest.getBreed(), listPetRequest.getTypePet(), listPetRequest.getCity(),
 					listPetRequest.getDistrict(), listPetRequest.getCompanyName(), listPetRequest.getGender());
@@ -452,7 +451,6 @@ public class PetController {
 		ResponseAPI responseAPI = new ResponseAPI();
 
 		try {
-			petService.updateStatusPets();
 			List<Pet> pets = petService.getAllFilteredCompany(listPetRequest.getDescription(), listPetRequest.getSize(),
 					listPetRequest.getBreed(), listPetRequest.getTypePet(), listPetRequest.getCity(),
 					listPetRequest.getDistrict(), guid, listPetRequest.getGender());

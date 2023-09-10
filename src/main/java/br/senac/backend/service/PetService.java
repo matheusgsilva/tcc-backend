@@ -22,11 +22,13 @@ public interface PetService {
 	
 	Boolean isExists(String size, String breed, String typePet, String gender);
 	
-	void updateStatusPets();
+	void updateStatusPets(String guid);
 	
 	Integer getDaysSinceReservationByGuid(String guid);
 	
 	List<Pet> getByStatusAndUser(String userGuid,ESTATUS_PET status);
 	
 	List<Pet> getByStatusAndCompany(String companyGuid,ESTATUS_PET status);
+	
+	List<Pet> getByStatus(ESTATUS_PET status);
 }

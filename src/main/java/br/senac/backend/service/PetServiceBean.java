@@ -81,8 +81,8 @@ public class PetServiceBean implements PetService {
 	
 	@Transactional
 	@Modifying
-	public void updateStatusPets() {
-		repository.updateStatusPets(ESTATUS_PET.AVAILABLE);
+	public void updateStatusPets(String guid) {
+		repository.updateStatusPets(guid, ESTATUS_PET.AVAILABLE);
 	}
 	
 	public Integer getDaysSinceReservationByGuid(String guid) {
@@ -95,5 +95,9 @@ public class PetServiceBean implements PetService {
 	
 	public List<Pet> getByStatusAndCompany(String companyGuid,ESTATUS_PET status) {
 		return repository.getByStatusAndCompany(companyGuid, status);
+	}
+	
+	public List<Pet> getByStatus(ESTATUS_PET status) {
+		return repository.getByStatus(ESTATUS_PET.RESERVED);
 	}
 }

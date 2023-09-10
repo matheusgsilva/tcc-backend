@@ -56,6 +56,7 @@ public class LoginController {
 				login.setEmail(user.getEmail());
 				login.setToken(t.getToken());
 				login.setGuid(user.getGuid());
+				login.setUserName(user.getName());
 				login.setType(ELOGIN_TYPE.USER);
 				login.setPermission(user.getType().ordinal());
 				handlerLogin.handleLoginMessages(responseAPI, 200, login);
@@ -69,6 +70,7 @@ public class LoginController {
 				login.setEmail(company.getEmail());
 				login.setToken(t.getToken());
 				login.setGuid(company.getGuid());
+				login.setUserName(company.getName());
 				login.setType(ELOGIN_TYPE.COMPANY);
 				login.setPermission(ETYPE_USER.NORMAL.ordinal());
 				handlerLogin.handleLoginMessages(responseAPI, 200, login);

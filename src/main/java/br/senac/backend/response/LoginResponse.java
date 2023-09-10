@@ -7,6 +7,7 @@ public class LoginResponse {
 	private String email;
 	private String token;
 	private String guid;
+	private String userName;
 	private ELOGIN_TYPE type;
 	private Integer permission;
 
@@ -48,6 +49,14 @@ public class LoginResponse {
 
 	public void setPermission(Integer permission) {
 		this.permission = permission;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 }

@@ -1,18 +1,22 @@
 package br.senac.backend.configurator;
 
-import org.springframework.context.annotation.Bean;
+import java.util.concurrent.Executor;
+
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.task.TaskExecutor;
+import org.springframework.context.annotation.Primary;
+import org.springframework.scheduling.annotation.AsyncConfigurer;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 @Configuration
-public class TaskExecutorConfig {
+@Primary
+public class TaskExecutorConfig implements AsyncConfigurer {
 
-    @Bean
-    public TaskExecutor threadPoolTaskExecutor() {
+    @Override
+    public Executor getAsyncExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(8);
-        executor.setMaxPoolSize(8);
+        executor.setCorePoolSize(2);
+        executor.setMaxPoolSize(5);
+        executor.setQueueCapacity(500);
         executor.setThreadNamePrefix("THREAD-ASYNC");
         executor.initialize();
         return executor;

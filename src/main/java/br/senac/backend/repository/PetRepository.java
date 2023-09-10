@@ -72,10 +72,13 @@ public interface PetRepository extends PagingAndSortingRepository<Pet, Long> {
 	Pet getByGuid(@Param("guid") String guid);
 
 	@Modifying
-	@Query("UPDATE Pet p SET p.status = :status, p.reservationDate = NULL, p.adopterUser = NULL "
-			+ "WHERE p.company.daysPetReservation IS NOT NULL AND p.reservationDate IS NOT NULL AND "
-			+ "(DATEDIFF(CURRENT_DATE, p.reservationDate) - p.company.daysPetReservation) >= 0")
-	void updateStatusPets(@Param("status") ESTATUS_PET status);
+	@Query(value = "UPDATE pets "
+			+ "JOIN company ON pets.company = company.id "
+			+ "SET pets.status = :status, pets.reservation_date = NULL, pets.user = NULL "
+			+ "WHERE pets.guid = :guid AND company.days_pet_reservation IS NOT NULL "
+			+ "AND pets.reservation_date IS NOT NULL "
+			+ "AND (DATEDIFF(CURRENT_DATE, pets.reservation_date) - company.days_pet_reservation) >= 0", nativeQuery = true)
+	void updateStatusPets(@Param("guid") String guid, @Param("status") ESTATUS_PET status);
 
 	@Query("SELECT DATEDIFF(CURRENT_DATE, p.reservationDate) FROM Pet p WHERE p.guid = :guid")
 	Integer getDaysSinceReservationByGuid(@Param("guid") String guid);
@@ -85,5 +88,8 @@ public interface PetRepository extends PagingAndSortingRepository<Pet, Long> {
 	
 	@Query("SELECT p FROM Pet p WHERE p.company.guid = :companyGuid AND p.status = :status")
 	List<Pet> getByStatusAndCompany(@Param("companyGuid") String companyGuid, @Param("status") ESTATUS_PET status);
+	
+	@Query("SELECT p FROM Pet p WHERE p.status = :status")
+	List<Pet> getByStatus(@Param("status") ESTATUS_PET status);
 
 }
