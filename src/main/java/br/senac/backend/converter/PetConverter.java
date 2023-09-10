@@ -26,7 +26,7 @@ public class PetConverter {
 
 	@Autowired
 	private CompanyService companyService;
-	
+
 	@Autowired
 	private PetService petService;
 
@@ -53,7 +53,8 @@ public class PetConverter {
 			pet.setTypePet(petRequest.getTypePet());
 			pet.setGender(petRequest.getGender());
 			pet.setStatus(ESTATUS_PET.AVAILABLE);
-			pet.setIdentification(petRequest.getTypePet().equals("Cachorro") ? "CAO" + generateRandomNumber() : "GAT" + generateRandomNumber());
+			pet.setIdentification(petRequest.getTypePet().equals("Cachorro") ? "CAO" + generateRandomNumber()
+					: "GAT" + generateRandomNumber());
 			return pet;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -146,9 +147,10 @@ public class PetConverter {
 			petResponse.setStatus(pet.getStatus());
 			petResponse.setIsReserved(pet.getStatus().equals(ESTATUS_PET.RESERVED));
 			petResponse.setIsAdopted(pet.getStatus().equals(ESTATUS_PET.ADOPTED));
-			if(pet.getStatus().equals(ESTATUS_PET.RESERVED)) {
+			if (pet.getStatus().equals(ESTATUS_PET.RESERVED)) {
 				Integer days = petService.getDaysSinceReservationByGuid(pet.getGuid());
-				petResponse.setReservationInfo("Restam " + days + (days == 1 ? " dia " : " dias ") + "para finalizar a reserva.");
+				petResponse.setReservationInfo(
+						"Restam " + days + (days == 1 ? " dia " : " dias ") + "para finalizar a reserva.");
 			}
 			petResponse.setIdentification(pet.getIdentification());
 			if (user != null)
@@ -197,9 +199,10 @@ public class PetConverter {
 				petResponse.setStatus(pet.getStatus());
 				petResponse.setIsReserved(pet.getStatus().equals(ESTATUS_PET.RESERVED));
 				petResponse.setIsAdopted(pet.getStatus().equals(ESTATUS_PET.ADOPTED));
-				if(pet.getStatus().equals(ESTATUS_PET.RESERVED)) {
+				if (pet.getStatus().equals(ESTATUS_PET.RESERVED)) {
 					Integer days = petService.getDaysSinceReservationByGuid(pet.getGuid());
-					petResponse.setReservationInfo("Restam " + days + (days == 1 ? " dia " : " dias ") + "para cancelar a reserva.");
+					petResponse.setReservationInfo(
+							"Restam " + days + (days == 1 ? " dia " : " dias ") + "para cancelar a reserva.");
 				}
 				petResponse.setIdentification(pet.getIdentification());
 				list.add(petResponse);

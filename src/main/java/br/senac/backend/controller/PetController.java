@@ -68,6 +68,7 @@ public class PetController {
 				NotificationTask notificationTask = applicationContext.getBean(NotificationTask.class);
 				notificationTask.setPetGuid(pet.getGuid());
 				taskExecutor.execute(notificationTask);
+				petService.verifyPetImage(pet);
 				PetResponse petResponse = petConverter.petToResponse(pet);
 				if (petResponse != null)
 					handlerPet.handleAddMessages(responseAPI, 200, petResponse);
@@ -99,6 +100,7 @@ public class PetController {
 				pet = petConverter.petUpdate(petRequest, pet);
 				if (pet != null) {
 					pet = petService.save(pet);
+					petService.verifyPetImage(pet);
 					PetResponse petResponse = petConverter.petToResponse(pet);
 					if (petResponse != null)
 						handlerPet.handleUpdateMessages(responseAPI, 200, petResponse);

@@ -31,4 +31,6 @@ public interface PetService {
 	List<Pet> getByStatusAndCompany(String companyGuid,ESTATUS_PET status);
 	
 	List<Pet> getByStatus(ESTATUS_PET status);
+	
+	void verifyPetImage(Pet pet);
 }

@@ -21,7 +21,7 @@ import com.sun.istack.ByteArrayDataSource;
 import br.senac.backend.model.Company;
 
 @Component
-public class EmailAccessTask implements Runnable {
+public class CompanyEmailTask implements Runnable {
 
 	@Autowired
 	private JavaMailSender javaMailSender;
@@ -61,7 +61,7 @@ public class EmailAccessTask implements Runnable {
 			byte[] watermarkBytes = baos.toByteArray();
 
 			helper.setText(
-					"<html><body><h1>Seu acesso foi liberado no aplicativo.</h1><p>Faça login e insira já os pets para a adoção!</p><p>Atenciosamente,</p><p>Equipe 4PET.</p><br><img src='cid:watermark'></body></html>",
+					"<html><body><h1>Seu acesso foi bloqueado no aplicativo.</h1><p>Aguarde a liberação e contato da nossa equipe de suporte.</p><p>Atenciosamente,</p><p>Equipe 4PET.</p><br><img src='cid:watermark'></body></html>",
 					true);
 			helper.addInline("watermark", new ByteArrayDataSource(watermarkBytes, "image/png"));
 

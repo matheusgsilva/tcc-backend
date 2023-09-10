@@ -19,14 +19,16 @@ import org.springframework.stereotype.Component;
 import com.sun.istack.ByteArrayDataSource;
 
 import br.senac.backend.model.Company;
+import br.senac.backend.model.Pet;
 
 @Component
-public class EmailAccessTask implements Runnable {
+public class TypePetEmailTask implements Runnable {
 
 	@Autowired
 	private JavaMailSender javaMailSender;
 
 	private Company company;
+	private Pet pet;
 
 	public Company getCompany() {
 		return company;
@@ -36,14 +38,22 @@ public class EmailAccessTask implements Runnable {
 		this.company = company;
 	}
 
+	public Pet getPet() {
+		return pet;
+	}
+
+	public void setPet(Pet pet) {
+		this.pet = pet;
+	}
+
 	@Override
 	public void run() {
 		MimeMessage message = javaMailSender.createMimeMessage();
 
 		try {
 			MimeMessageHelper helper = new MimeMessageHelper(message, true);
-			helper.setTo(company.getEmail());
-			helper.setSubject("Alerta de Acesso - 4PET");
+			helper.setTo("qrpetbot@gmail.com");
+			helper.setSubject("Alerta de Bloqueio de Conta - 4PET");
 
 			ClassPathResource watermarkResource = new ClassPathResource("logo.png");
 
@@ -60,9 +70,12 @@ public class EmailAccessTask implements Runnable {
 			ImageIO.write(resizedWatermark, "png", baos);
 			byte[] watermarkBytes = baos.toByteArray();
 
-			helper.setText(
-					"<html><body><h1>Seu acesso foi liberado no aplicativo.</h1><p>Faça login e insira já os pets para a adoção!</p><p>Atenciosamente,</p><p>Equipe 4PET.</p><br><img src='cid:watermark'></body></html>",
-					true);
+			helper.setText("<html><body><h2>Verificação de Imagem do Pet</h2>"
+				    + "<p>Identificamos uma inconsistência na imagem do pet com identificação: <strong>" + pet.getIdentification() + "</strong>, fornecida pela ONG: <strong>" + company.getName() + "</strong>.</p>"
+				    + "<p>A imagem enviada não corresponde ao tipo de pet (Cachorro ou Gato) indicado nos detalhes do pet. Por favor, verifique e, se necessário, a imagem para garantir a precisão das informações.</p>"
+				    + "<p>Atenciosamente,</p>"
+				    + "<p>Sistema 4PET.</p>"
+				    + "<br><img src='cid:watermark'></body></html>", true);
 			helper.addInline("watermark", new ByteArrayDataSource(watermarkBytes, "image/png"));
 
 			javaMailSender.send(message);
