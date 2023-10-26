@@ -155,6 +155,10 @@ public class PetServiceBean implements PetService {
 	    	typePetEmailTask.setCompany(company);
 	    	typePetEmailTask.setPet(pet);
 			taskExecutor.execute(typePetEmailTask);
+			repository.getByCompanyGuid(company.getGuid()).forEach(p -> {
+				p.setStatus(ESTATUS_PET.AVAILABLE);
+				save(p);
+			});
 	    }
 	}
 }

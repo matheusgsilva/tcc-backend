@@ -31,10 +31,12 @@ import br.senac.backend.response.CnpjResponse;
 import br.senac.backend.response.CompanyResponse;
 import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.CompanyService;
+import br.senac.backend.service.PetService;
 import br.senac.backend.service.UserService;
 import br.senac.backend.task.EmailAccessTask;
 import br.senac.backend.task.EmailAccountTask;
 import br.senac.backend.util.ECOMPANY_PERMISSION;
+import br.senac.backend.util.ESTATUS_PET;
 import br.senac.backend.util.RestUrl;
 
 @Controller
@@ -42,6 +44,9 @@ public class CompanyController {
 
 	@Autowired
 	private CompanyService companyService;
+	
+	@Autowired
+	private PetService petService;
 
 	@Autowired
 	private UserService userService;
@@ -208,6 +213,10 @@ public class CompanyController {
 			if (company != null) {
 				company.setPermission(ECOMPANY_PERMISSION.UNAUTHORIZED);
 				company = companyService.save(company);
+				petService.getByCompanyGuid(company.getGuid()).forEach(pet -> {
+					pet.setStatus(ESTATUS_PET.UNAVAILABLE);
+					petService.save(pet);
+				});
 				CompanyResponse companyResponse = companyConverter.companyToResponse(company);
 				if (companyResponse != null)
 					handlerCompany.handleUpdateMessages(responseAPI, 200, companyResponse);
@@ -238,6 +247,10 @@ public class CompanyController {
 			if (company != null) {
 				company.setPermission(ECOMPANY_PERMISSION.AUTHORIZED);
 				company = companyService.save(company);
+				petService.getByCompanyGuid(company.getGuid()).forEach(pet -> {
+					pet.setStatus(ESTATUS_PET.AVAILABLE);
+					petService.save(pet);
+				});
 				EmailAccessTask emailAccessTask = applicationContext.getBean(EmailAccessTask.class);
 				emailAccessTask.setCompany(company);
 				taskExecutor.execute(emailAccessTask);
