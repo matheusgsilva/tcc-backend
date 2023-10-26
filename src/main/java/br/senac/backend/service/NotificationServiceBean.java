@@ -180,9 +180,13 @@ public class NotificationServiceBean implements NotificationService {
 				ImageIO.write(resizedWatermark, "png", baos);
 				byte[] watermarkBytes = baos.toByteArray();
 
-				helper.setText("<html><body><h1>Sua reserva do pet de identificação: " + pet.getIdentification()
-						+ " expirou.</h1><p>Acesse o aplicativo para mais detalhes.</p><p>Atenciosamente,</p><p>Equipe 4PET.</p><br><img src='cid:watermark'></body></html>",
-						true);
+				helper.setText("<html><body><h2>Cancelamento de Reserva</h2>"
+	                    + "<p>Olá, " + adopterUser.getName() + "!</p>"
+	                    + "<p>Lamentamos informar que a reserva do pet de identificação <strong>" + pet.getIdentification() + "</strong> foi cancelada.</p>"
+	                    + "<p>Se tiver dúvidas ou precisar de mais informações, entre em contato conosco.</p>"
+	                    + "<p>Atenciosamente,</p>"
+	                    + "<p>Sistema 4PET.</p>"
+	                    + "<br><img src='cid:banner'></body></html>", true);
 				helper.addInline("watermark", new ByteArrayDataSource(watermarkBytes, "image/png"));
 
 				javaMailSender.send(message);
