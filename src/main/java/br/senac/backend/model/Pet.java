@@ -99,7 +99,7 @@ public class Pet implements Serializable {
 	@JoinColumn(name = "company")
 	private Company company;
 
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "user", nullable = true)
 	private User adopterUser;
 
