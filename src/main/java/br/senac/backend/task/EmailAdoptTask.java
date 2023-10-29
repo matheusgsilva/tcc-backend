@@ -75,7 +75,7 @@ public class EmailAdoptTask implements Runnable {
 					+ pet.getIdentification() + "</strong> foi concluída com sucesso.</p>"
 					+ "<p>Por favor, entre em contato com a instituição para agendar um dia e horário para retirar o pet.</p>"
 					+ "<p>Agradecemos por abrir seu coração e lar para um novo amigo. Desejamos muitos momentos felizes juntos!</p>"
-					+ "<p>Atenciosamente,</p>" + "<p>Sistema 4PET.</p>" + "<br><img src='cid:banner'></body></html>",
+					+ "<p>Atenciosamente,</p>" + "<p>Sistema 4PET.</p>" + "<br><img src='cid:watermark'></body></html>",
 					true);
 			helper.addInline("banner", new ByteArrayDataSource(bannerBytes, "image/png"));
 

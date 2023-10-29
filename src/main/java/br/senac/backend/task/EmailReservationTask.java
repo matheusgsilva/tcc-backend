@@ -73,7 +73,7 @@ public class EmailReservationTask implements Runnable {
 			helper.setText("<html><body><h2>Reserva Confirmada!</h2>" + "<p>Olá, " + user.getName() + "!</p>"
 					+ "<p>Estamos felizes em informar que a reserva do pet de identificação <strong>" + pet.getIdentification()
 					+ "</strong> foi realizada com sucesso.</p>" + "<p>Atenciosamente,</p>" + "<p>Sistema 4PET.</p>"
-					+ "<br><img src='cid:banner'></body></html>", true);
+					+ "<br><img src='cid:watermark'></body></html>", true);
 			helper.addInline("banner", new ByteArrayDataSource(bannerBytes, "image/png"));
 
 			javaMailSender.send(message);

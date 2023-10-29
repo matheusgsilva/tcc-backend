@@ -36,7 +36,7 @@ public class DatabaseCheckServiceBean {
 			long daysSinceReservation = Duration.between(reservationDate.toInstant(), Instant.now()).toDays();
 			long daysRemaining = company.getDaysPetReservation() - daysSinceReservation;
 
-			if (daysRemaining == 0) {
+			if (daysRemaining <= 0) {
 				notificationService.makeNotificationReserveExpired(pet);
 				petService.updateStatusPets(pet.getGuid());
 			} else if (daysRemaining > 0) {

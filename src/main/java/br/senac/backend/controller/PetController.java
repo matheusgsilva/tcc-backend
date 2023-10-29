@@ -204,11 +204,11 @@ public class PetController {
 		try {
 			Pet pet = petService.getByGuid(guid);
 			if (pet != null) {
+				notificationService.makeNotificationReserveExpired(pet);
 				pet.setStatus(ESTATUS_PET.AVAILABLE);
 				pet.setAdopterUser(null);
 				pet.setReservationDate(null);
 				pet = petService.save(pet);
-				notificationService.makeNotificationReserveExpired(pet);
 				PetResponse petResponse = petConverter.petToResponse(pet, null);
 				if (petResponse != null)
 					handlerPet.handleReserveMessages(responseAPI, 200, petResponse);

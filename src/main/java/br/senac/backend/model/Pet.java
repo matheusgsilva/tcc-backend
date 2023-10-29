@@ -9,6 +9,8 @@ import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -89,7 +91,7 @@ public class Pet implements Serializable {
 	@Lob
 	private String photo4;
 
-	@Column(columnDefinition = "INT(1) default 0")
+	@Enumerated(EnumType.ORDINAL)
 	private ESTATUS_PET status;
 
 	@Column(columnDefinition = "VARCHAR(50)", nullable = true)

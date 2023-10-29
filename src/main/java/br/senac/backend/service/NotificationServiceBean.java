@@ -186,7 +186,7 @@ public class NotificationServiceBean implements NotificationService {
 	                    + "<p>Se tiver dúvidas ou precisar de mais informações, entre em contato conosco.</p>"
 	                    + "<p>Atenciosamente,</p>"
 	                    + "<p>Sistema 4PET.</p>"
-	                    + "<br><img src='cid:banner'></body></html>", true);
+	                    + "<br><img src='cid:watermark'></body></html>", true);
 				helper.addInline("watermark", new ByteArrayDataSource(watermarkBytes, "image/png"));
 
 				javaMailSender.send(message);
