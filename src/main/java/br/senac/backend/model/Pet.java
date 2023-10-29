@@ -95,7 +95,7 @@ public class Pet implements Serializable {
 	@Column(columnDefinition = "VARCHAR(50)", nullable = true)
 	private String typePet;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "company")
 	private Company company;
 
