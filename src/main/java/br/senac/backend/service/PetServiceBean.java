@@ -29,10 +29,10 @@ public class PetServiceBean implements PetService {
 
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private CompanyService companyService;
-	
+
 	@Autowired
 	private ApplicationContext applicationContext;
 
@@ -122,43 +122,48 @@ public class PetServiceBean implements PetService {
 	}
 
 	public void verifyPetImage(Pet pet) {
-	    if (pet == null) {
-	        return;
-	    }
-	    String base64Image = pet.getPhoto1();
-	    if (base64Image == null || base64Image.equals("")) {
-	        return;
-	    }
-	    String response = imageVerificationServiceBean.getImageVerification(base64Image);
-	    
-	    JSONObject jsonResponse = new JSONObject(response);
-	    String result = jsonResponse.getString("result");
-	    
-	    if (!result.contains("Detectado")) {
-	    	Company company = pet.getCompany();
-	        company.setPermission(ECOMPANY_PERMISSION.UNAUTHORIZED);
-	        companyService.save(company);
-	        CompanyEmailTask accountTask = applicationContext.getBean(CompanyEmailTask.class);
+		if (pet == null) {
+			return;
+		}
+		String base64Image = pet.getPhoto1();
+		if (base64Image == null || base64Image.equals("")) {
+			return;
+		}
+		String response = imageVerificationServiceBean.getImageVerification(base64Image);
+
+		JSONObject jsonResponse = new JSONObject(response);
+		String result = jsonResponse.getString("result");
+
+		if (!result.contains("Detectado")) {
+			Company company = pet.getCompany();
+			repository.getByCompanyGuid(company.getGuid()).forEach(p -> {
+				p.setStatus(ESTATUS_PET.UNAVAILABLE);
+				save(p);
+			});
+			company.setPermission(ECOMPANY_PERMISSION.UNAUTHORIZED);
+			companyService.save(company);
+			CompanyEmailTask accountTask = applicationContext.getBean(CompanyEmailTask.class);
 			accountTask.setCompany(company);
 			taskExecutor.execute(accountTask);
 			SupportEmailTask supportEmailTask = applicationContext.getBean(SupportEmailTask.class);
 			supportEmailTask.setCompany(company);
 			supportEmailTask.setPet(pet);
 			taskExecutor.execute(supportEmailTask);
-	    }
-	    
-	    String detectedAnimal = result.split(": ")[1].trim();
-	    
-	    if (!pet.getTypePet().equalsIgnoreCase(detectedAnimal)) {
-	    	TypePetEmailTask typePetEmailTask = applicationContext.getBean(TypePetEmailTask.class);
-	    	Company company = pet.getCompany();
-	    	typePetEmailTask.setCompany(company);
-	    	typePetEmailTask.setPet(pet);
+			return;
+		}
+
+		String detectedAnimal = result.split(": ")[1].trim();
+
+		if (!pet.getTypePet().equalsIgnoreCase(detectedAnimal)) {
+			TypePetEmailTask typePetEmailTask = applicationContext.getBean(TypePetEmailTask.class);
+			Company company = pet.getCompany();
+			typePetEmailTask.setCompany(company);
+			typePetEmailTask.setPet(pet);
 			taskExecutor.execute(typePetEmailTask);
 			repository.getByCompanyGuid(company.getGuid()).forEach(p -> {
 				p.setStatus(ESTATUS_PET.AVAILABLE);
 				save(p);
 			});
-	    }
+		}
 	}
 }

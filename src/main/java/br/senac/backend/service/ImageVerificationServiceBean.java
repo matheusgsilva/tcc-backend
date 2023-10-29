@@ -29,7 +29,7 @@ public class ImageVerificationServiceBean {
 
 		try {
 			if (base64Image.startsWith("data:image/")) {
-				base64Image = base64Image.split(", ")[1];
+				base64Image = base64Image.split(",")[1].trim();
 			}
 			byte[] imageBytes = Base64.getDecoder().decode(base64Image);
 

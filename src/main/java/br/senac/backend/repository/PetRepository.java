@@ -14,7 +14,7 @@ import br.senac.backend.util.ESTATUS_PET;
 @Repository
 public interface PetRepository extends PagingAndSortingRepository<Pet, Long> {
 
-	@Query("SELECT c FROM Pet c WHERE c.company.guid = :companyGuid and c.status < 3")
+	@Query("SELECT c FROM Pet c WHERE c.company.guid = :companyGuid")
 	List<Pet> getByCompanyGuid(@Param("companyGuid") String companyGuid);
 
 	@Query("SELECT c from Pet c WHERE ((:description is null or c.description LIKE CONCAT('%',:description,'%')) "
