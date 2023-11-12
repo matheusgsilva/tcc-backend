@@ -18,6 +18,7 @@ import org.springframework.stereotype.Component;
 
 import com.sun.istack.ByteArrayDataSource;
 
+import br.senac.backend.converter.NotificationConverter;
 import br.senac.backend.model.Company;
 import br.senac.backend.model.User;
 import br.senac.backend.service.CompanyService;
@@ -34,6 +35,9 @@ public class EmailRatingTask implements Runnable {
 
 	@Autowired
 	private CompanyService companyService;
+
+	@Autowired
+	private NotificationConverter notificationConverter;
 
 	private String companyGuid;
 	private String email;
@@ -64,41 +68,51 @@ public class EmailRatingTask implements Runnable {
 	}
 
 	@Override
-	 public void run() {
-        User user = userService.locateByEmail(this.getEmail());
-        Company company = companyService.getByGuid(this.getCompanyGuid());
+	public void run() {
+		User user = userService.locateByEmail(this.getEmail());
+		Company company = companyService.getByGuid(this.getCompanyGuid());
 
-        if (user != null && company != null) {
-            try {
-                MimeMessage message = javaMailSender.createMimeMessage();
-                MimeMessageHelper helper = new MimeMessageHelper(message, true);
-                helper.setTo(user.getEmail());
-                helper.setSubject("Avaliação de Serviço - 4PET");
+		if (user != null && company != null) {
+			try {
 
-                ClassPathResource watermarkResource = new ClassPathResource("logo.png");
+				notificationConverter.saveNotification("Avaliação de Serviço - 4PET",
+						"O que você achou do processo de adoção? Avalie já os serviços prestados pela Organização - "
+								+ company.getName()
+								+ ". O link para avaliação foi enviado por e-mail. Atenciosamente, Equipe 4PET.",
+						user.getGuid());
 
-                BufferedImage watermarkImage = ImageIO.read(watermarkResource.getInputStream());
-                int newWidth = 200;
-                int newHeight = (int) ((double) watermarkImage.getHeight() / watermarkImage.getWidth() * newWidth);
-                Image scaledWatermark = watermarkImage.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
-                BufferedImage resizedWatermark = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_ARGB);
-                Graphics2D g2d = resizedWatermark.createGraphics();
-                g2d.drawImage(scaledWatermark, 0, 0, null);
-                g2d.dispose();
+				MimeMessage message = javaMailSender.createMimeMessage();
+				MimeMessageHelper helper = new MimeMessageHelper(message, true);
+				helper.setTo(user.getEmail());
+				helper.setSubject("Avaliação de Serviço - 4PET");
 
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                ImageIO.write(resizedWatermark, "png", baos);
-                byte[] watermarkBytes = baos.toByteArray();
+				ClassPathResource watermarkResource = new ClassPathResource("logo.png");
 
-                helper.setText("<html><body><h1>O que você achou do processo de adoção?</h1><p>Avalie já os serviços prestados pela Organização - "
-                        + company.getName() + "</p><p>Segue o link para avaliação: " + this.getUrl() + company.getGuid()
-                        + "</p><p>Atenciosamente,</p><p>Equipe 4PET.</p><br><img src='cid:watermark'></body></html>", true);
-                helper.addInline("watermark", new ByteArrayDataSource(watermarkBytes, "image/png"));
+				BufferedImage watermarkImage = ImageIO.read(watermarkResource.getInputStream());
+				int newWidth = 200;
+				int newHeight = (int) ((double) watermarkImage.getHeight() / watermarkImage.getWidth() * newWidth);
+				Image scaledWatermark = watermarkImage.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
+				BufferedImage resizedWatermark = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_ARGB);
+				Graphics2D g2d = resizedWatermark.createGraphics();
+				g2d.drawImage(scaledWatermark, 0, 0, null);
+				g2d.dispose();
 
-                javaMailSender.send(message);
-            } catch (MessagingException | IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+				ByteArrayOutputStream baos = new ByteArrayOutputStream();
+				ImageIO.write(resizedWatermark, "png", baos);
+				byte[] watermarkBytes = baos.toByteArray();
+
+				helper.setText(
+						"<html><body><h1>O que você achou do processo de adoção?</h1><p>Avalie já os serviços prestados pela Organização - "
+								+ company.getName() + "</p><p>Segue o link para avaliação: " + this.getUrl()
+								+ company.getGuid()
+								+ "</p><p>Atenciosamente,</p><p>Equipe 4PET.</p><br><img src='cid:watermark'></body></html>",
+						true);
+				helper.addInline("watermark", new ByteArrayDataSource(watermarkBytes, "image/png"));
+
+				javaMailSender.send(message);
+			} catch (MessagingException | IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }

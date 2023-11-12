@@ -18,6 +18,7 @@ import org.springframework.stereotype.Component;
 
 import com.sun.istack.ByteArrayDataSource;
 
+import br.senac.backend.converter.NotificationConverter;
 import br.senac.backend.model.Pet;
 import br.senac.backend.model.User;
 
@@ -26,6 +27,9 @@ public class EmailAdoptTask implements Runnable {
 
 	@Autowired
 	private JavaMailSender javaMailSender;
+
+	@Autowired
+	private NotificationConverter notificationConverter;
 
 	private Pet pet;
 	private User user;
@@ -51,6 +55,15 @@ public class EmailAdoptTask implements Runnable {
 		MimeMessage message = javaMailSender.createMimeMessage();
 
 		try {
+
+			notificationConverter.saveNotification("Confirmação de Reserva - 4PET",
+					"Estamos felizes em informar que a adoção do pet de identificação " + pet.getIdentification()
+							+ " foi concluída com sucesso. "
+							+ "Por favor, entre em contato com a instituição para agendar um dia e horário para retirar o pet. "
+							+ "Agradecemos por abrir seu coração e lar para um novo amigo. Desejamos muitos momentos felizes juntos! "
+							+ "Atenciosamente, Sistema 4PET.",
+					user.getGuid());
+
 			MimeMessageHelper helper = new MimeMessageHelper(message, true);
 			helper.setTo(user.getEmail());
 			helper.setSubject("Confirmação de Reserva - 4PET");

@@ -18,6 +18,7 @@ import org.springframework.stereotype.Component;
 
 import com.sun.istack.ByteArrayDataSource;
 
+import br.senac.backend.converter.NotificationConverter;
 import br.senac.backend.model.Pet;
 import br.senac.backend.model.User;
 
@@ -26,6 +27,9 @@ public class EmailReservationTask implements Runnable {
 
 	@Autowired
 	private JavaMailSender javaMailSender;
+
+	@Autowired
+	private NotificationConverter notificationConverter;
 
 	private Pet pet;
 	private User user;
@@ -51,6 +55,13 @@ public class EmailReservationTask implements Runnable {
 		MimeMessage message = javaMailSender.createMimeMessage();
 
 		try {
+
+			notificationConverter.saveNotification("Confirmação de Reserva - 4PET",
+					"Reserva Confirmada! Olá, " + user.getName() + "! "
+							+ "Estamos felizes em informar que a reserva do pet de identificação "
+							+ pet.getIdentification() + " foi realizada com sucesso. Atenciosamente, Sistema 4PET.",
+					user.getGuid());
+
 			MimeMessageHelper helper = new MimeMessageHelper(message, true);
 			helper.setTo(user.getEmail());
 			helper.setSubject("Confirmação de Reserva - 4PET");
@@ -71,9 +82,9 @@ public class EmailReservationTask implements Runnable {
 			byte[] bannerBytes = baos.toByteArray();
 
 			helper.setText("<html><body><h2>Reserva Confirmada!</h2>" + "<p>Olá, " + user.getName() + "!</p>"
-					+ "<p>Estamos felizes em informar que a reserva do pet de identificação <strong>" + pet.getIdentification()
-					+ "</strong> foi realizada com sucesso.</p>" + "<p>Atenciosamente,</p>" + "<p>Sistema 4PET.</p>"
-					+ "<br><img src='cid:watermark'></body></html>", true);
+					+ "<p>Estamos felizes em informar que a reserva do pet de identificação <strong>"
+					+ pet.getIdentification() + "</strong> foi realizada com sucesso.</p>" + "<p>Atenciosamente,</p>"
+					+ "<p>Sistema 4PET.</p>" + "<br><img src='cid:watermark'></body></html>", true);
 			helper.addInline("banner", new ByteArrayDataSource(bannerBytes, "image/png"));
 
 			javaMailSender.send(message);

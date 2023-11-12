@@ -1,44 +1,60 @@
 package br.senac.backend.response;
 
-import java.util.Date;
-
 public class NotificationResponse {
 
-	private Date date;
-	private String companyName;
-	private String companyGuid;
-	private String petGuid;
+	private String date;
+	private String title;
+	private String content;
+	private Boolean isRead;
+	private String guid;
+	private String userGuid;
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
-	public String getCompanyName() {
-		return companyName;
+	public String getContent() {
+		return content;
 	}
 
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
-	public String getCompanyGuid() {
-		return companyGuid;
+	public Boolean getIsRead() {
+		return isRead;
 	}
 
-	public void setCompanyGuid(String companyGuid) {
-		this.companyGuid = companyGuid;
+	public void setIsRead(Boolean isRead) {
+		this.isRead = isRead;
 	}
 
-	public String getPetGuid() {
-		return petGuid;
+	public String getGuid() {
+		return guid;
 	}
 
-	public void setPetGuid(String petGuid) {
-		this.petGuid = petGuid;
+	public void setGuid(String guid) {
+		this.guid = guid;
+	}
+
+	public String getUserGuid() {
+		return userGuid;
+	}
+
+	public void setUserGuid(String userGuid) {
+		this.userGuid = userGuid;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 }

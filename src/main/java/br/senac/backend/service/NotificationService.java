@@ -1,5 +1,8 @@
 package br.senac.backend.service;
 
+import java.util.List;
+
+import br.senac.backend.model.Notification;
 import br.senac.backend.model.Pet;
 
 public interface NotificationService {
@@ -11,4 +14,10 @@ public interface NotificationService {
 	void makeNotificationReservePet(Pet pet, long daysRemaining);
 
 	void makeNotificationReserveExpired(Pet pet);
+
+	List<Notification> getByUserGuid(String userGuid);
+	
+	Notification getByGuid(String guid);
+	
+	Notification save(Notification notification);
 }

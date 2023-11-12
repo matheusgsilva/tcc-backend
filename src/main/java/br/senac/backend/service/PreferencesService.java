@@ -3,6 +3,7 @@ package br.senac.backend.service;
 import java.util.List;
 
 import br.senac.backend.model.Preferences;
+import br.senac.backend.model.User;
 
 public interface PreferencesService {
 
@@ -12,7 +13,7 @@ public interface PreferencesService {
 
 	List<Preferences> getByUserGuid(String userGuid);
 
-	List<String> findPreferences(String size, String breed, String typePet, String gender);
+	List<User> findPreferences(String size, String breed, String typePet, String gender);
 	
 	Boolean isExists(String gender, String typePet, String breed, String size);
 	
