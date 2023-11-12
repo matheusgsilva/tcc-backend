@@ -60,6 +60,11 @@ public class NotificationServiceBean implements NotificationService {
 	public Notification save(Notification notification) {
 		return notificationRepository.save(notification);
 	}
+	
+	@Transactional
+	public void deleteByUser(String userGuid) {
+		notificationRepository.deleteByUser(userGuid);
+	}
 
 	public void makeNotification(String petGuid) {
 		try {
@@ -234,6 +239,100 @@ public class NotificationServiceBean implements NotificationService {
 
 				helper.setText("<html><body><h2>Cancelamento de Reserva</h2>" + "<p>Olá, " + adopterUser.getName()
 						+ "!</p>" + "<p>Lamentamos informar que a reserva do pet de identificação <strong>"
+						+ pet.getIdentification() + "</strong> foi cancelada.</p>"
+						+ "<p>Se tiver dúvidas ou precisar de mais informações, entre em contato conosco.</p>"
+						+ "<p>Atenciosamente,</p>" + "<p>Sistema 4PET.</p>"
+						+ "<br><img src='cid:watermark'></body></html>", true);
+				helper.addInline("watermark", new ByteArrayDataSource(watermarkBytes, "image/png"));
+
+				javaMailSender.send(message);
+			}
+		} catch (IOException | MessagingException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void makeNotificationAdoptionPet(Pet pet, long daysRemaining) {
+		try {
+			if (pet != null) {
+				User adopterUser = pet.getAdopterUser();
+
+				notificationConverter.saveNotification("Alerta de Adoção de Pet - 4PET",
+						"Você tem " + daysRemaining + " dia(s) restantes para entrar em contato com a instituição e retirar seu pet de identificação: "
+								+ pet.getIdentification()
+								+ ". Acesse o aplicativo para mais detalhes! Atenciosamente, Equipe 4PET.",
+						adopterUser.getGuid());
+
+				MimeMessage message = javaMailSender.createMimeMessage();
+				MimeMessageHelper helper = new MimeMessageHelper(message, true);
+				helper.setTo(adopterUser.getEmail());
+				helper.setSubject("Alerta de Adoção de Pet - 4PET");
+
+				ClassPathResource watermarkResource = new ClassPathResource("logo.png");
+
+				BufferedImage watermarkImage = ImageIO.read(watermarkResource.getInputStream());
+				int newWidth = 200;
+				int newHeight = (int) ((double) watermarkImage.getHeight() / watermarkImage.getWidth() * newWidth);
+				Image scaledWatermark = watermarkImage.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
+				BufferedImage resizedWatermark = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_ARGB);
+				Graphics2D g2d = resizedWatermark.createGraphics();
+				g2d.drawImage(scaledWatermark, 0, 0, null);
+				g2d.dispose();
+
+				ByteArrayOutputStream baos = new ByteArrayOutputStream();
+				ImageIO.write(resizedWatermark, "png", baos);
+				byte[] watermarkBytes = baos.toByteArray();
+
+				String messageContent = String.format(
+						"<html><body><h1>Você tem %d dia(s) restantes para entrar em contato com a instituição e retirar seu pet de identificação: "
+								+ pet.getIdentification()
+								+ ".</h1><p>Acesse o aplicativo para mais detalhes!</p><p>Atenciosamente,</p><p>Equipe 4PET.</p><br><img src='cid:watermark'></body></html>",
+						daysRemaining);
+
+				helper.setText(messageContent, true);
+				helper.addInline("watermark", new ByteArrayDataSource(watermarkBytes, "image/png"));
+
+				javaMailSender.send(message);
+			}
+		} catch (IOException | MessagingException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void makeNotificationAdoptionExpired(Pet pet) {
+		try {
+			if (pet != null) {
+				User adopterUser = pet.getAdopterUser();
+
+				notificationConverter.saveNotification("Alerta de Expiração de Adoção de Pet - 4PET",
+						"Lamentamos informar que a adoção do seu pet de identificação " + pet.getIdentification()
+								+ " foi cancelada. "
+								+ "Se tiver dúvidas ou precisar de mais informações, entre em contato conosco. "
+								+ "Atenciosamente, Sistema 4PET.",
+						adopterUser.getGuid());
+
+				MimeMessage message = javaMailSender.createMimeMessage();
+				MimeMessageHelper helper = new MimeMessageHelper(message, true);
+				helper.setTo(adopterUser.getEmail());
+				helper.setSubject("Alerta de Expiração de Reserva de Pet - 4PET");
+
+				ClassPathResource watermarkResource = new ClassPathResource("logo.png");
+
+				BufferedImage watermarkImage = ImageIO.read(watermarkResource.getInputStream());
+				int newWidth = 200;
+				int newHeight = (int) ((double) watermarkImage.getHeight() / watermarkImage.getWidth() * newWidth);
+				Image scaledWatermark = watermarkImage.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
+				BufferedImage resizedWatermark = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_ARGB);
+				Graphics2D g2d = resizedWatermark.createGraphics();
+				g2d.drawImage(scaledWatermark, 0, 0, null);
+				g2d.dispose();
+
+				ByteArrayOutputStream baos = new ByteArrayOutputStream();
+				ImageIO.write(resizedWatermark, "png", baos);
+				byte[] watermarkBytes = baos.toByteArray();
+
+				helper.setText("<html><body><h2>Cancelamento de Adoção</h2>" + "<p>Olá, " + adopterUser.getName()
+						+ "!</p>" + "<p>Lamentamos informar que a adoção do seu pet de identificação <strong>"
 						+ pet.getIdentification() + "</strong> foi cancelada.</p>"
 						+ "<p>Se tiver dúvidas ou precisar de mais informações, entre em contato conosco.</p>"
 						+ "<p>Atenciosamente,</p>" + "<p>Sistema 4PET.</p>"

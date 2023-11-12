@@ -24,6 +24,7 @@ import br.senac.backend.request.UpdatePassRequest;
 import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.response.UserResponse;
 import br.senac.backend.service.CompanyService;
+import br.senac.backend.service.NotificationService;
 import br.senac.backend.service.UserService;
 
 @Controller
@@ -31,6 +32,9 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+
+	@Autowired
+	private NotificationService notificationService;
 
 	@Autowired
 	private CompanyService companyService;
@@ -163,6 +167,7 @@ public class UserController {
 		try {
 			User user = userService.getByGuid(guid);
 			if (user != null) {
+				notificationService.deleteByUser(guid);
 				userService.delete(user);
 				handlerUser.handleDeleteMessages(responseAPI, 200);
 			} else

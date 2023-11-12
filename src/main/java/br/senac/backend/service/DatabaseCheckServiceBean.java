@@ -38,7 +38,7 @@ public class DatabaseCheckServiceBean {
 
 			if (daysRemaining <= 0) {
 				notificationService.makeNotificationReserveExpired(pet);
-				petService.updateStatusPets(pet.getGuid());
+				petService.updateStatusPets(pet.getGuid(), ESTATUS_PET.RESERVED);
 			} else if (daysRemaining > 0) {
 				notificationService.makeNotificationReservePet(pet, daysRemaining);
 			}
@@ -46,4 +46,25 @@ public class DatabaseCheckServiceBean {
 		System.out.println("Verificação de reservas de pet realizadas.");
 	}
 
+//	@Scheduled(cron = "0 0 8 * * ?") // Executa todos os dias as 8 horas da manhã
+	@Scheduled(fixedRate = 60000) // Executa a cada 60 segundos
+	public void notifyUserForPetAdoption() {
+		System.out.println("Verificando adoções de pet...");
+		List<Pet> adoptedPets = petService.getByStatus(ESTATUS_PET.ADOPTED);
+
+		for (Pet pet : adoptedPets) {
+			Company company = pet.getCompany();
+			Date adoptionDate = pet.getAdoptionDate();
+			long daysSinceReservation = Duration.between(adoptionDate.toInstant(), Instant.now()).toDays();
+			long daysRemaining = company.getDaysPetReservation() - daysSinceReservation;
+
+			if (daysRemaining <= 0) {
+				notificationService.makeNotificationAdoptionExpired(pet);
+				petService.updateStatusPets(pet.getGuid(), ESTATUS_PET.ADOPTED);
+			} else if (daysRemaining > 0) {
+				notificationService.makeNotificationAdoptionPet(pet, daysRemaining);
+			}
+		}
+		System.out.println("Verificação de adoções de pet realizadas.");
+	}
 }

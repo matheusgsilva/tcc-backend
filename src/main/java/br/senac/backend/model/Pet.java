@@ -109,6 +109,10 @@ public class Pet implements Serializable {
 	@Column(nullable = true)
 	private Date reservationDate;
 
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(nullable = true)
+	private Date adoptionDate;
+
 	public Long getId() {
 		return id;
 	}
@@ -158,11 +162,11 @@ public class Pet implements Serializable {
 	}
 
 	public List<String> getVaccines() {
-	    return vaccines;
+		return vaccines;
 	}
 
 	public void setVaccines(List<String> vaccines) {
-	    this.vaccines = vaccines;
+		this.vaccines = vaccines;
 	}
 
 	public String getColor() {
@@ -259,6 +263,14 @@ public class Pet implements Serializable {
 
 	public void setReservationDate(Date reservationDate) {
 		this.reservationDate = reservationDate;
+	}
+
+	public Date getAdoptionDate() {
+		return adoptionDate;
+	}
+
+	public void setAdoptionDate(Date adoptionDate) {
+		this.adoptionDate = adoptionDate;
 	}
 
 }

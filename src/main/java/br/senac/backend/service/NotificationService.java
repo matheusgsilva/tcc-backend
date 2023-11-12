@@ -14,10 +14,16 @@ public interface NotificationService {
 	void makeNotificationReservePet(Pet pet, long daysRemaining);
 
 	void makeNotificationReserveExpired(Pet pet);
+	
+	void makeNotificationAdoptionPet(Pet pet, long daysRemaining);
+
+	void makeNotificationAdoptionExpired(Pet pet);
 
 	List<Notification> getByUserGuid(String userGuid);
 	
 	Notification getByGuid(String guid);
 	
 	Notification save(Notification notification);
+	
+	void deleteByUser(String userGuid);
 }

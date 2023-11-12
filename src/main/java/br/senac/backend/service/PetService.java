@@ -22,7 +22,7 @@ public interface PetService {
 	
 	Boolean isExists(String size, String breed, String typePet, String gender);
 	
-	void updateStatusPets(String guid);
+	void updateStatusPets(String guid, ESTATUS_PET status);
 	
 	Integer getDaysSinceReservationByGuid(String guid);
 	

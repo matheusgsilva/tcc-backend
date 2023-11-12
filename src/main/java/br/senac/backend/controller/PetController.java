@@ -29,6 +29,7 @@ import br.senac.backend.response.ResponseAPI;
 import br.senac.backend.service.NotificationService;
 import br.senac.backend.service.PetService;
 import br.senac.backend.service.TokenService;
+import br.senac.backend.task.EmailAdoptionTask;
 import br.senac.backend.task.EmailReservationTask;
 import br.senac.backend.task.NotificationTask;
 import br.senac.backend.util.ESTATUS_PET;
@@ -240,7 +241,13 @@ public class PetController {
 				if (pet.getStatus().equals(ESTATUS_PET.RESERVED)) {
 					pet.setStatus(ESTATUS_PET.ADOPTED);
 					pet.setReservationDate(null);
+					pet.setAdoptionDate(new Date());
 					pet = petService.save(pet);
+					User user = pet.getAdopterUser();
+					EmailAdoptionTask emailReservationTask = applicationContext.getBean(EmailAdoptionTask.class);
+					emailReservationTask.setPet(pet);
+					emailReservationTask.setUser(user);
+					taskExecutor.execute(emailReservationTask);
 					PetResponse petResponse = petConverter.petToResponse(pet, null);
 					if (petResponse != null)
 						handlerPet.handleAdoptionMessages(responseAPI, 200, petResponse);

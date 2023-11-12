@@ -23,7 +23,7 @@ import br.senac.backend.model.Pet;
 import br.senac.backend.model.User;
 
 @Component
-public class EmailAdoptTask implements Runnable {
+public class EmailAdoptionTask implements Runnable {
 
 	@Autowired
 	private JavaMailSender javaMailSender;
@@ -56,10 +56,10 @@ public class EmailAdoptTask implements Runnable {
 
 		try {
 
-			notificationConverter.saveNotification("Confirmação de Reserva - 4PET",
+			notificationConverter.saveNotification("Confirmação de Adoção - 4PET",
 					"Estamos felizes em informar que a adoção do pet de identificação " + pet.getIdentification()
 							+ " foi concluída com sucesso. "
-							+ "Por favor, entre em contato com a instituição para agendar um dia e horário para retirar o pet. "
+							+ "Por favor, entre em contato com a instituição para agendar um dia e horário para retirar o pet. Você tem 3 dias para entrar em contato com a mesma. "
 							+ "Agradecemos por abrir seu coração e lar para um novo amigo. Desejamos muitos momentos felizes juntos! "
 							+ "Atenciosamente, Sistema 4PET.",
 					user.getGuid());
@@ -87,6 +87,7 @@ public class EmailAdoptTask implements Runnable {
 					+ "<p>Estamos felizes em informar que a adoção do pet de identificação <strong>"
 					+ pet.getIdentification() + "</strong> foi concluída com sucesso.</p>"
 					+ "<p>Por favor, entre em contato com a instituição para agendar um dia e horário para retirar o pet.</p>"
+					+ "<p>Você tem 3 dias para entrar em contato com a mesma.</p>"
 					+ "<p>Agradecemos por abrir seu coração e lar para um novo amigo. Desejamos muitos momentos felizes juntos!</p>"
 					+ "<p>Atenciosamente,</p>" + "<p>Sistema 4PET.</p>" + "<br><img src='cid:watermark'></body></html>",
 					true);

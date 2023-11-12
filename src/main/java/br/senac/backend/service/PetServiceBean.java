@@ -101,8 +101,8 @@ public class PetServiceBean implements PetService {
 
 	@Transactional
 	@Modifying
-	public void updateStatusPets(String guid) {
-		repository.updateStatusPets(guid, ESTATUS_PET.AVAILABLE.ordinal());
+	public void updateStatusPets(String guid, ESTATUS_PET status) {
+		repository.updateStatusPets(guid, ESTATUS_PET.AVAILABLE.ordinal(), status.ordinal());
 	}
 
 	public Integer getDaysSinceReservationByGuid(String guid) {

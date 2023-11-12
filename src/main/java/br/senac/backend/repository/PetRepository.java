@@ -74,12 +74,12 @@ public interface PetRepository extends PagingAndSortingRepository<Pet, Long> {
 	@Modifying
 	@Query(value = "UPDATE pets " +
 	       "INNER JOIN company ON pets.company = company.id " +
-	       "SET pets.status = :status, pets.reservation_date = NULL, pets.user = NULL " +
-	       "WHERE pets.guid = :guid AND pets.status = 1 AND company.days_pet_reservation IS NOT NULL " +
+	       "SET pets.status = :statusToSave, pets.reservation_date = NULL, pets.user = NULL " +
+	       "WHERE pets.guid = :guid AND pets.status = :statusAtual AND company.days_pet_reservation IS NOT NULL " +
 	       "AND pets.reservation_date IS NOT NULL " +
 	       "AND (DATEDIFF(CURRENT_DATE, pets.reservation_date) - company.days_pet_reservation) >= 0",
 	       nativeQuery = true)
-	void updateStatusPets(@Param("guid") String guid, @Param("status") int status);
+	void updateStatusPets(@Param("guid") String guid, @Param("statusToSave") int statusToSave, @Param("statusAtual") int statusAtual);
 
 	@Query("SELECT DATEDIFF(CURRENT_DATE, p.reservationDate) FROM Pet p WHERE p.guid = :guid and p.status < 3")
 	Integer getDaysSinceReservationByGuid(@Param("guid") String guid);
