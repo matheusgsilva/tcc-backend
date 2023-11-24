@@ -9,6 +9,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import br.senac.backend.model.Company;
 import br.senac.backend.model.Notification;
 import br.senac.backend.response.NotificationResponse;
 import br.senac.backend.service.NotificationService;
@@ -23,7 +24,7 @@ public class NotificationConverter {
 	@Autowired
 	private UserService userService;
 
-	public void saveNotification(String title, String content, String userGuid) {
+	public void saveNotification(String title, String content, String userGuid, Company company) {
 		Notification notification = new Notification();
 		notification.setTitle(title);
 		notification.setContent(content);
@@ -31,6 +32,8 @@ public class NotificationConverter {
 		notification.setGuid(UUID.randomUUID().toString());
 		notification.setIsRead(false);
 		notification.setUser(userService.getByGuid(userGuid));
+		if (company != null)
+			notification.setCompany(company);
 		notificationService.save(notification);
 	}
 
@@ -46,6 +49,8 @@ public class NotificationConverter {
 				notificationResponse.setGuid(notification.getGuid());
 				notificationResponse.setIsRead(notification.getIsRead());
 				notificationResponse.setUserGuid(notification.getUser().getGuid());
+				if (notification.getCompany() != null)
+					notificationResponse.setCompanyName(notification.getCompany().getName());
 				list.add(notificationResponse);
 			}
 			return list;

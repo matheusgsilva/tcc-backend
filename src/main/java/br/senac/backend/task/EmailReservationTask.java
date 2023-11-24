@@ -60,7 +60,7 @@ public class EmailReservationTask implements Runnable {
 					"Reserva Confirmada! Olá, " + user.getName() + "! "
 							+ "Estamos felizes em informar que a reserva do pet de identificação "
 							+ pet.getIdentification() + " foi realizada com sucesso. Atenciosamente, Sistema 4PET.",
-					user.getGuid());
+					user.getGuid(), pet.getCompany());
 
 			MimeMessageHelper helper = new MimeMessageHelper(message, true);
 			helper.setTo(user.getEmail());

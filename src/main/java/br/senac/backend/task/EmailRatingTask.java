@@ -79,7 +79,7 @@ public class EmailRatingTask implements Runnable {
 						"O que você achou do processo de adoção? Avalie já os serviços prestados pela Organização - "
 								+ company.getName()
 								+ ". O link para avaliação foi enviado por e-mail. Atenciosamente, Equipe 4PET.",
-						user.getGuid());
+						user.getGuid(), company);
 
 				MimeMessage message = javaMailSender.createMimeMessage();
 				MimeMessageHelper helper = new MimeMessageHelper(message, true);

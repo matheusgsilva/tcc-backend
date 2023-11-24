@@ -62,7 +62,7 @@ public class EmailAdoptionTask implements Runnable {
 							+ "Por favor, entre em contato com a instituição para agendar um dia e horário para retirar o pet. Você tem 3 dias para entrar em contato com a mesma. "
 							+ "Agradecemos por abrir seu coração e lar para um novo amigo. Desejamos muitos momentos felizes juntos! "
 							+ "Atenciosamente, Sistema 4PET.",
-					user.getGuid());
+					user.getGuid(), pet.getCompany());
 
 			MimeMessageHelper helper = new MimeMessageHelper(message, true);
 			helper.setTo(user.getEmail());

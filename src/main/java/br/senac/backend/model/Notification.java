@@ -55,6 +55,10 @@ public class Notification implements Serializable {
 	@JoinColumn(name = "user", nullable = true)
 	private User user;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "company", nullable = true)
+	private Company company;
+
 	public Long getId() {
 		return id;
 	}
@@ -109,6 +113,14 @@ public class Notification implements Serializable {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public Company getCompany() {
+		return company;
+	}
+
+	public void setCompany(Company company) {
+		this.company = company;
 	}
 
 }

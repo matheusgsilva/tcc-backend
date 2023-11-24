@@ -76,7 +76,7 @@ public class NotificationServiceBean implements NotificationService {
 
 					notificationConverter.saveNotification("Alerta de Novos Pets - 4PET",
 							"Foi encontrado um Pet de acordo com suas preferências. Acesse já o aplicativo! Atenciosamente, Equipe 4PET.",
-							user.getGuid());
+							user.getGuid(), pet.getCompany());
 
 					MimeMessage message = javaMailSender.createMimeMessage();
 					MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -122,7 +122,7 @@ public class NotificationServiceBean implements NotificationService {
 					User user = userService.locateByEmail(email);
 					notificationConverter.saveNotification("Alerta de Novos Pets - 4PET",
 							"Foi encontrado Pets de acordo com as preferências criadas. Acesse já o aplicativo! Atenciosamente, Equipe 4PET.",
-							user.getGuid());
+							user.getGuid(), null);
 					
 					MimeMessage message = javaMailSender.createMimeMessage();
 					MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -167,7 +167,7 @@ public class NotificationServiceBean implements NotificationService {
 						"Você tem " + daysRemaining + " dia(s) restantes na sua reserva do pet de identificação: "
 								+ pet.getIdentification()
 								+ ". Acesse o aplicativo para mais detalhes! Atenciosamente, Equipe 4PET.",
-						adopterUser.getGuid());
+						adopterUser.getGuid(), pet.getCompany());
 
 				MimeMessage message = javaMailSender.createMimeMessage();
 				MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -215,7 +215,7 @@ public class NotificationServiceBean implements NotificationService {
 								+ " foi cancelada. "
 								+ "Se tiver dúvidas ou precisar de mais informações, entre em contato conosco. "
 								+ "Atenciosamente, Sistema 4PET.",
-						adopterUser.getGuid());
+						adopterUser.getGuid(), pet.getCompany());
 
 				MimeMessage message = javaMailSender.createMimeMessage();
 				MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -261,7 +261,7 @@ public class NotificationServiceBean implements NotificationService {
 						"Você tem " + daysRemaining + " dia(s) restantes para entrar em contato com a instituição e retirar seu pet de identificação: "
 								+ pet.getIdentification()
 								+ ". Acesse o aplicativo para mais detalhes! Atenciosamente, Equipe 4PET.",
-						adopterUser.getGuid());
+						adopterUser.getGuid(), pet.getCompany());
 
 				MimeMessage message = javaMailSender.createMimeMessage();
 				MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -309,7 +309,7 @@ public class NotificationServiceBean implements NotificationService {
 								+ " foi cancelada. "
 								+ "Se tiver dúvidas ou precisar de mais informações, entre em contato conosco. "
 								+ "Atenciosamente, Sistema 4PET.",
-						adopterUser.getGuid());
+						adopterUser.getGuid(), pet.getCompany());
 
 				MimeMessage message = javaMailSender.createMimeMessage();
 				MimeMessageHelper helper = new MimeMessageHelper(message, true);

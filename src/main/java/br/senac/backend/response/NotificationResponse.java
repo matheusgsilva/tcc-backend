@@ -8,6 +8,7 @@ public class NotificationResponse {
 	private Boolean isRead;
 	private String guid;
 	private String userGuid;
+	private String companyName;
 
 	public String getDate() {
 		return date;
@@ -55,6 +56,14 @@ public class NotificationResponse {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 
 }
