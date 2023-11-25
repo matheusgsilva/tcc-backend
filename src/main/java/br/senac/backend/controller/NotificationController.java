@@ -79,7 +79,7 @@ public class NotificationController {
 	}
 
 	@CrossOrigin(origins = "*")
-	@RequestMapping(value = "/api/notification/read/guid/{guid}", method = RequestMethod.GET)
+	@RequestMapping(value = "/api/notification/read/guid/{guid}", method = RequestMethod.PUT)
 	public ResponseEntity<ResponseAPI> read(@RequestHeader(value = "token") String token, @PathVariable String guid) {
 
 		ResponseAPI responseAPI = new ResponseAPI();
