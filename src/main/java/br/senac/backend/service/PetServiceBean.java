@@ -118,7 +118,7 @@ public class PetServiceBean implements PetService {
 	}
 
 	public List<Pet> getByStatus(ESTATUS_PET status) {
-		return repository.getByStatus(ESTATUS_PET.RESERVED);
+		return repository.getByStatus(status);
 	}
 
 	public void verifyPetImage(Pet pet) {
